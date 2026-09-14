@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMS — Система квалификационного тестирования</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">E</div>
+      <div>
+        <div class="brand-name">EMS</div>
+        <div class="brand-sub">QUALIFICATION • TESTING • SYSTEM</div>
+      </div>
+    </div>
+    <div class="top-status"><span class="status-dot"></span> Система онлайн</div>
+  </header>
+
+  <main class="shell">
+    <aside class="sidebar">
+      <div class="profile-card">
+        <div class="avatar" id="candidateAvatar">PS</div>
+        <div>
+          <strong>Кандидат</strong>
+          <span id="candidateLabel">Не авторизован</span><span id="staticIdLabel" class="static-id-label"></span>
+        </div>
+      </div>
+      <nav>
+        <button class="nav-item active" data-screen="home"><span>◈</span> Тесты</button>
+        <button class="nav-item" data-screen="info"><span>▤</span> Информация</button>
+      </nav>
+      <div class="side-note">
+        <span>EMS ACADEMY</span>
+        <p>Квалификация начинается с знаний.</p>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div id="home" class="screen active">
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow" id="heroEyebrow">EMS • QUALIFICATION CENTER</div>
+            <h1>Система<br><span>квалификационного</span><br>тестирования</h1>
+            <p id="heroDescription">Выберите квалификационный тест отдела, ознакомьтесь с правилами и приступайте к проверке знаний.</p>
+          </div>
+          <div class="hero-panel">
+            <div class="scan-line"></div>
+            <div class="panel-logo" id="panelLogo">EMS</div>
+            <div class="panel-circle" id="panelCircle">TEST</div>
+            <div class="panel-caption">SECURE TESTING<br>SYSTEM</div>
+          </div>
+        </section>
+
+        <section class="section-head chooser-head">
+          <div><div class="eyebrow">TEST SELECTION</div><h2>Выберите квалификационный тест</h2></div>
+          <p class="chooser-hint">Выберите нужный отдел, затем начните тестирование.</p>
+        </section>
+
+        <div class="test-choices">
+          <article class="test-choice psid-choice selected" data-test="psid">
+            <div class="choice-top"><span class="choice-code">PSID</span><span class="choice-status">ДОСТУПЕН</span></div>
+            <h3>Тест на квалификацию мед. справок и вакцинации</h3>
+            <p>Проверка знаний по медицинским справкам, вакцинации и внутренним регламентам отдела PSID.</p>
+            <div class="choice-meta"><span>12 вопросов</span><span>15:00</span><span>80%</span></div>
+            <div class="choice-arrow">Выбрать тест <b>→</b></div>
+          </article>
+
+          <article class="test-choice di-choice" data-test="di">
+            <div class="choice-top"><span class="choice-code">DI</span><span class="choice-status">ДОСТУПЕН</span></div>
+            <h3>Тест по вводной лекции</h3>
+            <p>Базовая квалификационная проверка: интернатура, препараты, дефибриллятор и квалификации EMS.</p>
+            <div class="choice-meta"><span>7 вопросов</span><span>15:00</span><span>80%</span></div>
+            <div class="choice-arrow">Выбрать тест <b>→</b></div>
+          </article>
+        </div>
+
+      <section class="home-instruction">
+        <div class="section-head">
+          <div><div class="eyebrow">TEST INSTRUCTIONS</div><h2>Инструкция</h2></div>
+        </div>
+        <div class="instruction-panel">
+          <ol>
+            <li>Выберите нужный квалификационный тест, нажмите <b>«Начать»</b> и только после этого укажите <b>игровое имя и фамилию</b> и ваш <b>Static ID</b>.</li>
+            <li>После завершения теста <b>не закрывайте страницу</b>. Экзаменатор должен самостоятельно проверить и зафиксировать результат.</li>
+            <li>В зависимости от вопроса необходимо выбрать <b>один или несколько правильных вариантов</b> ответа.</li>
+            <li><b>Пользоваться сторонними ресурсами во время тестирования запрещено.</b></li>
+            <li>Тест считается сданным, если итоговый результат составляет <b>80% или выше</b>.</li>
+          </ol>
+        </div>
+        <div class="bottom-start">
+          <button class="btn primary start-bottom" id="startBtn">Начать выбранный тест <span>→</span></button>
+        </div>
+      </section>
+      </div>
+
+      <div id="info" class="screen">
+        <div class="page-title">
+          <div class="eyebrow">EMS • INFORMATION</div>
+          <h1>Информация</h1>
+          <p>Материалы и полезная информация для сотрудников EMS.</p>
+        </div>
+        <div class="info-links">
+          <button class="info-link-card" id="openLectureBtn">
+            <div class="info-link-icon">▤</div>
+            <div class="info-link-text">
+              <span>01 • ЛЕКЦИЯ</span>
+              <h2>Вводная лекция</h2>
+              <p>Ознакомительный урок по Больницам</p>
+            </div>
+            <strong>→</strong>
+          </button>
+        </div>
+      </div>
+
+      <div id="lecture" class="screen">
+        <div class="page-title lecture-header">
+          <button class="btn ghost" id="backToInfo">← Назад к информации</button>
+          <div class="eyebrow">EMS • INTRODUCTORY LECTURE</div>
+          <h1>Вводная лекция</h1>
+          <p>Ознакомительный урок по Больницам</p>
+        </div>
+        <div class="lecture-gallery single-material">
+          <article class="lecture-card lecture-material">
+            <div class="lecture-label"><span>01</span> Материал лекции</div>
+            <div class="lecture-pages">
+              <img class="lecture-image" loading="lazy" referrerpolicy="no-referrer" src="https://images-cdn.onlinetestpad.net/8b/ef/5be60e9142c0b87ce29dfe98cf94.jpg" alt="Материал вводной лекции — страница 1">
+              <img class="lecture-image" loading="lazy" referrerpolicy="no-referrer" src="https://images-cdn.onlinetestpad.net/60/4e/01b6f79e4f10a997adb6f841a83d.jpg" alt="Материал вводной лекции — страница 2">
+              <img class="lecture-image" loading="lazy" referrerpolicy="no-referrer" src="https://images-cdn.onlinetestpad.net/72/66/a1eb6ef74e3d90f4ad847fae2108.jpg" alt="Материал вводной лекции — страница 3">
+              <img class="lecture-image" loading="lazy" referrerpolicy="no-referrer" src="https://images-cdn.onlinetestpad.net/9e/ae/fd72c44a4fd4a82bbf08c482e57b.jpg" alt="Материал вводной лекции — страница 4">
+              <img class="lecture-image" loading="lazy" referrerpolicy="no-referrer" src="https://images-cdn.onlinetestpad.net/e2/36/ce386fd54401afa269b884024bfa.jpg" alt="Материал вводной лекции — страница 5">
+              <img class="lecture-image" loading="lazy" referrerpolicy="no-referrer" src="https://images-cdn.onlinetestpad.net/1f/e3/10f02da8448986105ccb33df085a.jpg" alt="Материал вводной лекции — страница 6">
+              <img class="lecture-image" loading="lazy" referrerpolicy="no-referrer" src="https://images-cdn.onlinetestpad.net/5a/ce/be455e1f4d9181274ce358a0d05a.jpg" alt="Материал вводной лекции — страница 7">
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div id="test" class="screen">
+        <div class="test-top">
+          <div><div class="eyebrow" id="testEyebrow">QUALIFICATION TEST • PSID</div><h1 id="questionTitle">Вопрос 1</h1></div>
+          <div class="timer" id="timer">15:00</div>
+        </div>
+        <div class="progress-wrap"><div class="progress"><span id="progressBar"></span></div><div class="progress-text"><span id="progressText">1 / 12</span><span id="progressStandard">PSID STANDARD</span></div></div>
+        <div class="question-card">
+          <div class="question-number" id="questionNumber">01</div>
+          <h2 id="questionText"></h2>
+          <div id="answers" class="answers"></div>
+        </div>
+        <div class="test-actions">
+          <button class="btn ghost" id="prevBtn">← Назад</button>
+          <button class="btn primary" id="nextBtn">Следующий →</button>
+        </div>
+      </div>
+
+      <div id="result" class="screen">
+        <div class="result-card">
+          <div class="result-ring"><span id="score">0%</span><small id="resultStatus">FAIL</small></div>
+          <div class="eyebrow" id="resultEyebrow">TEST COMPLETE • PSID</div>
+          <h1 id="resultTitle">Результат готов</h1>
+          <p id="resultText"></p>
+          <div class="result-meta"><span>Имя и фамилия</span><strong id="resultName">—</strong></div>
+          <div class="result-meta"><span>Static ID</span><strong id="resultStaticId">—</strong></div>
+          <div class="result-meta"><span>Правильных ответов</span><strong id="resultCorrect">0 / 12</strong></div>
+          <div class="candidate-answers-section">
+            <div class="eyebrow">ОТВЕТЫ КАНДИДАТА</div>
+            <h2 class="candidate-answers-title">Выбранные ответы</h2>
+            <div id="candidateAnswers" class="candidate-answers"></div>
+          </div>
+          <button class="btn primary" id="restartBtn">Вернуться к выбору теста</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="nameModal" class="modal">
+    <div class="modal-box identity-modal">
+      <div class="modal-logo">EMS</div>
+      <div class="eyebrow">IDENTIFICATION • CANDIDATE</div>
+      <h2>Представьтесь</h2>
+      <p>Введите игровое имя, фамилию и Static ID. После подтверждения выбранный тест начнётся автоматически.</p>
+      <label class="input-label" for="nameInput">Имя и фамилия</label>
+      <input id="nameInput" type="text" placeholder="Например: Ivan Ivanov" maxlength="40" autocomplete="name">
+      <label class="input-label" for="staticIdInput">Static ID</label>
+      <input id="staticIdInput" type="text" placeholder="Например: 123456" maxlength="20" inputmode="numeric" autocomplete="off">
+      <button class="btn primary full" id="confirmName">Продолжить →</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
