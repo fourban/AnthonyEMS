@@ -19,7 +19,30 @@ di:{id:'di',code:'DI',accent:'green',title:'Тест по вводной лек�
 {q:'На каком ранге у вас появляется возможность запросить дефибриллятор',type:'single',a:['2','4','3','1'],c:2},
 {q:'Составьте соответствие мед.препаратов с болезнями.',type:'selects',fields:[{label:'Азитромицин',options:['Панкреатит','Отравление','ГРИПП','Гастрит','Менингит'],correct:'ГРИПП'},{label:'Активированный уголь',options:['Панкреатит','Отравление','ГРИПП','Гастрит','Менингит'],correct:'Отравление'}]},
 {q:'Какие квалификации есть в ЕМС?',type:'multi',a:['Психолог.','Хирург.','Спасательно-поисковых работ (SAR).','Выдача медицинских карт и вакцинация населения.','SES.','Ветеринар.','Стоматолог.','Уролог.','Пожарный.'],c:[0,1,2,3,4,5]},
-{q:'Разрешено ли использовать эпинефрин без дефибриллятора ?',type:'single',a:['Да.','Нет.','Да если не выдал старший состав.'],c:1}]}}
+{q:'Разрешено ли использовать эпинефрин без дефибриллятора ?',type:'single',a:['Да.','Нет.','Да если не выдал старший состав.'],c:1}]},
+charter:{id:'charter',code:'HAD',accent:'red',title:'Экзамен по Уставу EMS',short:'Устав Emergency Medical Service',description:'Проверь знание действующего Устава EMS: обязанности, рабочий график, квалификации и основные запреты.',questions:[
+{q:'При оказании экстренной медицинской помощи Вы прибыли на место происшествия, где находятся несколько пострадавших с различными травмами. Один из пострадавших является сотрудником государственной структуры и находится в служебной форме. Кому необходимо оказать помощь в первую очередь?',type:'single',a:['Сотруднику государственной структуры','Приоритетов в оказании первой медицинской помощи нет','Ближайшему к вам пострадавшему','Пострадавшему, находящемуся в наиболее тяжёлом состоянии'],c:0},
+{q:'Какие временные рамки имеются у сотрудников на перерыв для отдыха и питания?',type:'single',a:['Не менее 30 минут и не более 1 часа','Не более 2 часов при условии, что до начала перерыва сотрудник находился на рабочем месте не менее 2 часов','Не менее 2 часов и не более 3 часов при условии, что сотрудник находился до этого на рабочем месте не менее 2 часов','Не менее 1 часа и не более 2 часов без дополнительных условий'],c:1},
+{q:'Подъезжая к месту оказания первой медицинской помощи, вы обнаружили на земле огнестрельное оружие, и рядом с местом оказания первой медицинской помощи вы видите вооружённых лиц, которые ведут перестрелку. Как вы поступите?',type:'single',a:['Покину данное место ввиду того, что там происходит перестрелка и оказать помощь я не смогу','Подойду вплотную к месту и начну оказывать первую медицинскую помощь пострадавшим','Подниму огнестрельное оружие и начну стрелять в вооружённых лиц, так как у меня имеется действующая лицензия на оружие'],c:0},
+{q:'Сколько квалификаций имеется в EMS?',type:'single',a:['3 квалификации','4 квалификации','5 квалификаций','6 квалификаций'],c:3},
+{q:'В течение какого времени сотрудник обязан пройти назначенную ему переаттестацию?',type:'single',a:['24 часа','48 часов','72 часа'],c:2},
+{q:'Какие нормы взятия медикаментов и индивидуальных предметов установлены для сотрудника EMS?',type:'single',a:[
+'Кодеиновые таблетки — 72 шт.; Эпинефрин — 25 шт.; Активированный уголь — 24 шт.; Азитромицин — 24 шт.; ИРП — 3 шт. раз в 2 часа',
+'Кодеиновые таблетки — 48 шт.; Эпинефрин — 10 шт.; Активированный уголь — 24 шт.; Азитромицин — 24 шт.; ИРП — 3 шт. раз в 1 час',
+'Кодеиновые таблетки — 72 шт.; Эпинефрин — 35 шт.; Активированный уголь — 14 шт.; Азитромицин — 14 шт.; ИРП — 1 шт. раз в 2 часа',
+'Кодеиновые таблетки — 60 шт.; Эпинефрин — 15 шт.; Активированный уголь — 20 шт.; Азитромицин — 20 шт.; ИРП — 2 шт. раз в 3 часа'],c:0},
+{q:'Какой рабочий график установлен в EMS?',type:'single',a:[
+'Дневная смена: Пн–Пт 11:00–21:00, Сб–Вс 12:00–21:00. Ночная смена: Вс–Чт 21:00–11:00, Пт–Сб 21:00–12:00.',
+'Дневная смена: Пн–Пт 09:00–21:00, Сб–Вс 10:00–22:00. Ночная смена: Вс–Чт 21:00–09:00, Пт–Сб 22:00–10:00.',
+'Дневная смена: Пн–Пт 11:00–22:00, Сб–Вс 12:00–22:00. Ночная смена: Вс–Чт 22:00–11:00, Пт–Сб 22:00–12:00.',
+'Дневная смена: Пн–Пт 10:00–21:00, Сб–Вс 11:00–21:00. Ночная смена: Вс–Чт 21:00–10:00, Пт–Сб 21:00–11:00.'],c:0},
+{q:'Какова минимальная дневная смена для сотрудников EMS?',type:'single',a:['2 часа','5 часов','4 часа','Норма рабочего времени отсутствует'],c:2},
+{q:'Разрешён ли выезд на личном транспортном средстве для оказания первой медицинской помощи?',type:'single',a:['Разрешено','Разрешено, если личное транспортное средство красного цвета','Запрещено'],c:2},
+{q:'При повышении на какой порядковый ранг сотрудник обязан получить квалификацию «Выдача медицинских карт и вакцинация населения»?',type:'single',a:['3-й ранг','4-й ранг','5-й ранг','6-й ранг'],c:1},
+{q:'Обязан ли сотрудник находиться в специальной связи EMS?',type:'single',a:['Нет, не обязан','Да, обязан'],c:1},
+{q:'В течение какого времени сотрудник по прибытии в штат во время дневной рабочей смены обязан заступить на смену и составить отчёт о начале смены?',type:'single',a:['В течение 30 минут','В течение 15 минут','В течение 10 минут'],c:2}
+]}}
+
 let activeTestId='psid';
 let themeSelected=false;
 let questions=tests.psid.questions;
@@ -29,8 +52,8 @@ const $=id=>document.getElementById(id);
 function showScreen(id){
  document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
  $(id).classList.add("active");
- document.querySelectorAll(".nav-item").forEach(n=>n.classList.toggle("active",n.dataset.screen===(id==="lecture"?"info":id)));
- if(id==="info"||id==="lecture") applyInfoTheme();
+ document.querySelectorAll(".nav-item").forEach(n=>n.classList.toggle("active",n.dataset.screen===((id!=="home"&&id!=="test"&&id!=="result")?"info":id)));
+ if(["info","internship","qualificationMenu","qualificationGuide","lecture","duty","pmp","codeine","screens","getid","bodycam"].includes(id)) applyInfoTheme();
  else if(id==="home"||id==="test"||id==="result") applyTestTheme();
  window.scrollTo(0,0)
 }
@@ -71,7 +94,7 @@ function finishTest(){
  let pct=Math.round(correct/questions.length*100);
  $("score").textContent=pct+"%";
  $("resultStatus").textContent=pct>=80?"PASSED":"FAIL";
- $("resultStatus").style.color=pct>=80?(activeTestId==="di"?"#4ade80":"#c084fc"):"#ff719f";
+ $("resultStatus").style.color=pct>=80?(activeTestId==="di"?"#4ade80":activeTestId==="charter"?"#ef4444":"#c084fc"):"#ff719f";
  $("resultEyebrow").textContent=`TEST COMPLETE • ${active.code}`;
  $("resultTitle").textContent=pct>=80?"Квалификация пройдена":"Квалификация не пройдена";
  $("resultText").textContent=pct>=80?"Отличный результат. Данные тестирования можно передать руководству подразделения. Не закрывайте страницу до тех пор, пока экзаменатор не скажет, что можно завершить проверку.":"Результата пока недостаточно для квалификации. Повтори попытку и закрепи теорию. Не закрывайте страницу до тех пор, пока экзаменатор не скажет, что можно завершить проверку.";
@@ -103,7 +126,7 @@ function renderCandidateAnswers(){
 function escapeHtml(value){return String(value).replace(/[&<>'"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[ch]));}
 function resetAnswers(){answers=questions.map(q=>q.type==="multi"?[]:q.type==="selects"?{}:null)}
 function applyInfoTheme(){document.body.classList.remove("psid-mode","di-mode");$("heroEyebrow").textContent="EMS • QUALIFICATION CENTER";$("heroDescription").textContent="Система квалификационного тестирования EMS.";$("panelLogo").textContent="EMS";$("panelCircle").textContent="EMS";$("candidateAvatar").textContent="EMS";}
-function applyTestTheme(){const active=themeSelected?tests[activeTestId]:null;document.body.classList.toggle("psid-mode",themeSelected && active.accent==="purple");document.body.classList.toggle("di-mode",themeSelected && active.accent==="green");$("heroEyebrow").textContent=active?active.code+" • QUALIFICATION CENTER":"EMS • QUALIFICATION CENTER";$("heroDescription").textContent=active?active.description:"Система квалификационного тестирования EMS.";$("panelLogo").textContent=active?active.code:"EMS";$("panelCircle").textContent=active?active.code:"EMS";$("candidateAvatar").textContent=active?active.code:"EMS";}
+function applyTestTheme(){const active=themeSelected?tests[activeTestId]:null;document.body.classList.toggle("psid-mode",themeSelected && active.accent==="purple");document.body.classList.toggle("di-mode",themeSelected && active.accent==="green");document.body.classList.toggle("had-mode",themeSelected && active.accent==="red");$("heroEyebrow").textContent=active?active.code+" • QUALIFICATION CENTER":"EMS • QUALIFICATION CENTER";$("heroDescription").textContent=active?active.description:"Система квалификационного тестирования EMS.";$("panelLogo").textContent=active?active.code:"EMS";$("panelCircle").textContent=active?active.code:"EMS";$("candidateAvatar").textContent=active?active.code:"EMS";}
 function chooseTest(id){activeTestId=id;themeSelected=true;questions=tests[id].questions;current=0;resetAnswers();applyTestTheme();renderTestChooser()}
 function renderTestChooser(){document.querySelectorAll(".test-choice").forEach(card=>card.classList.toggle("selected",card.dataset.test===activeTestId));const active=tests[activeTestId];document.querySelector(".start-bottom").innerHTML=themeSelected?`Начать «${active.title}» <span>→</span>`:`Начать тестирование <span>→</span>`;}
 function begin(){
@@ -132,6 +155,19 @@ document.querySelectorAll(".nav-item").forEach(n=>n.onclick=()=>{if(n.dataset.sc
 document.querySelectorAll(".test-choice").forEach(card=>card.onclick=()=>{chooseTest(card.dataset.test);renderTestChooser()});
 applyTestTheme();
 renderTestChooser();
+$("startIntroBtn")?.addEventListener("click",()=>{chooseTest("di");$("nameModal").classList.add("show")});
 
-$("openLectureBtn").onclick=()=>showScreen("lecture");
-$("backToInfo").onclick=()=>showScreen("info");
+$("openInternshipBtn").onclick=()=>showScreen("internship");
+$("openQualificationsBtn")?.addEventListener("click",()=>showScreen("qualificationMenu"));
+$("openCharterBtn")?.addEventListener("click",()=>window.open("https://forum.majestic-rp.ru/threads/ustav-emergency-medical-service.3617851/","_blank","noopener,noreferrer"));
+$("startCharterBtn")?.addEventListener("click",()=>{chooseTest("charter");$("nameModal").classList.add("show")});
+$("startCharterBtn2")?.addEventListener("click",(e)=>{e.stopPropagation();chooseTest("charter");$("nameModal").classList.add("show")});
+document.querySelectorAll(".internship-guide-card[data-open]").forEach(card=>card.addEventListener("click",()=>showScreen(card.dataset.open)));
+document.querySelectorAll(".backToInternship").forEach(b=>b.onclick=()=>showScreen("internship"));
+$("backFromInternship")?.addEventListener("click",()=>showScreen("info"));
+$("backFromQualifications")?.addEventListener("click",()=>showScreen("qualificationMenu"));
+$("backFromQualificationMenu")?.addEventListener("click",()=>showScreen("info"));
+document.querySelectorAll(".qualification-guide-grid .internship-guide-card[data-open]").forEach(card=>card.addEventListener("click",()=>showScreen(card.dataset.open)));
+$("backToInfo")?.addEventListener("click",()=>showScreen("internship"));
+
+$("backToInfoDuty")?.addEventListener("click",()=>showScreen("internship"));

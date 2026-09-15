@@ -1,16 +1,1 @@
-PSID / DI Qualification Center — v8
-
-Структура для загрузки в GitHub Pages:
-- index.html
-- app.js
-- styles.css
-- assets/
-
-После ввода имени и Static ID кандидат попадает на выбор теста.
-Доступны два модуля:
-1) PSID — Тест на квалификацию мед. справок и вакцинации (12 вопросов)
-2) DI — Тест по вводной лекции (7 вопросов, зелёная тема)
-
-Оба теста используют лимит 15 минут и проходной балл 80%.
-
-ВАЖНО: файл .github/workflows/main.yml не входит в этот архив. На GitHub его не удалять — он отвечает за автоматическую публикацию Pages.
+EMS Academy v39 — qualification memo with source images from the supplied DOCX documents.
