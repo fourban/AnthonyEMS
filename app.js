@@ -60,6 +60,19 @@ di_pmp:{id:'di_pmp',code:'DI',accent:'green',title:'Тест по ПМП',short:
 {q:'Вам пришел вызов из острова Кайо-Перико. Ваши действия?',type:'single',a:['Поплыву на лодке чтоб никто меня не увидел','Возьму вертолет и полечу на вызов','Остров Кайо-Перико - объект особой важности, отклоню вызов'],c:2},
 {q:'Вы приехали поднимать человека, но вдруг на вас наставили оружие и сказали уезжать. Ваши действия?',type:'single',a:['Буду дальше оказывать ПМП','Возьму оружие и начну стрелять по человеку','Уеду и возьму другой вызов'],c:2}
 ]},
+di_rp:{id:'di_rp',code:'DI',accent:'green',title:'Тест по РП',short:'Тест по РП',description:'Проверка знаний основных RP-терминов и правил использования команд /me, /do и /try.',questions:[
+{q:'Как отыгрывается /me?',type:'single',a:['С большой буквы, без знаков препинания на конце.','С маленькой буквы, со знаком препинания на конце.','С большой буквы, со знаком препинания на конце.','С маленькой буквы, без знаков препинания на конце.'],c:3},
+{q:'Выберите верный вариант отыгровки.',type:'single',a:['/do Владимир от удара Аарона упал на землю и потерял сознание.','/do Брови Джонатана нахмурились.','/do Присев на стул, откинулась на спинку, при этом закрыла глаза.'],c:1},
+{q:'Что такое OOC информация?',type:'single',a:['Информация связанная с игровым миром.','Информация в обоих случаях.','Информация не связанная с игровым миром.'],c:2},
+{q:'Что такое IC информация?',type:'single',a:['Информация связанная с игровым миром.','Информация не связанная с игровым миром.','Информация в обоих случаях.'],c:0},
+{q:'Что такое ДМ?',type:'single',a:['Убийство/нанесение урона без причины.','Нанесение увечий машиной.','Нанесение урона своему товарищу.'],c:0},
+{q:'Для чего предназначена отыгровка /try?',type:'single',a:['Команда предназначена исключительно для отыгровки тех действий, возможность которых сопровождается определенной вероятностью, например, подбрасывание костей, монетки и так далее.','Команда предназначена для обозначения прямой речи персонажа во время выполнения им какого-либо действия.','Команда предназначена для описания выполняемого вашим персонажем действия от 3-го лица, которое нельзя отобразить иными способами в силу отсутствия возможности этого в игре.'],c:0},
+{q:'Для чего предназначена отыгровка /do?',type:'single',a:['Команда предназначена для обозначения прямой речи персонажа во время выполнения им какого-либо действия.','Команда предназначена для описания действий персонажа от третьего лица, а также для описания состояния объектов вокруг него.','Команда предназначена исключительно для отыгровки тех действий, возможность которых сопровождается определенной вероятностью, например, подбрасывание костей, монетки и так далее.'],c:1},
+{q:'Выберите верный вариант отыгровки.',type:'single',a:['/me правой рукой снял рацию с поясного держателя и поднес ее ко рту','/me умер','/me моет пол [1/3..2/3]'],c:0},
+{q:'Выберите верный вариант отыгровки.',type:'single',a:['/try собравшись с мыслями, ударил бутылкой об голову так, чтобы она разбилась','/try ударив человека по щеке, привел его в чувства','/try посмотрев на алкотестер, увидел, что водитель пьян'],c:1},
+{q:'Для чего предназначена отыгровка /me?',type:'single',a:['Команда предназначена исключительно для отыгровки тех действий, возможность которых сопровождается определенной вероятностью, например, подбрасывание костей, монетки и так далее.','Команда предназначена для описания действия персонажа от первого лица. Она пишется с маленькой буквы и без точки в конце.','Команда предназначена для обозначения прямой речи персонажа во время выполнения им какого-либо действия.'],c:1},
+{q:'Что такое РК?',type:'single',a:['РП убийство.','Не знаю.','Возвращение на место смерти с целью мести.'],c:2}
+]},
 charter:{id:'charter',code:'HAD',accent:'red',title:'Переаттестация',short:'Переаттестация HAD',description:'Проверка сотрудников HAD по внутренним требованиям EMS и действующему порядку работы.',questions:[
 {q:'При оказании экстренной медицинской помощи Вы прибыли на место происшествия, где находятся несколько пострадавших с различными травмами. Один из пострадавших является сотрудником государственной структуры и находится в служебной форме. Кому необходимо оказать помощь в первую очередь?',type:'single',a:['Сотруднику государственной структуры','Приоритетов в оказании первой медицинской помощи нет','Ближайшему к вам пострадавшему','Пострадавшему, находящемуся в наиболее тяжёлом состоянии'],c:0},
 {q:'Какие временные рамки имеются у сотрудников на перерыв для отдыха и питания?',type:'single',a:['Не менее 30 минут и не более 1 часа','Не более 2 часов при условии, что до начала перерыва сотрудник находился на рабочем месте не менее 2 часов','Не менее 2 часов и не более 3 часов при условии, что сотрудник находился до этого на рабочем месте не менее 2 часов','Не менее 1 часа и не более 2 часов без дополнительных условий'],c:1},
@@ -92,8 +105,9 @@ const $=id=>document.getElementById(id);
 function showScreen(id){
  document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
  $(id).classList.add("active");
- document.querySelectorAll(".nav-item").forEach(n=>n.classList.toggle("active",n.dataset.screen===((id!=="home"&&id!=="test"&&id!=="result")?"info":id)));
- if(["info","internship","qualificationMenu","qualificationGuide","lecture","duty","pmp","codeine","screens","getid","bodycam"].includes(id)) applyInfoTheme();
+ const navScreen = id==="binders" ? "binders" : (["info","internship","qualificationMenu","qualificationGuide","lecture","duty","pmp","codeine","screens","getid","bodycam"].includes(id) ? "info" : id);
+ document.querySelectorAll(".nav-item").forEach(n=>n.classList.toggle("active",n.dataset.screen===navScreen));
+ if(["info","internship","qualificationMenu","qualificationGuide","lecture","duty","pmp","codeine","screens","getid","bodycam","binders"].includes(id)) applyInfoTheme();
  else if(id==="home"||id==="test"||id==="result") applyTestTheme();
  window.scrollTo(0,0)
 }
@@ -189,6 +203,24 @@ function startSelectedTest(){if(!themeSelected || !activeTestId){alert("Снач
 $("prevBtn").onclick=()=>{if(current>0){current--;renderQuestion()}};
 $("nextBtn").onclick=()=>{if(!answered(questions[current],answers[current])){alert(questions[current].type==="multi"?"Выбери хотя бы один вариант ответа.":"Заполни ответ перед продолжением.");return}if(current<questions.length-1){current++;renderQuestion()}else finishTest()};
 $("restartBtn").onclick=()=>{themeSelected=false;activeTestId=null;applyTestTheme();showScreen("home");renderTestChooser()};
+
+function selectBinderProgram(program){
+ const names={a5i:"A5iBinder",binderbot:"BinderBot"};
+ document.querySelectorAll("[data-binder-panel]").forEach(panel=>{panel.hidden=panel.dataset.binderPanel!==program});
+ document.querySelectorAll(".binder-program-card").forEach(card=>card.classList.toggle("active",card.dataset.binderProgram===program));
+ const title=$("binderProfilesTitle");
+ if(title) title.textContent=program && names[program]?`Профили EMS ${names[program]}`:"Профили EMS";
+ const section=document.querySelector(".binder-profiles-section");
+ if(section) section.scrollIntoView({behavior:"smooth",block:"start"});
+}
+document.querySelectorAll(".binder-select-program").forEach(btn=>btn.addEventListener("click",e=>{
+ e.stopPropagation();
+ selectBinderProgram(btn.dataset.binderTarget);
+}));
+document.querySelectorAll(".binder-program-card").forEach(card=>card.addEventListener("click",e=>{
+ if(e.target.closest(".binder-download-main, .binder-guide-link")) return;
+ selectBinderProgram(card.dataset.binderProgram);
+}));
 document.querySelectorAll(".nav-item").forEach(n=>n.onclick=()=>{if(n.dataset.screen==="test"){if(candidate){renderQuestion();showScreen("test")}else $("nameModal").classList.add("show")}else showScreen(n.dataset.screen)});
 
 
