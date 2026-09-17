@@ -105,9 +105,9 @@ const $=id=>document.getElementById(id);
 function showScreen(id){
  document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
  $(id).classList.add("active");
- const navScreen = id==="binders" ? "binders" : (["info","internship","qualificationMenu","qualificationGuide","lecture","duty","pmp","codeine","screens","getid","bodycam"].includes(id) ? "info" : id);
+ const navScreen = id==="binders" ? "binders" : (["info","internship","qualificationMenu","qualificationGuide","surgeryGuide","lecture","duty","pmp","codeine","screens","getid","bodycam"].includes(id) ? "info" : id);
  document.querySelectorAll(".nav-item").forEach(n=>n.classList.toggle("active",n.dataset.screen===navScreen));
- if(["info","internship","qualificationMenu","qualificationGuide","lecture","duty","pmp","codeine","screens","getid","bodycam","binders"].includes(id)) applyInfoTheme();
+ if(["info","internship","qualificationMenu","qualificationGuide","surgeryGuide","lecture","duty","pmp","codeine","screens","getid","bodycam","binders"].includes(id)) applyInfoTheme();
  else if(id==="home"||id==="test"||id==="result") applyTestTheme();
  window.scrollTo(0,0)
 }
@@ -240,6 +240,17 @@ document.querySelectorAll(".internship-guide-card[data-open]").forEach(card=>car
 document.querySelectorAll(".backToInternship").forEach(b=>b.onclick=()=>showScreen("internship"));
 $("backFromInternship")?.addEventListener("click",()=>showScreen("info"));
 $("backFromQualifications")?.addEventListener("click",()=>showScreen("qualificationMenu"));
+$("backFromSurgery")?.addEventListener("click",()=>showScreen("qualificationMenu"));
+$("openSurgeryBinders")?.addEventListener("click",()=>{
+  showScreen("binders");
+  selectBinderProgram("a5i");
+  requestAnimationFrame(()=>{
+    const panel=document.querySelector('[data-binder-panel="a5i"]');
+    const card=[...(panel?.querySelectorAll('.binder-profile-card')||[])].find(c=>c.querySelector('h3')?.textContent.trim()==="Хирургия");
+    card?.scrollIntoView({behavior:"smooth",block:"center"});
+    if(card){card.classList.add("binder-focus");setTimeout(()=>card.classList.remove("binder-focus"),1800);}
+  });
+});
 $("backFromQualificationMenu")?.addEventListener("click",()=>showScreen("info"));
 document.querySelectorAll(".qualification-guide-grid .internship-guide-card[data-open]").forEach(card=>card.addEventListener("click",()=>showScreen(card.dataset.open)));
 $("backToInfo")?.addEventListener("click",()=>showScreen("internship"));

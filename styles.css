@@ -351,9 +351,9 @@ body.had-mode .info-section-card{border-color:rgba(239,68,68,.15)}
 
 /* Qualifications chooser */
 .qualification-menu-screen .internship-guide-header{margin-bottom:24px}
-.qualification-guide-grid{grid-template-columns:minmax(280px,420px);justify-content:start}
-.qualification-guide-grid .internship-guide-card{width:100%}
-@media(max-width:560px){.qualification-guide-grid{grid-template-columns:1fr}}
+.qualification-guide-grid{grid-template-columns:repeat(2,minmax(0,420px));justify-content:start;align-items:stretch}
+.qualification-guide-grid .internship-guide-card{width:100%;height:100%}
+@media(max-width:760px){.qualification-guide-grid{grid-template-columns:1fr;max-width:420px}}
 
 /* v48 testing mode labels */
 .choice-note{display:inline-flex;align-items:center;margin:10px 0 0;padding:6px 10px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;width:max-content;max-width:100%;}
@@ -903,3 +903,230 @@ body.had-mode .home-hero-compact h1 span{color:#ef4444;text-shadow:0 0 22px rgba
 @media(max-width:1050px){.binder-profile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:820px){.binder-programs{grid-template-columns:1fr}.binder-profiles-head{align-items:stretch;flex-direction:column}.binder-switch{align-self:flex-start}.binder-help{align-items:stretch;flex-direction:column}}
 @media(max-width:560px){.binder-program-card{grid-template-columns:56px minmax(0,1fr);padding:16px;gap:13px}.binder-program-icon{width:56px;height:56px;border-radius:13px;font-size:18px}.binder-program-actions{flex-direction:column}.binder-program-actions .btn{width:100%}.binder-profiles-section{padding:15px}.binder-profile-grid{grid-template-columns:1fr}.binder-switch{width:100%}.binder-tab{flex:1}.binder-gender-actions a{min-height:42px}}
+
+/* v85 — Surgery qualification guide */
+.surgery-important{border-color:rgba(239,68,68,.24);background:linear-gradient(145deg,rgba(239,68,68,.07),rgba(255,255,255,.025))}.surgery-important a:not(.btn){color:#ff7878;font-weight:700}.surgery-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}.surgery-law-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.surgery-law-card{height:100%}.surgery-location-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}.surgery-location-grid>div{padding:18px;border:1px solid rgba(255,90,90,.14);border-radius:12px;background:rgba(255,255,255,.025)}.surgery-location-grid strong{display:block;font-size:17px;color:#fff}.surgery-location-grid span{display:block;margin-top:6px;font-size:11px;color:#8f848f}.surgery-images img{aspect-ratio:16/9;object-fit:cover}.surgery-price-card .btn{display:inline-flex;margin-top:12px;text-decoration:none}.binder-profile-card.binder-focus{border-color:rgba(255,72,72,.75)!important;box-shadow:0 0 0 2px rgba(255,72,72,.18),0 18px 50px rgba(255,0,0,.12);transform:translateY(-2px)}@media(max-width:760px){.surgery-law-grid,.surgery-location-grid{grid-template-columns:1fr}.surgery-actions .btn{width:100%}}
+
+/* =========================================================
+   v87 — EMS Academy unified motion system
+   Calm, professional motion across the whole interface.
+   ========================================================= */
+:root{
+  --motion-fast:160ms;
+  --motion-base:240ms;
+  --motion-slow:420ms;
+  --motion-ease:cubic-bezier(.22,.61,.36,1);
+  --motion-ease-out:cubic-bezier(.16,1,.3,1);
+}
+
+/* Screen transitions: short and restrained */
+.screen{animation:none!important}
+.screen.active{animation:emsScreenIn var(--motion-base) var(--motion-ease-out) both}
+@keyframes emsScreenIn{
+  from{opacity:0;transform:translateY(6px)}
+  to{opacity:1;transform:none}
+}
+
+/* Headings and lead text arrive with a subtle hierarchy */
+.screen.active .eyebrow,
+.screen.active .page-title .eyebrow,
+.screen.active .internship-header .eyebrow,
+.screen.active .lecture-header .eyebrow{
+  animation:emsSoftIn 220ms var(--motion-ease-out) both;
+}
+.screen.active .page-title h1,
+.screen.active .internship-header h1,
+.screen.active .lecture-header h1,
+.screen.active .test-top h1{
+  animation:emsSoftIn 280ms 35ms var(--motion-ease-out) both;
+}
+.screen.active .page-title p,
+.screen.active .internship-header p,
+.screen.active .lecture-header p{
+  animation:emsSoftIn 300ms 70ms var(--motion-ease-out) both;
+}
+@keyframes emsSoftIn{
+  from{opacity:0;transform:translateY(5px)}
+  to{opacity:1;transform:none}
+}
+
+/* Top bar / brand */
+.topbar{transition:border-color var(--motion-base) ease,background var(--motion-base) ease,box-shadow var(--motion-base) ease}
+.brand-mark{transition:transform var(--motion-base) var(--motion-ease-out),box-shadow var(--motion-base) ease,border-color var(--motion-base) ease}
+.brand:hover .brand-mark{transform:translateY(-2px) scale(1.025)}
+.top-status{transition:color var(--motion-base) ease}
+.status-dot{transition:transform var(--motion-base) var(--motion-ease-out),box-shadow var(--motion-base) ease}
+.top-status:hover .status-dot{transform:scale(1.18)}
+
+/* Sidebar and navigation */
+.profile-card{transition:transform var(--motion-base) var(--motion-ease-out),border-color var(--motion-base) ease,background var(--motion-base) ease}
+.profile-card:hover{transform:translateY(-2px);border-color:rgba(239,68,68,.22);background:rgba(255,255,255,.035)}
+.nav-item{position:relative;transition:transform var(--motion-fast) var(--motion-ease-out),background var(--motion-base) ease,color var(--motion-base) ease,box-shadow var(--motion-base) ease}
+.nav-item:hover{transform:translateX(3px)}
+.nav-item:active{transform:translateX(1px) scale(.992)}
+.side-note{transition:transform var(--motion-base) var(--motion-ease-out),border-color var(--motion-base) ease,background var(--motion-base) ease}
+.side-note:hover{transform:translateY(-2px);border-color:rgba(239,68,68,.22)}
+
+/* Buttons: consistent hover and press language */
+.btn,
+.choice-start,
+.binder-gender-actions a,
+.binder-tab,
+.lecture-close{
+  transition:transform var(--motion-fast) var(--motion-ease-out),box-shadow var(--motion-base) ease,border-color var(--motion-base) ease,background var(--motion-base) ease,color var(--motion-base) ease,opacity var(--motion-base) ease!important;
+}
+.btn:hover,.choice-start:hover,.binder-gender-actions a:hover{transform:translateY(-2px)}
+.btn:active,.choice-start:active,.binder-gender-actions a:active,.binder-tab:active{transform:translateY(0) scale(.985)}
+.btn.ghost:hover{border-color:rgba(239,68,68,.28)}
+
+/* Hero keeps its identity, but with calmer ambient motion */
+.hero-panel{transition:transform var(--motion-slow) var(--motion-ease-out),border-color var(--motion-slow) ease,box-shadow var(--motion-slow) ease}
+.hero-panel:hover{transform:translateY(-3px);border-color:rgba(239,68,68,.22);box-shadow:inset 0 0 80px rgba(239,68,68,.04),0 28px 80px rgba(0,0,0,.30)}
+.scan-line{animation-duration:6.5s!important;opacity:.72}
+.panel-logo,.panel-circle{transition:transform var(--motion-base) var(--motion-ease-out),text-shadow var(--motion-base) ease}
+.hero-panel:hover .panel-logo{transform:translateY(-2px)}
+
+/* Overview / learning section cards */
+.compact-info-card,
+.info-material-card,
+.internship-guide-card,
+.glass-card,
+.rule,
+.material-card,
+.qualification-section{
+  transition:transform var(--motion-base) var(--motion-ease-out),border-color var(--motion-base) ease,box-shadow var(--motion-base) ease,background var(--motion-base) ease!important;
+}
+.compact-info-card:hover,
+.info-material-card:hover,
+.internship-guide-card:hover,
+.glass-card:hover,
+.rule:hover{
+  transform:translateY(-4px);
+  border-color:rgba(239,68,68,.30)!important;
+  box-shadow:0 20px 55px rgba(0,0,0,.24),0 0 0 1px rgba(239,68,68,.025);
+}
+.compact-info-card:active,
+.info-material-card:active,
+.internship-guide-card:active{transform:translateY(-1px) scale(.995)}
+
+/* Card imagery zooms only on intent */
+.info-overview-media,
+.info-material-image,
+.guide-cover{overflow:hidden}
+.info-overview-media img,
+.info-material-image img,
+.guide-cover img{
+  transition:transform 420ms var(--motion-ease-out),filter 420ms ease!important;
+}
+.compact-info-card:hover .info-overview-media img,
+.info-material-card:hover .info-material-image img,
+.internship-guide-card:hover .guide-cover img{
+  transform:scale(1.035)!important;
+  filter:saturate(1.03) contrast(1.025)!important;
+}
+
+/* Arrows and small action labels */
+.info-overview-body span,
+.info-material-link span,
+.guide-link span,
+.choice-arrow b{
+  display:inline-block;
+  transition:transform var(--motion-base) var(--motion-ease-out),color var(--motion-base) ease;
+}
+.compact-info-card:hover .info-overview-body span,
+.info-material-card:hover .info-material-link span,
+.internship-guide-card:hover .guide-link span,
+.test-choice:hover .choice-arrow b{transform:translateX(5px)}
+
+/* Sequential card entrance — only when a screen is opened */
+.screen.active .info-overview-grid > *,
+.screen.active .internship-guide-grid > *,
+.screen.active .test-choices > *,
+.screen.active .binder-programs > *,
+.screen.active .binder-profile-grid > *,
+.screen.active .rules-grid > *,
+.screen.active .cards > *{
+  animation:emsCardIn 300ms var(--motion-ease-out) both;
+}
+.screen.active .info-overview-grid > *:nth-child(2),
+.screen.active .internship-guide-grid > *:nth-child(2),
+.screen.active .test-choices > *:nth-child(2),
+.screen.active .binder-programs > *:nth-child(2),
+.screen.active .binder-profile-grid > *:nth-child(2),
+.screen.active .rules-grid > *:nth-child(2),
+.screen.active .cards > *:nth-child(2){animation-delay:35ms}
+.screen.active .internship-guide-grid > *:nth-child(3),
+.screen.active .test-choices > *:nth-child(3),
+.screen.active .binder-profile-grid > *:nth-child(3),
+.screen.active .cards > *:nth-child(3){animation-delay:70ms}
+.screen.active .internship-guide-grid > *:nth-child(4),
+.screen.active .test-choices > *:nth-child(4),
+.screen.active .binder-profile-grid > *:nth-child(4){animation-delay:105ms}
+.screen.active .internship-guide-grid > *:nth-child(5),
+.screen.active .test-choices > *:nth-child(5),
+.screen.active .binder-profile-grid > *:nth-child(5){animation-delay:140ms}
+.screen.active .internship-guide-grid > *:nth-child(6){animation-delay:175ms}
+.screen.active .internship-guide-grid > *:nth-child(7){animation-delay:210ms}
+.screen.active .internship-guide-grid > *:nth-child(8){animation-delay:245ms}
+@keyframes emsCardIn{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:none}
+}
+
+/* Binder tools */
+.binder-program-card{transition:transform var(--motion-base) var(--motion-ease-out),border-color var(--motion-base) ease,box-shadow var(--motion-base) ease,background var(--motion-base) ease!important}
+.binder-program-card:hover{transform:translateY(-4px);border-color:rgba(239,68,68,.28);box-shadow:0 22px 58px rgba(0,0,0,.25)}
+.binder-program-card:active{transform:translateY(-1px) scale(.996)}
+.binder-program-icon{transition:transform var(--motion-base) var(--motion-ease-out),border-color var(--motion-base) ease,background var(--motion-base) ease}
+.binder-program-card:hover .binder-program-icon{transform:scale(1.035);border-color:rgba(239,68,68,.25)}
+.binder-profile-card{transition:transform var(--motion-base) var(--motion-ease-out),border-color var(--motion-base) ease,box-shadow var(--motion-base) ease,background var(--motion-base) ease}
+.binder-profile-card:hover{transform:translateY(-3px);border-color:rgba(239,68,68,.26);box-shadow:0 17px 45px rgba(0,0,0,.20)}
+
+/* Test chooser cards */
+.test-choice{transition:transform var(--motion-base) var(--motion-ease-out),border-color var(--motion-base) ease,box-shadow var(--motion-base) ease,background var(--motion-base) ease!important}
+.test-choice:hover{transform:translateY(-4px);box-shadow:0 20px 55px rgba(0,0,0,.24)}
+.test-choice:active{transform:translateY(-1px) scale(.996)}
+
+/* Test experience */
+.question-card{transition:border-color var(--motion-base) ease,box-shadow var(--motion-base) ease,background var(--motion-base) ease}
+.screen.active .question-card{animation:emsQuestionIn 280ms 40ms var(--motion-ease-out) both}
+@keyframes emsQuestionIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.answer{transition:transform var(--motion-fast) var(--motion-ease-out),border-color var(--motion-base) ease,background var(--motion-base) ease,color var(--motion-base) ease,box-shadow var(--motion-base) ease!important}
+.answer:hover{transform:translateX(3px)}
+.answer:active{transform:translateX(1px) scale(.996)}
+.answer.selected{animation:emsSelect 180ms var(--motion-ease-out)}
+@keyframes emsSelect{0%{transform:scale(.992)}100%{transform:none}}
+.progress span{transition:width 360ms var(--motion-ease-out)!important}
+.timer{transition:border-color var(--motion-base) ease,background var(--motion-base) ease,box-shadow var(--motion-base) ease}
+
+/* Content blocks and guide imagery */
+.material-card:hover{border-color:rgba(239,68,68,.22);box-shadow:0 18px 52px rgba(0,0,0,.20)}
+.material-images img,.material-wide-image{transition:transform 320ms var(--motion-ease-out),border-color var(--motion-base) ease,filter var(--motion-base) ease}
+.material-images img:hover,.material-wide-image:hover{transform:translateY(-2px);border-color:rgba(239,68,68,.22);filter:brightness(1.025)}
+
+/* Modal interactions */
+.modal.show{animation:emsModalBackdrop 180ms ease both}
+.modal.show .modal-box{animation:emsModalBox 240ms var(--motion-ease-out) both}
+@keyframes emsModalBackdrop{from{background:rgba(4,2,9,0)}to{background:rgba(4,2,9,.82)}}
+@keyframes emsModalBox{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:none}}
+.modal-box input{transition:border-color var(--motion-base) ease,box-shadow var(--motion-base) ease,background var(--motion-base) ease}
+
+/* Result page */
+.screen.active .result-ring{animation:emsResultRing 420ms 80ms var(--motion-ease-out) both}
+@keyframes emsResultRing{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+.candidate-question{transition:transform var(--motion-base) var(--motion-ease-out),border-color var(--motion-base) ease,background var(--motion-base) ease}
+.candidate-question:hover{transform:translateY(-2px);border-color:rgba(239,68,68,.20)}
+
+/* Keyboard accessibility follows the same motion language */
+:where(button,a,input,select):focus-visible{outline:2px solid rgba(239,68,68,.75);outline-offset:3px;transition:outline-offset var(--motion-fast) ease}
+
+/* Respect the visitor's motion preference */
+@media(prefers-reduced-motion:reduce){
+  .screen.active,.screen.active *{animation:none!important}
+  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.001ms!important;animation-duration:.001ms!important;animation-iteration-count:1!important}
+}
+
+/* v90 — learning overview cards align to the left edge like page headings */
+.info-overview-guide-grid{margin:0;max-width:856px;justify-content:start;padding-bottom:0}
+.info-overview-guide-grid .internship-guide-card{height:100%}
+@media(max-width:760px){.info-overview-guide-grid{max-width:420px}}

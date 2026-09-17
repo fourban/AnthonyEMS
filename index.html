@@ -118,25 +118,15 @@
 <h1>Обучающие материалы</h1>
 <p>Материалы и полезная информация для сотрудников EMS.</p>
 </div>
-<div class="info-sections info-overview-grid compact-info-grid">
-<section class="info-section-card info-section-clickable compact-info-card" id="openInternshipBtn">
-<div class="compact-info-media">
-<img alt="Материалы интернатуры" src="assets/guide_intro.png"/>
-<div class="compact-info-overlay"></div>
-<span class="info-kicker">01 • ОБУЧЕНИЕ</span>
-<h2>Интернатура</h2>
-</div>
-<div class="info-overview-body"><strong>8 материалов</strong><span>Открыть раздел →</span></div>
-</section>
-<section class="info-section-card qualifications-card compact-info-card info-section-clickable" id="openQualificationsBtn">
-<div class="compact-info-media compact-qual-media">
-<img alt="Квалификации" src="assets/qualification_card_cover.webp"/>
-<div class="compact-info-overlay"></div>
-<span class="info-kicker">02 • РАЗВИТИЕ</span>
-<h2>Квалификации</h2>
-</div>
-<div class="info-overview-body"><strong>1 памятка</strong><span>Открыть материал →</span></div>
-</section>
+<div class="internship-guide-grid qualification-guide-grid info-overview-guide-grid">
+<article class="internship-guide-card" id="openInternshipBtn">
+<div class="guide-cover"><img alt="Материалы интернатуры" src="assets/cover_intro.webp"/><span class="guide-icon">▣</span><span class="guide-badge">01</span></div>
+<div class="guide-body"><div class="guide-meta">ОБУЧЕНИЕ</div><h3>Интернатура</h3><p>8 учебных материалов для подготовки к работе и повышению в EMS.</p><span class="guide-link">Открыть раздел <b>→</b></span></div>
+</article>
+<article class="internship-guide-card" id="openQualificationsBtn">
+<div class="guide-cover"><img alt="Квалификации" src="assets/cover_vaccination.webp"/><span class="guide-icon">✚</span><span class="guide-badge">02</span></div>
+<div class="guide-body"><div class="guide-meta">РАЗВИТИЕ</div><h3>Квалификации</h3><p>2 памятки по квалификациям EMS с учебными материалами и инструкциями.</p><span class="guide-link">Открыть материалы <b>→</b></span></div>
+</article>
 </div>
 </div>
 <div class="screen binders-screen" id="binders">
@@ -219,9 +209,114 @@
 </div>
 <div class="internship-guide-grid qualification-guide-grid">
 <article class="internship-guide-card" data-open="qualificationGuide">
-<div class="guide-cover"><img alt="Памятка: Выдача медицинских карт и вакцинация" src="assets/qualification_guide_cover.webp"/><span class="guide-icon">▣</span><span class="guide-badge">01</span></div>
+<div class="guide-cover"><img alt="Памятка: Выдача медицинских карт и вакцинация" src="assets/cover_vaccination.webp"/><span class="guide-icon">▣</span><span class="guide-badge">01</span></div>
 <div class="guide-body"><div class="guide-meta">КВАЛИФИКАЦИЯ</div><h3>Памятка: Выдача медицинских карт и вакцинация</h3><p>Единый учебный материал по вакцинации и выдаче медицинских справок.</p><span class="guide-link">Открыть памятку <b>→</b></span></div>
 </article>
+<article class="internship-guide-card" data-open="surgeryGuide">
+<div class="guide-cover"><img alt="Памятка по квалификации Хирургия" src="assets/cover_surgery.webp"/><span class="guide-icon">✚</span><span class="guide-badge">02</span></div>
+<div class="guide-body"><div class="guide-meta">КВАЛИФИКАЦИЯ</div><h3>Памятка по квалификации «Хирургия»</h3><p>Подготовка и проведение операций, противопоказания, правила оказания помощи и рабочие места.</p><span class="guide-link">Открыть памятку <b>→</b></span></div>
+</article>
+</div>
+</div>
+<div class="screen material-screen qualifications-screen surgery-guide-screen" id="surgeryGuide">
+<div class="page-title lecture-header">
+<button class="btn ghost" id="backFromSurgery">← Назад к квалификациям</button>
+<div class="eyebrow">QUALIFICATION • SURGERY</div>
+<h1>Памятка по квалификации «Хирургия»</h1>
+<p>Основные правила подготовки и проведения операций для сотрудников с квалификацией хирурга.</p>
+</div>
+
+<div class="qualification-doc surgery-doc">
+<article class="material-card surgery-important">
+<div class="lecture-label"><span>!</span> ВАЖНО</div>
+<p>Если вы не имеете квалификации <b>хирурга</b> или <b>ветеринара</b>, а квалифицированных сотрудников в штате нет, не пытайтесь проводить лечение самостоятельно. Попросите пациента записаться на портале штата.</p>
+<p>Если ситуация экстренная — обратитесь к <b>старшему составу EMS</b>.</p>
+<div class="surgery-actions"><button class="btn primary" id="openSurgeryBinders" type="button">Профили для биндеров →</button></div>
+</article>
+
+<section class="qualification-section">
+<div class="qualification-section-head"><span>01</span><div><div class="qualification-kicker">ПРОЦЕДУРА</div><h2>Проведение операций</h2></div></div>
+<article class="material-card">
+<p>Перед началом операции обязательно <b>проверьте документы пациента</b> и получите согласие на медицинское лечение и обработку данных. Согласие отыгрывается перед каждой операцией.</p>
+<h3>Согласие пациента</h3>
+<pre class="rp-block">/do На столе лежат пустые формы согласия.
+/me взял форму согласия в правую руку
+/do Форма в правой руке.
+/me передал форму согласия пациенту</pre>
+<p>После того как пациент подписал форму:</p>
+<pre class="rp-block">/me взял форму согласия у пациента
+/me положил документ в папку
+/do Подписанная форма согласия в папке.</pre>
+</article>
+</section>
+
+<section class="qualification-section">
+<div class="qualification-section-head"><span>02</span><div><div class="qualification-kicker">ПОДГОТОВКА</div><h2>Перед операцией</h2></div></div>
+<article class="material-card">
+<p>Непосредственно перед хирургическим вмешательством необходимо сменить рабочую форму, надеть чистый медицинский халат и перчатки. При необходимости пациенту проводится анестезия.</p>
+<div class="lecture-note"><b>Анестезия</b> — процедура, применяемая для обезболивания пациента во время хирургического вмешательства.</div>
+<h3>Подготовка хирургических инструментов</h3>
+<pre class="rp-block">/me взял поднос с хирургическими инструментами со стола
+/do Поднос с хирургическими инструментами в руках.
+/me поставил поднос на специальный столик рядом с операционным столом</pre>
+</article>
+</section>
+
+<section class="qualification-section">
+<div class="qualification-section-head"><span>03</span><div><div class="qualification-kicker">ЗАВЕРШЕНИЕ</div><h2>После операции</h2></div></div>
+<article class="material-card">
+<ul class="material-list">
+<li>Вывести пациента из состояния общей анестезии, если она применялась.</li>
+<li>Снять хирургический халат и использованные перчатки.</li>
+<li>Утилизировать использованные хирургические инструменты и расходные материалы.</li>
+</ul>
+<pre class="rp-block">/do На столе находится поднос с использованными хирургическими инструментами.
+/me взял поднос с хирургическими инструментами со стола
+/do Поднос в руках.
+/me утилизировал использованные хирургические инструменты в предназначенный для этого контейнер
+/me снял медицинские перчатки
+/do Использованные перчатки в руках.
+/me утилизировал использованные перчатки</pre>
+</article>
+</section>
+
+<section class="qualification-section">
+<div class="qualification-section-head"><span>04</span><div><div class="qualification-kicker">БЕЗОПАСНОСТЬ</div><h2>Противопоказания к операции</h2></div></div>
+<article class="material-card">
+<ul class="material-list">
+<li>Пациент находится в неоперабельном состоянии.</li>
+<li>Пациент не дал информированного согласия на медицинское лечение и обработку данных.</li>
+<li>Риск хирургического вмешательства существенно превышает предполагаемую пользу от операции.</li>
+<li>Имеются иные медицинские противопоказания, препятствующие безопасному проведению вмешательства.</li>
+</ul>
+</article>
+</section>
+
+<section class="qualification-section">
+<div class="qualification-section-head"><span>05</span><div><div class="qualification-kicker">ПРАВИЛА ПОМОЩИ</div><h2>Когда сотрудник может отказать в помощи</h2></div></div>
+<div class="surgery-law-grid">
+<article class="material-card surgery-law-card emergency"><div class="lecture-label"><span>02</span> НЕОТЛОЖНАЯ ПОМОЩЬ</div><p>Отказ в предоставлении неотложной медицинской помощи <b>запрещается</b> и влечёт юридическую ответственность согласно действующему законодательству.</p><div class="duty-warning"><strong>Исключение:</strong> наличие прямого фактора угрозы жизни или здоровью самого сотрудника EMS.</div></article>
+<article class="material-card surgery-law-card planned"><div class="lecture-label"><span>03</span> ПЛАНОВАЯ ПОМОЩЬ</div><p>Сотрудник EMS имеет право законно отказать в предоставлении плановой медицинской помощи, если:</p><ul class="material-list"><li>пациент проявляет оскорбительное поведение, неуважительное отношение к сотрудникам EMS или окружающим гражданам либо находится в неадекватном состоянии;</li><li>пациент не имеет возможности или отказывается оплатить регламентированную стоимость медицинских услуг.</li></ul></article>
+</div>
+<div class="lecture-note"><b>Важно:</b> неотложная медицинская помощь и плановая медицинская помощь — разные ситуации. Условия законного отказа от плановой помощи не распространяются на неотложную помощь.</div>
+</section>
+
+<section class="qualification-section">
+<div class="qualification-section-head"><span>06</span><div><div class="qualification-kicker">ОПЕРАЦИОННЫЕ</div><h2>Места проведения операций</h2></div></div>
+<article class="material-card">
+<div class="surgery-location-grid"><div><strong>ELSH</strong><span>East Los Santos Hospital</span></div><div><strong>Paleto Bay</strong><span>Пригородная больница</span></div><div><strong>Sandy Shores</strong><span>Пригородная больница</span></div></div>
+<div class="qualification-doc-images surgery-images">
+<figure><img alt="Операционная зона EMS" src="assets/surgery_operating_area.png"/><figcaption>Операционная зона EMS.</figcaption></figure>
+<figure><img alt="Вход в операционную" src="assets/surgery_entrance.png"/><figcaption>Вход в Oper. Room.</figcaption></figure>
+<figure><img alt="Операционная комната" src="assets/surgery_room.png"/><figcaption>Пример операционной комнаты.</figcaption></figure>
+</div>
+</article>
+</section>
+
+<section class="qualification-section">
+<div class="qualification-section-head"><span>07</span><div><div class="qualification-kicker">СТОИМОСТЬ</div><h2>Актуальный прейскурант EMS</h2></div></div>
+<article class="material-card surgery-price-card"><p>Стоимость хирургических и иных платных медицинских услуг определяется действующим прейскурантом EMS. Чтобы на сайте всегда оставалась актуальная информация, цены открываются напрямую из официального прейскуранта.</p><a class="btn primary" href="https://forum.majestic-rp.ru/threads/preiskurant-platnykh-uslug-emergency-medical-services.3617865/" target="_blank" rel="noopener noreferrer">Открыть актуальный прейскурант →</a></article>
+</section>
 </div>
 </div>
 <div class="screen material-screen qualifications-screen" id="qualificationGuide">
@@ -393,19 +488,19 @@
 </div>
 <div class="internship-guide-grid">
 <article class="internship-guide-card" data-open="lecture">
-<div class="guide-cover guide-cover-1"><img alt="Вводная лекция" src="assets/guide_intro.png"/><span class="guide-icon">▣</span><span class="guide-badge">01</span></div>
+<div class="guide-cover guide-cover-1"><img alt="Вводная лекция" src="assets/cover_intro.webp"/><span class="guide-icon">▣</span><span class="guide-badge">01</span></div>
 <div class="guide-body"><div class="guide-meta">ОСНОВЫ</div><h3>Вводная лекция</h3><p>Базовые знания перед началом работы в EMS.</p><span class="guide-link">Открыть материал <b>→</b></span></div>
 </article>
 <article class="internship-guide-card" data-external="https://forum.majestic-rp.ru/threads/ustav-emergency-medical-service.3617851/">
-<div class="guide-cover guide-cover-2"><img alt="Устав EMS" src="assets/guide_charter.png"/><span class="guide-icon">▤</span><span class="guide-badge">02</span></div>
+<div class="guide-cover guide-cover-2"><img alt="Устав EMS" src="assets/cover_charter.webp"/><span class="guide-icon">▤</span><span class="guide-badge">02</span></div>
 <div class="guide-body"><div class="guide-meta">ПРАВИЛА</div><h3>Устав EMS</h3><p>Актуальные правила и обязанности сотрудников.</p><div class="guide-actions"><a class="btn ghost small" href="https://forum.majestic-rp.ru/threads/ustav-emergency-medical-service.3617851/" rel="noopener noreferrer" target="_blank">Открыть Устав</a><button class="btn primary small" id="startCharterBtn2">Сдать экзамен →</button></div></div>
 </article>
-<article class="internship-guide-card" data-open="duty"><div class="guide-cover"><img alt="Дежурство EMS" src="assets/guide_duty.png"/><span class="guide-icon">◷</span><span class="guide-badge">03</span></div><div class="guide-body"><div class="guide-meta">РАБОЧИЙ ПРОЦЕСС</div><h3>Как отстоять дежурство?</h3><p>Тайминг, скрины и обязательные требования.</p><span class="guide-link">Открыть памятку <b>→</b></span></div></article>
-<article class="internship-guide-card" data-open="pmp"><div class="guide-cover"><img alt="Выезды на ПМП" src="assets/guide_pmp.png"/><span class="guide-icon">✚</span><span class="guide-badge">04</span></div><div class="guide-body"><div class="guide-meta">ПМП</div><h3>Как ездить на вызовы ПМП?</h3><p>Подготовка, вызов, безопасность и завершение работы.</p><span class="guide-link">Открыть памятку <b>→</b></span></div></article>
-<article class="internship-guide-card" data-open="codeine"><div class="guide-cover"><img alt="Кодеиновые таблетки" src="assets/guide_codeine.png"/><span class="guide-icon">◉</span><span class="guide-badge">05</span></div><div class="guide-body"><div class="guide-meta">ЛЕКАРСТВА</div><h3>Как лечить кодеиновыми таблетками?</h3><p>Где брать, кому выдавать и какие скрины делать.</p><span class="guide-link">Открыть памятку <b>→</b></span></div></article>
-<article class="internship-guide-card" data-open="screens"><div class="guide-cover"><img alt="Критерии для скриншотов" src="assets/guide_screens.png"/><span class="guide-icon">▧</span><span class="guide-badge">06</span></div><div class="guide-body"><div class="guide-meta">ОТЧЁТНОСТЬ</div><h3>Критерии для скриншотов</h3><p>Правильные фото для таблеток, дежурств, ПМП и медкарт.</p><span class="guide-link">Открыть памятку <b>→</b></span></div></article>
-<article class="internship-guide-card" data-open="getid"><div class="guide-cover"><img alt="Удостоверение" src="assets/guide_getid.png"/><span class="guide-icon">▱</span><span class="guide-badge">07</span></div><div class="guide-body"><div class="guide-meta">ДОКУМЕНТЫ</div><h3>Как получить удостоверение</h3><p>Путь от Government до получения удостоверения.</p><span class="guide-link">Открыть инструкцию <b>→</b></span></div></article>
-<article class="internship-guide-card" data-open="bodycam"><div class="guide-cover"><img alt="Боди-камера" src="assets/guide_bodycam.png"/><span class="guide-icon">◫</span><span class="guide-badge">08</span></div><div class="guide-body"><div class="guide-meta">НАСТРОЙКА</div><h3>Как включить боди-камеру</h3><p>Где назначить клавишу и как не выключить камеру случайно.</p><span class="guide-link">Открыть инструкцию <b>→</b></span></div></article>
+<article class="internship-guide-card" data-open="duty"><div class="guide-cover"><img alt="Дежурство EMS" src="assets/cover_duty.webp"/><span class="guide-icon">◷</span><span class="guide-badge">03</span></div><div class="guide-body"><div class="guide-meta">РАБОЧИЙ ПРОЦЕСС</div><h3>Как отстоять дежурство?</h3><p>Тайминг, скрины и обязательные требования.</p><span class="guide-link">Открыть памятку <b>→</b></span></div></article>
+<article class="internship-guide-card" data-open="pmp"><div class="guide-cover"><img alt="Выезды на ПМП" src="assets/cover_pmp.webp"/><span class="guide-icon">✚</span><span class="guide-badge">04</span></div><div class="guide-body"><div class="guide-meta">ПМП</div><h3>Как ездить на вызовы ПМП?</h3><p>Подготовка, вызов, безопасность и завершение работы.</p><span class="guide-link">Открыть памятку <b>→</b></span></div></article>
+<article class="internship-guide-card" data-open="codeine"><div class="guide-cover"><img alt="Кодеиновые таблетки" src="assets/cover_codeine.webp"/><span class="guide-icon">◉</span><span class="guide-badge">05</span></div><div class="guide-body"><div class="guide-meta">ЛЕКАРСТВА</div><h3>Как лечить кодеиновыми таблетками?</h3><p>Где брать, кому выдавать и какие скрины делать.</p><span class="guide-link">Открыть памятку <b>→</b></span></div></article>
+<article class="internship-guide-card" data-open="screens"><div class="guide-cover"><img alt="Критерии для скриншотов" src="assets/cover_screens.webp"/><span class="guide-icon">▧</span><span class="guide-badge">06</span></div><div class="guide-body"><div class="guide-meta">ОТЧЁТНОСТЬ</div><h3>Критерии для скриншотов</h3><p>Правильные фото для таблеток, дежурств, ПМП и медкарт.</p><span class="guide-link">Открыть памятку <b>→</b></span></div></article>
+<article class="internship-guide-card" data-open="getid"><div class="guide-cover"><img alt="Удостоверение" src="assets/cover_getid.webp"/><span class="guide-icon">▱</span><span class="guide-badge">07</span></div><div class="guide-body"><div class="guide-meta">ДОКУМЕНТЫ</div><h3>Как получить удостоверение</h3><p>Путь от Government до получения удостоверения.</p><span class="guide-link">Открыть инструкцию <b>→</b></span></div></article>
+<article class="internship-guide-card" data-open="bodycam"><div class="guide-cover"><img alt="Боди-камера" src="assets/cover_bodycam.webp"/><span class="guide-icon">◫</span><span class="guide-badge">08</span></div><div class="guide-body"><div class="guide-meta">НАСТРОЙКА</div><h3>Как включить боди-камеру</h3><p>Где назначить клавишу и как не выключить камеру случайно.</p><span class="guide-link">Открыть инструкцию <b>→</b></span></div></article>
 </div>
 </div>
 <div class="screen material-screen" id="lecture">
