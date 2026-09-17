@@ -1130,3 +1130,77 @@ body.had-mode .home-hero-compact h1 span{color:#ef4444;text-shadow:0 0 22px rgba
 .info-overview-guide-grid{margin:0;max-width:856px;justify-content:start;padding-bottom:0}
 .info-overview-guide-grid .internship-guide-card{height:100%}
 @media(max-width:760px){.info-overview-guide-grid{max-width:420px}}
+
+
+/* v92 — Surgery qualification test + binder link at the true bottom of the surgery guide */
+.surgery-choice{border-color:rgba(239,68,68,.22);background:linear-gradient(145deg,rgba(239,68,68,.10),rgba(255,255,255,.025))}
+.surgery-choice:before{background:#ef4444}
+.surgery-choice .choice-code{color:#ef4444}
+.surgery-choice .choice-status{color:#fca5a5;border-color:rgba(239,68,68,.14)}
+.surgery-choice:hover{border-color:rgba(239,68,68,.45);background:rgba(239,68,68,.12)}
+.surgery-choice.selected{border-color:#ef4444;background:rgba(239,68,68,.14);box-shadow:0 0 28px rgba(239,68,68,.12)}
+.surgery-choice .choice-rank{border-color:rgba(239,68,68,.14);color:#fecaca;background:rgba(239,68,68,.06)}
+.surgery-choice .choice-start{border-color:rgba(239,68,68,.28);background:linear-gradient(135deg,rgba(239,68,68,.12),rgba(255,255,255,.035))}
+.surgery-bottom-actions{margin-top:22px;padding-bottom:4px}
+
+/* v94 — Surgery qualification test: complete SD / blue theme */
+.surgery-choice{border-color:rgba(96,165,250,.22);background:linear-gradient(145deg,rgba(59,130,246,.10),rgba(255,255,255,.025))}
+.surgery-choice:before{background:#3b82f6}.surgery-choice .choice-code{color:#60a5fa}.surgery-choice .choice-status{color:#93c5fd;border-color:rgba(96,165,250,.16)}.surgery-choice:hover{border-color:rgba(96,165,250,.48);background:rgba(59,130,246,.12)}.surgery-choice.selected{border-color:#60a5fa;background:rgba(59,130,246,.14);box-shadow:0 0 28px rgba(59,130,246,.13)}.surgery-choice .choice-rank{border-color:rgba(96,165,250,.16);color:#bfdbfe;background:rgba(59,130,246,.07)}.surgery-choice .choice-start{border-color:rgba(96,165,250,.30);background:linear-gradient(135deg,rgba(59,130,246,.13),rgba(255,255,255,.035))}
+body.surgery-mode .bg-grid{background-image:linear-gradient(rgba(59,130,246,.20) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.20) 1px,transparent 1px)}
+body.surgery-mode .orb-a{background:#2563eb}body.surgery-mode .orb-b{background:#1d4ed8}
+body.surgery-mode .topbar{border-bottom-color:rgba(96,165,250,.18);background:rgba(3,8,18,.86)}
+body.surgery-mode .brand-mark{border-color:#3b82f6;color:#93c5fd;box-shadow:0 0 25px rgba(59,130,246,.28)}
+body.surgery-mode .status-dot{background:#60a5fa;box-shadow:0 0 10px #60a5fa}
+body.surgery-mode .sidebar{border-right-color:rgba(96,165,250,.12);background:rgba(3,8,18,.64)}
+body.surgery-mode .profile-card{border-color:rgba(96,165,250,.18)}
+body.surgery-mode .avatar{background:linear-gradient(135deg,#1d4ed8,#60a5fa)}
+body.surgery-mode .nav-item span{color:#60a5fa}
+body.surgery-mode .nav-item:hover,body.surgery-mode .nav-item.active{background:rgba(59,130,246,.10);color:#f5f5f5}
+body.surgery-mode .nav-item.active{box-shadow:inset 2px 0 #3b82f6}
+body.surgery-mode .side-note{background:linear-gradient(145deg,rgba(59,130,246,.12),rgba(255,255,255,.02));border-color:rgba(96,165,250,.14)}
+body.surgery-mode .side-note span{color:#60a5fa}
+body.surgery-mode .eyebrow{color:#60a5fa}
+body.surgery-mode .hero h1 span,body.surgery-mode .hero span{color:#60a5fa;text-shadow:0 0 30px rgba(59,130,246,.22)}
+body.surgery-mode .btn.primary{background:linear-gradient(135deg,#1d4ed8,#3b82f6);box-shadow:0 10px 30px rgba(59,130,246,.24)}
+body.surgery-mode .btn.primary:hover{box-shadow:0 15px 35px rgba(59,130,246,.34)}
+body.surgery-mode .btn.ghost{border-color:rgba(96,165,250,.22)}
+body.surgery-mode .btn.ghost:hover{background:rgba(59,130,246,.08)}
+body.surgery-mode .hero-panel{border-color:rgba(96,165,250,.20);background:radial-gradient(circle at 50% 45%,rgba(59,130,246,.20),transparent 42%),linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.01));box-shadow:inset 0 0 80px rgba(59,130,246,.05),0 25px 80px rgba(0,0,0,.25)}
+body.surgery-mode .hero-panel:before,body.surgery-mode .hero-panel:after{border-color:rgba(96,165,250,.22)}
+body.surgery-mode .panel-logo{color:#fff;text-shadow:0 0 25px #2563eb}
+body.surgery-mode .panel-circle{color:#60a5fa}
+body.surgery-mode .scan-line{background:linear-gradient(90deg,transparent,#60a5fa,transparent);box-shadow:0 0 12px #3b82f6}
+body.surgery-mode .stats,body.surgery-mode .stat,body.surgery-mode .glass-card,body.surgery-mode .rule,body.surgery-mode .question-card,body.surgery-mode .result-card{border-color:rgba(96,165,250,.14)}
+body.surgery-mode .icon,body.surgery-mode .rule b{color:#60a5fa}
+body.surgery-mode .timer{color:#60a5fa;border-color:rgba(96,165,250,.20);background:rgba(59,130,246,.05)}
+body.surgery-mode .progress{background:#0d1422}
+body.surgery-mode .progress span{background:linear-gradient(90deg,#1d4ed8,#60a5fa);box-shadow:0 0 12px #3b82f6}
+body.surgery-mode .question-number,body.surgery-mode .candidate-q-number{color:#60a5fa}
+body.surgery-mode .question-card:before{background:#3b82f6}
+body.surgery-mode .answer{border-color:rgba(96,165,250,.14)}
+body.surgery-mode .answer:hover{border-color:rgba(96,165,250,.48);background:rgba(59,130,246,.07)}
+body.surgery-mode .answer.selected{border-color:#60a5fa;background:rgba(59,130,246,.13);box-shadow:0 0 20px rgba(59,130,246,.09)}
+body.surgery-mode .check-box{border-color:rgba(96,165,250,.36)}
+body.surgery-mode .answer.selected .check-box{background:#3b82f6;border-color:#3b82f6}
+body.surgery-mode .result-ring{border-color:rgba(96,165,250,.5);box-shadow:0 0 60px rgba(59,130,246,.14)}
+body.surgery-mode .result-ring small{color:#60a5fa}
+body.surgery-mode .modal-box{border-color:rgba(96,165,250,.22);background:linear-gradient(145deg,#071326,#080808)}
+body.surgery-mode .modal-logo{color:#60a5fa}
+body.surgery-mode .modal-box input{border-color:rgba(96,165,250,.20)}
+body.surgery-mode .modal-box input:focus{border-color:#60a5fa;box-shadow:0 0 0 3px rgba(59,130,246,.09)}
+body.surgery-mode .candidate-choice span{color:#60a5fa}
+
+
+/* v95 — study shortcuts on test cards */
+.flat-test-grid .choice-material,.extra-flat-grid .choice-material{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin-top:10px;padding:9px 13px;border:1px solid rgba(255,255,255,.075);border-radius:10px;
+  background:rgba(255,255,255,.025);color:#bdb6c1;text-decoration:none;
+  font:650 10px/1 Inter,system-ui,sans-serif;letter-spacing:.01em;cursor:pointer;
+  transition:transform .18s ease,border-color .18s ease,background .18s ease,color .18s ease;
+}
+.flat-test-grid .choice-material b,.extra-flat-grid .choice-material b{font-size:13px;line-height:1;opacity:.78}
+.flat-test-grid .choice-material:hover,.extra-flat-grid .choice-material:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.055);color:#f0eaf3}
+.di-choice .choice-material{border-color:rgba(74,222,128,.15);color:#b8d8c1}
+.psid-choice .choice-material{border-color:rgba(168,85,247,.18);color:#d3b9e8}
+.surgery-choice .choice-material{border-color:rgba(96,165,250,.20);color:#bfd7fb}

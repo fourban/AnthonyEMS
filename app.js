@@ -73,6 +73,22 @@ di_rp:{id:'di_rp',code:'DI',accent:'green',title:'Тест по РП',short:'Т�
 {q:'Для чего предназначена отыгровка /me?',type:'single',a:['Команда предназначена исключительно для отыгровки тех действий, возможность которых сопровождается определенной вероятностью, например, подбрасывание костей, монетки и так далее.','Команда предназначена для описания действия персонажа от первого лица. Она пишется с маленькой буквы и без точки в конце.','Команда предназначена для обозначения прямой речи персонажа во время выполнения им какого-либо действия.'],c:1},
 {q:'Что такое РК?',type:'single',a:['РП убийство.','Не знаю.','Возвращение на место смерти с целью мести.'],c:2}
 ]},
+surgery:{id:'surgery',code:'SD',accent:'blue',title:'Тест на квалификацию хирурга',short:'Квалификация «Хирургия»',description:'Проверка знаний по подготовке и проведению операций, противопоказаниям и правилам оказания помощи.',questions:[
+{q:'Что необходимо выполнить перед началом каждой операции?',type:'single',a:['Проверить документы пациента, после чего получить устное согласие на проведение операции.','Проверить документы пациента и получить согласие на медицинское лечение и обработку данных.','Получить согласие на медицинское лечение и обработку данных; проверка документов требуется только при первом обращении.','Проверить документы пациента и получить согласие на обработку данных только при проведении платной операции.'],c:1},
+{q:'В какой момент оформляется согласие пациента?',type:'single',a:['Один раз перед началом курса хирургического лечения.','Перед операцией только в случае применения общей анестезии.','Перед каждой проводимой операцией.','При первичном обращении к хирургу, после чего согласие действует до завершения лечения.'],c:2},
+{q:'Какой порядок подготовки сотрудника непосредственно перед операцией соответствует памятке?',type:'single',a:['Надеть медицинские перчатки → подготовить инструменты → при необходимости сменить форму.','Сменить рабочую форму → надеть чистый медицинский халат и перчатки → при необходимости провести анестезию.','Провести анестезию → проверить документы → сменить форму и подготовить инструменты.','Подготовить инструменты → надеть халат → получить согласие пациента после введения анестезии.'],c:1},
+{q:'Для чего при хирургическом вмешательстве применяется анестезия?',type:'single',a:['Для подготовки пациента к послеоперационному восстановлению.','Для временного ограничения двигательной активности пациента.','Для обезболивания пациента во время хирургического вмешательства.','Для обязательного введения пациента в состояние общего наркоза перед любой операцией.'],c:2},
+{q:'Операция завершена, применялась общая анестезия. Какой вариант действий соответствует памятке?',type:'single',a:['Снять перчатки и халат, утилизировать инструменты; вывод пациента из анестезии производится только при необходимости.','Вывести пациента из анестезии и оставить инструменты для последующей обработки другим сотрудником.','Вывести пациента из общей анестезии, снять халат и использованные перчатки, утилизировать использованные инструменты и расходные материалы.','Сначала утилизировать оборудование, затем снять перчатки; состояние пациента контролирует следующий сотрудник.'],c:2},
+{q:'Как следует поступить с использованными хирургическими инструментами после операции?',type:'single',a:['Поместить их обратно на специальный столик до последующей санитарной обработки.','Оставить на подносе и передать следующему хирургу для обработки.','Утилизировать использованные хирургические инструменты в предназначенный для этого контейнер.','Утилизировать только одноразовые расходные материалы, а инструменты вернуть на рабочее место.'],c:2},
+{q:'В каком случае операцию проводить нельзя?',type:'single',a:['Пациент подписал согласие, противопоказаний нет.','Риск хирургического вмешательства существенно превышает предполагаемую пользу.','Пациент прошёл подготовку к операции и дал согласие.','Медицинских противопоказаний нет, состояние пациента позволяет провести операцию.'],c:1},
+{q:'Пациент нуждается в неотложной медицинской помощи, но ведёт себя оскорбительно по отношению к сотруднику EMS. Может ли сотрудник отказать ему только на основании поведения?',type:'single',a:['Да, оскорбительное поведение является основанием для отказа от любой медицинской помощи.','Нет. Условия отказа от плановой помощи не распространяются на неотложную помощь.','Да, если сотрудник предварительно предупредил пациента о возможном отказе.','Может, если пациент одновременно отказывается соблюдать указания сотрудника EMS.'],c:1},
+{q:'Пациент обратился за плановой медицинской помощью и отказывается оплачивать установленную стоимость услуги. Как вправе поступить сотрудник EMS?',type:'single',a:['Он обязан оказать услугу, а вопрос оплаты решить после лечения.','Отказать можно только в том случае, если пациент одновременно ведёт себя неадекватно.','Сотрудник вправе законно отказать в предоставлении плановой медицинской помощи.','Отказать можно только после согласования со старшим составом EMS.'],c:2},
+{q:'Что является исключением из запрета на отказ в предоставлении неотложной медицинской помощи?',type:'single',a:['Неуважительное отношение пациента к сотруднику EMS.','Невозможность пациента оплатить медицинскую услугу.','Отсутствие квалификации хирурга у конкретного сотрудника.','Наличие прямого фактора угрозы жизни или здоровью самого сотрудника EMS.'],c:3},
+{q:'Какой перечень содержит только места проведения операций, указанные в памятке?',type:'single',a:['ELSH, Sandy Shores, Government.','ELSH, Paleto Bay, место вызова при наличии оборудования.','ELSH, Paleto Bay, Sandy Shores.','Paleto Bay, Sandy Shores, Government.'],c:2},
+{q:'Как сотруднику определить актуальную стоимость хирургической услуги?',type:'single',a:['Использовать стоимость, которая была указана при прохождении квалификации.','Проверить действующий официальный прейскурант EMS.','Уточнить стоимость у пациента перед проведением операции.','Использовать стандартную стоимость операции, если старший состав не сообщил об изменениях.'],c:1},
+{q:'В штате нет хирурга или ветеринара, а сотрудник необходимой квалификации не имеет. Как следует поступить в обычной, неэкстренной ситуации?',type:'single',a:['Провести необходимое лечение после получения согласия пациента.','Провести только базовую часть лечения, а дальнейшее вмешательство оставить квалифицированному сотруднику.','Не проводить лечение самостоятельно и попросить пациента записаться на портале штата.','Обратиться к старшему составу EMS и проводить лечение под его дистанционным контролем.'],c:2},
+{q:'Ситуация экстренная, но сотрудник не имеет квалификации хирурга или ветеринара, а квалифицированных сотрудников в штате нет. Что необходимо сделать?',type:'single',a:['Самостоятельно провести хирургическое вмешательство из-за экстренности.','Попросить пациента записаться на портале штата и ожидать появления хирурга.','Обратиться к старшему составу EMS.','Отказать пациенту в помощи до появления квалифицированного сотрудника.'],c:2}
+]},
 charter:{id:'charter',code:'HAD',accent:'red',title:'Переаттестация',short:'Переаттестация HAD',description:'Проверка сотрудников HAD по внутренним требованиям EMS и действующему порядку работы.',questions:[
 {q:'При оказании экстренной медицинской помощи Вы прибыли на место происшествия, где находятся несколько пострадавших с различными травмами. Один из пострадавших является сотрудником государственной структуры и находится в служебной форме. Кому необходимо оказать помощь в первую очередь?',type:'single',a:['Сотруднику государственной структуры','Приоритетов в оказании первой медицинской помощи нет','Ближайшему к вам пострадавшему','Пострадавшему, находящемуся в наиболее тяжёлом состоянии'],c:0},
 {q:'Какие временные рамки имеются у сотрудников на перерыв для отдыха и питания?',type:'single',a:['Не менее 30 минут и не более 1 часа','Не более 2 часов при условии, что до начала перерыва сотрудник находился на рабочем месте не менее 2 часов','Не менее 2 часов и не более 3 часов при условии, что сотрудник находился до этого на рабочем месте не менее 2 часов','Не менее 1 часа и не более 2 часов без дополнительных условий'],c:1},
@@ -98,6 +114,7 @@ charter:{id:'charter',code:'HAD',accent:'red',title:'Переаттестаци�
 
 let activeTestId=null;
 let themeSelected=false;
+let materialOriginTestId=null;
 let questions=tests.psid.questions;
 
 let current=0,answers=questions.map(q=>q.type==="multi"?[]:q.type==="selects"?{}:null),seconds=900,timerId=null,candidate="",staticId="";
@@ -148,7 +165,7 @@ function finishTest(){
  let pct=Math.round(correct/questions.length*100);
  $("score").textContent=pct+"%";
  $("resultStatus").textContent=pct>=80?"PASSED":"FAIL";
- $("resultStatus").style.color=pct>=80?(activeTestId==="di"?"#4ade80":activeTestId==="charter"?"#ef4444":"#c084fc"):"#ff719f";
+ $("resultStatus").style.color=pct>=80?(active.accent==="green"?"#4ade80":active.accent==="red"?"#ef4444":active.accent==="blue"?"#60a5fa":"#c084fc"):"#ff719f";
  $("resultEyebrow").textContent=`TEST COMPLETE • ${active.code}`;
  $("resultTitle").textContent=pct>=80?"Квалификация пройдена":"Квалификация не пройдена";
  $("resultText").textContent=pct>=80?"Отличный результат. Данные тестирования можно передать руководству подразделения. Не закрывайте страницу до тех пор, пока экзаменатор не скажет, что можно завершить проверку.":"Результата пока недостаточно для квалификации. Повтори попытку и закрепи теорию. Не закрывайте страницу до тех пор, пока экзаменатор не скажет, что можно завершить проверку.";
@@ -179,8 +196,8 @@ function renderCandidateAnswers(){
 }
 function escapeHtml(value){return String(value).replace(/[&<>'"]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[ch]));}
 function resetAnswers(){answers=questions.map(q=>q.type==="multi"?[]:q.type==="selects"?{}:null)}
-function applyInfoTheme(){document.body.classList.remove("psid-mode","di-mode");$("heroEyebrow").textContent="EMS • QUALIFICATION CENTER";$("heroDescription").textContent="Система квалификационного тестирования EMS.";$("panelLogo").textContent="EMS";$("panelCircle").textContent="EMS";$("candidateAvatar").textContent="EMS";}
-function applyTestTheme(){const active=themeSelected?tests[activeTestId]:null;document.body.classList.toggle("psid-mode",themeSelected && active.accent==="purple");document.body.classList.toggle("di-mode",themeSelected && active.accent==="green");document.body.classList.toggle("had-mode",themeSelected && active.accent==="red");$("heroEyebrow").textContent=active?active.code+" • QUALIFICATION CENTER":"EMS • QUALIFICATION CENTER";$("heroDescription").textContent=active?active.description:"Система квалификационного тестирования EMS.";$("panelLogo").textContent=active?active.code:"EMS";$("panelCircle").textContent=active?active.code:"READY";$("candidateAvatar").textContent=active?active.code:"EMS";}
+function applyInfoTheme(){document.body.classList.remove("psid-mode","di-mode","had-mode","surgery-mode");$("heroEyebrow").textContent="EMS • QUALIFICATION CENTER";$("heroDescription").textContent="Система квалификационного тестирования EMS.";$("panelLogo").textContent="EMS";$("panelCircle").textContent="EMS";$("candidateAvatar").textContent="EMS";}
+function applyTestTheme(){const active=themeSelected?tests[activeTestId]:null;document.body.classList.toggle("psid-mode",themeSelected && active.accent==="purple");document.body.classList.toggle("di-mode",themeSelected && active.accent==="green");document.body.classList.toggle("had-mode",themeSelected && active.accent==="red");document.body.classList.toggle("surgery-mode",themeSelected && active.accent==="blue");$("heroEyebrow").textContent=active?active.code+" • QUALIFICATION CENTER":"EMS • QUALIFICATION CENTER";$("heroDescription").textContent=active?active.description:"Система квалификационного тестирования EMS.";$("panelLogo").textContent=active?active.code:"EMS";$("panelCircle").textContent=active?active.code:"READY";$("candidateAvatar").textContent=active?active.code:"EMS";}
 function chooseTest(id){activeTestId=id;themeSelected=true;questions=tests[id].questions;current=0;resetAnswers();applyTestTheme();renderTestChooser()}
 function renderTestChooser(){document.querySelectorAll(".test-choice").forEach(card=>card.classList.toggle("selected",themeSelected && card.dataset.test===activeTestId));}
 function begin(){
@@ -226,6 +243,30 @@ document.querySelectorAll(".nav-item").forEach(n=>n.onclick=()=>{if(n.dataset.sc
 
 document.querySelectorAll(".test-choice").forEach(card=>card.onclick=()=>{chooseTest(card.dataset.test);renderTestChooser()});
 document.querySelectorAll(".choice-start").forEach(btn=>btn.addEventListener("click",e=>{e.stopPropagation();const card=btn.closest(".test-choice");if(!card)return;chooseTest(card.dataset.test);startSelectedTest()}));
+document.querySelectorAll(".choice-material").forEach(btn=>btn.addEventListener("click",e=>{
+  e.stopPropagation();
+  const card=btn.closest(".test-choice");
+  if(!card)return;
+  if(btn.matches("a")) return;
+  e.preventDefault();
+  materialOriginTestId=card.dataset.test;
+  showScreen(btn.dataset.studyScreen);
+  const screen=$(btn.dataset.studyScreen);
+  const back=screen?.querySelector(".lecture-header > .btn.ghost");
+  if(back){back.dataset.originalText ||= back.textContent;back.textContent="← Вернуться к тесту";}
+}));
+function backFromStudy(defaultScreen,screenId){
+  if(materialOriginTestId){
+    const testId=materialOriginTestId;materialOriginTestId=null;
+    const screen=$(screenId);const back=screen?.querySelector(".lecture-header > .btn.ghost");
+    if(back?.dataset.originalText) back.textContent=back.dataset.originalText;
+    showScreen("home");chooseTest(testId);renderTestChooser();
+    requestAnimationFrame(()=>document.querySelector(`.test-choice[data-test="${testId}"]`)?.scrollIntoView({behavior:"smooth",block:"center"}));
+    return;
+  }
+  showScreen(defaultScreen);
+}
+
 
 themeSelected=false;activeTestId=null;applyTestTheme();
 renderTestChooser();
@@ -236,11 +277,11 @@ $("openQualificationsBtn")?.addEventListener("click",e=>{e.preventDefault();show
 $("openCharterBtn")?.addEventListener("click",()=>window.open("https://forum.majestic-rp.ru/threads/ustav-emergency-medical-service.3617851/","_blank","noopener,noreferrer"));
 $("startCharterBtn")?.addEventListener("click",()=>{chooseTest("di_ustav");$("nameModal").classList.add("show")});
 $("startCharterBtn2")?.addEventListener("click",(e)=>{e.stopPropagation();chooseTest("di_ustav");$("nameModal").classList.add("show")});
-document.querySelectorAll(".internship-guide-card[data-open]").forEach(card=>card.addEventListener("click",()=>showScreen(card.dataset.open)));
-document.querySelectorAll(".backToInternship").forEach(b=>b.onclick=()=>showScreen("internship"));
+document.querySelectorAll(".internship-guide-card[data-open]").forEach(card=>card.addEventListener("click",()=>{materialOriginTestId=null;showScreen(card.dataset.open)}));
+document.querySelectorAll(".backToInternship").forEach(b=>b.onclick=()=>backFromStudy("internship",b.closest(".screen")?.id));
 $("backFromInternship")?.addEventListener("click",()=>showScreen("info"));
-$("backFromQualifications")?.addEventListener("click",()=>showScreen("qualificationMenu"));
-$("backFromSurgery")?.addEventListener("click",()=>showScreen("qualificationMenu"));
+$("backFromQualifications")?.addEventListener("click",()=>backFromStudy("qualificationMenu","qualificationGuide"));
+$("backFromSurgery")?.addEventListener("click",()=>backFromStudy("qualificationMenu","surgeryGuide"));
 $("openSurgeryBinders")?.addEventListener("click",()=>{
   showScreen("binders");
   selectBinderProgram("a5i");
@@ -252,8 +293,8 @@ $("openSurgeryBinders")?.addEventListener("click",()=>{
   });
 });
 $("backFromQualificationMenu")?.addEventListener("click",()=>showScreen("info"));
-document.querySelectorAll(".qualification-guide-grid .internship-guide-card[data-open]").forEach(card=>card.addEventListener("click",()=>showScreen(card.dataset.open)));
-$("backToInfo")?.addEventListener("click",()=>showScreen("internship"));
+document.querySelectorAll(".qualification-guide-grid .internship-guide-card[data-open]").forEach(card=>card.addEventListener("click",()=>{materialOriginTestId=null;showScreen(card.dataset.open)}));
+$("backToInfo")?.addEventListener("click",()=>backFromStudy("internship","lecture"));
 
 $("backToInfoDuty")?.addEventListener("click",()=>showScreen("internship"));
 
