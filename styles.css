@@ -1206,34 +1206,26 @@ body.surgery-mode .candidate-choice span{color:#60a5fa}
 .surgery-choice .choice-material{border-color:rgba(96,165,250,.20);color:#bfd7fb}
 
 
-/* v96 — mobile primary navigation */
-.mobile-nav{display:none}
+/* v97 — mobile navigation drawer opened from the EMS “E” mark */
+.brand-mark{appearance:none;-webkit-appearance:none;background:transparent;font-family:inherit;line-height:1;cursor:default}
+.mobile-nav-backdrop{display:none}
 @media(max-width:900px){
-  body{padding-bottom:78px}
-  .mobile-nav{
-    position:fixed;left:12px;right:12px;bottom:10px;z-index:95;
-    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;
-    padding:7px;border:1px solid rgba(239,68,68,.18);border-radius:18px;
-    background:rgba(10,7,9,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-    box-shadow:0 18px 50px rgba(0,0,0,.46),inset 0 1px rgba(255,255,255,.03);
-  }
-  .mobile-nav .mobile-nav-item{
-    margin:0;min-width:0;padding:9px 6px 8px;border-radius:12px;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
-    text-align:center;color:#8f878b;font:600 10px/1.1 Inter,Arial,sans-serif;
-  }
-  .mobile-nav .mobile-nav-item span{width:auto;display:block;font-size:17px;line-height:1;color:#a39a9e}
-  .mobile-nav .mobile-nav-item small{display:block;font:inherit;white-space:nowrap}
-  .mobile-nav .mobile-nav-item:hover{transform:none}
-  .mobile-nav .mobile-nav-item.active{
-    color:#fff;background:rgba(239,68,68,.12);box-shadow:none;
-  }
-  .mobile-nav .mobile-nav-item.active span{color:#ef4444;text-shadow:0 0 16px rgba(239,68,68,.35)}
-  body.theme-blue .mobile-nav{border-color:rgba(59,130,246,.22)}
-  body.theme-blue .mobile-nav .mobile-nav-item.active{background:rgba(59,130,246,.14)}
-  body.theme-blue .mobile-nav .mobile-nav-item.active span{color:#60a5fa;text-shadow:0 0 16px rgba(59,130,246,.4)}
+  .topbar{z-index:80}
+  .top-status{margin-left:auto}
+  .brand-mark{cursor:pointer;position:relative;z-index:82;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background .2s ease}
+  .brand-mark:active{transform:scale(.94)}
+  body.mobile-nav-open .brand-mark{background:rgba(239,68,68,.12);box-shadow:0 0 30px rgba(239,68,68,.34)}
+  body.di-mode.mobile-nav-open .brand-mark{background:rgba(34,197,94,.12);box-shadow:0 0 30px rgba(34,197,94,.32)}
+  body.psid-mode.mobile-nav-open .brand-mark{background:rgba(168,85,247,.12);box-shadow:0 0 30px rgba(168,85,247,.32)}
+  body.surgery-mode.mobile-nav-open .brand-mark,body.theme-blue.mobile-nav-open .brand-mark{background:rgba(59,130,246,.12);box-shadow:0 0 30px rgba(59,130,246,.34)}
+  .sidebar{display:flex;position:fixed;z-index:75;top:72px;bottom:0;left:0;width:min(320px,88vw);padding:22px 15px;background:rgba(10,8,12,.98);border-right:1px solid rgba(239,68,68,.18);box-shadow:24px 0 70px rgba(0,0,0,.48);transform:translateX(-105%);transition:transform .26s cubic-bezier(.22,.8,.24,1);overflow-y:auto}
+  body.mobile-nav-open .sidebar{transform:translateX(0)}
+  .mobile-nav-backdrop{display:block;position:fixed;z-index:70;inset:72px 0 0;background:rgba(0,0,0,.58);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}
+  body.mobile-nav-open .mobile-nav-backdrop{opacity:1;visibility:visible;pointer-events:auto}
+  body.mobile-nav-open{overflow:hidden}
+  .sidebar .nav-item{min-height:48px;font-size:13px}
+  .sidebar .nav-item span{font-size:15px}
 }
-@media(max-width:390px){
-  .mobile-nav{left:8px;right:8px;bottom:7px}
-  .mobile-nav .mobile-nav-item{padding-left:3px;padding-right:3px;font-size:9px}
+@media(max-width:480px){
+  .top-status{font-size:10px}
 }

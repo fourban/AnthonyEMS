@@ -238,7 +238,26 @@ document.querySelectorAll(".binder-program-card").forEach(card=>card.addEventLis
  if(e.target.closest(".binder-download-main, .binder-guide-link")) return;
  selectBinderProgram(card.dataset.binderProgram);
 }));
-document.querySelectorAll(".nav-item").forEach(n=>n.onclick=()=>{if(n.dataset.screen==="test"){if(candidate){renderQuestion();showScreen("test")}else $("nameModal").classList.add("show")}else showScreen(n.dataset.screen)});
+function closeMobileNav(){
+ document.body.classList.remove("mobile-nav-open");
+ const btn=$("mobileMenuBtn");
+ if(btn){btn.setAttribute("aria-expanded","false");btn.setAttribute("aria-label","Открыть меню")}
+}
+function toggleMobileNav(){
+ const open=!document.body.classList.contains("mobile-nav-open");
+ document.body.classList.toggle("mobile-nav-open",open);
+ const btn=$("mobileMenuBtn");
+ if(btn){btn.setAttribute("aria-expanded",String(open));btn.setAttribute("aria-label",open?"Закрыть меню":"Открыть меню")}
+}
+$("mobileMenuBtn")?.addEventListener("click",toggleMobileNav);
+$("mobileNavBackdrop")?.addEventListener("click",closeMobileNav);
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMobileNav()});
+window.addEventListener("resize",()=>{if(window.innerWidth>900)closeMobileNav()});
+
+document.querySelectorAll(".nav-item").forEach(n=>n.onclick=()=>{
+ closeMobileNav();
+ if(n.dataset.screen==="test"){if(candidate){renderQuestion();showScreen("test")}else $("nameModal").classList.add("show")}else showScreen(n.dataset.screen)
+});
 
 
 document.querySelectorAll(".test-choice").forEach(card=>card.onclick=()=>{chooseTest(card.dataset.test);renderTestChooser()});

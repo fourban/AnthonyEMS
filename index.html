@@ -21,7 +21,7 @@
 <div class="orb orb-b"></div>
 <header class="topbar">
 <div class="brand">
-<div class="brand-mark">E</div>
+<button class="brand-mark" id="mobileMenuBtn" type="button" aria-label="Открыть меню" aria-controls="siteSidebar" aria-expanded="false">E</button>
 <div>
 <div class="brand-name">EMS</div>
 <div class="brand-sub">QUALIFICATION • TESTING • SYSTEM</div>
@@ -29,8 +29,9 @@
 </div>
 <div class="top-status"><span class="status-dot"></span> Система онлайн</div>
 </header>
+<div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
 <main class="shell">
-<aside class="sidebar">
+<aside class="sidebar" id="siteSidebar">
 <div class="profile-card">
 <div class="avatar" id="candidateAvatar">PS</div>
 <div>
@@ -674,11 +675,6 @@
 
 </section>
 </main>
-<nav class="mobile-nav" aria-label="Мобильная навигация">
-  <button class="nav-item mobile-nav-item active" data-screen="home" type="button"><span>◈</span><small>Тесты</small></button>
-  <button class="nav-item mobile-nav-item" data-screen="info" type="button"><span>▤</span><small>Материалы</small></button>
-  <button class="nav-item mobile-nav-item" data-screen="binders" type="button"><span>⌁</span><small>Биндеры</small></button>
-</nav>
 <footer class="site-author"><span>Автор</span><strong>Anthony Raiden</strong><span>/ 133604 / DS:fourban</span></footer>
 <div class="modal" id="nameModal">
 <div class="modal-box identity-modal">
