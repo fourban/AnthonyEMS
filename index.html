@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EMS • QUALIFICATION CENTER</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#090909" name="theme-color"/>
+<style>
+.rp-block{margin:14px 0;padding:13px 16px;border:1px solid rgba(192,132,252,.15);background:rgba(255,255,255,.03);border-radius:10px;color:#d9d0df;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px;line-height:1.7;overflow:auto}
+.algorithm-card h4{margin:26px 0 10px;font-size:16px;color:#eee6f8}
+.algorithm-card h5{margin:18px 0 8px;font-size:14px;color:#c084fc}
+.source-note{font-size:11px;color:#766a82}
+</style></head>
+<body>
+<div class="bg-grid"></div>
+<div class="orb orb-a"></div>
+<div class="orb orb-b"></div>
+<header class="topbar">
+<div class="brand">
+<button class="brand-mark" id="mobileMenuBtn" type="button" aria-label="Открыть меню" aria-controls="siteSidebar" aria-expanded="false"><span class="brand-letter">E</span><span class="brand-menu-glyph" aria-hidden="true">≡</span></button>
+<div>
+<div class="brand-name">EMS</div>
+<div class="brand-sub">QUALIFICATION • TESTING • SYSTEM</div>
+</div>
+</div>
+<div class="top-status"><span class="status-dot"></span> Система онлайн</div>
+</header>
+<div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
+<main class="shell">
+<aside class="sidebar" id="siteSidebar">
+<div class="profile-card">
+<div class="avatar" id="candidateAvatar">PS</div>
+<div>
+<strong>Кандидат</strong>
+<span id="candidateLabel">Не авторизован</span><span class="static-id-label" id="staticIdLabel"></span>
+</div>
+</div>
+<nav>
+<button class="nav-item active" data-screen="home"><span>◈</span> Тесты</button>
+<button class="nav-item" data-screen="info"><span>▤</span> Обучающие материалы</button>
+<button class="nav-item" data-screen="binders"><span>⌁</span> Биндеры и профили</button>
+</nav>
+<div class="side-note">
+<span>EMS ACADEMY</span>
+<p>Квалификация начинается с знаний.</p>
+</div>
+</aside>
+<section class="content">
+<div class="screen active" id="home">
+<section class="home-hero-compact">
+<div class="home-hero-copy">
+<div class="eyebrow" id="heroEyebrow">EMS • QUALIFICATION CENTER</div>
+<h1>Система <span>квалификационного тестирования</span></h1>
+<p id="heroDescription">Выберите тест для прохождения.</p>
+</div>
+<div class="hero-panel" aria-label="Информация об отделе">
+<div class="scan-line"></div>
+<div class="panel-logo" id="panelLogo">EMS</div>
+<div class="panel-circle" id="panelCircle">EMS</div>
+<div class="panel-caption">SECURE TESTING<br/>SYSTEM</div>
+</div>
+</section>
+<section class="section-head chooser-head home-test-heading">
+<div><div class="eyebrow">TEST SELECTION</div><h2>Выберите тест для прохождения</h2></div>
+<p class="chooser-hint">Выберите нужный тест для прохождения.</p>
+</section>
+<div class="flat-test-layout"><section class="promotion-tests-panel flat-promotion-panel"><div class="promotion-panel-head"><div class="eyebrow">ПОВЫШЕНИЕ</div><h2>Тесты для повышения</h2><p>Выберите нужный тест. Информация о ранге указана прямо в карточке.</p></div><div class="flat-test-grid promotion-flat-grid"><article class="test-choice di-choice" data-test="di">
+<div class="choice-top"><span class="choice-code">DI</span><span class="choice-status">ДОСТУПЕН</span></div>
+<h3>Тест по вводной лекции</h3>
+<p>Базовая квалификационная проверка: интернатура, препараты, дефибриллятор и квалификации EMS.</p><div class="choice-rank">С 1-го → 2-й ранг</div>
+<div class="choice-note self">Нужно проходить самостоятельно</div>
+<div class="choice-meta"><span>7 вопросов</span><span>15:00</span><span>80%</span></div>
+<button class="choice-material" data-study-screen="lecture" type="button">Открыть материал <b>→</b></button>
+<button class="choice-start" type="button">Начать <b>→</b></button>
+</article><article class="test-choice di-choice" data-test="di_ustav">
+<div class="choice-top"><span class="choice-code">DI</span><span class="choice-status">ДОСТУПЕН</span></div>
+<h3>Экзамен по Уставу EMS</h3>
+<p>Проверка знания Устава EMS: обязанности, рабочие ситуации, дисциплина и основные правила работы.</p><div class="choice-rank">С 1-го → 2-й ранг</div>
+<div class="choice-note self">Нужно проходить самостоятельно</div>
+<div class="choice-meta"><span>26 вопросов</span><span>15:00</span><span>80%</span></div>
+<a class="choice-material" href="https://forum.majestic-rp.ru/threads/ustav-emergency-medical-service.3617851/" target="_blank" rel="noopener noreferrer">Открыть Устав <b>↗</b></a>
+<button class="choice-start" type="button">Начать <b>→</b></button>
+</article><article class="test-choice di-choice" data-test="di_pmp">
+<div class="choice-top"><span class="choice-code">DI</span><span class="choice-status">ДОСТУПЕН</span></div>
+<h3>Тест по ПМП</h3>
+<p>Проверка знаний по выездам на оказание первой медицинской помощи и действиям сотрудника EMS на вызове.</p><div class="choice-rank">С 2-го → 3-й ранг</div>
+<div class="choice-note self">Нужно проходить самостоятельно</div>
+<div class="choice-meta"><span>10 вопросов</span><span>15:00</span><span>80%</span></div>
+<button class="choice-material" data-study-screen="pmp" type="button">Открыть памятку <b>→</b></button>
+<button class="choice-start" type="button">Начать <b>→</b></button>
+</article><article class="test-choice di-choice" data-test="di_rp">
+<div class="choice-top"><span class="choice-code">DI</span><span class="choice-status">ДОСТУПЕН</span></div>
+<h3>Тест по РП</h3>
+<p>Проверка знаний основных RP-терминов и правил использования команд /me, /do и /try.</p><div class="choice-rank">С 2-го → 3-й ранг</div>
+<div class="choice-note self">Нужно проходить самостоятельно</div>
+<div class="choice-meta"><span>11 вопросов</span><span>15:00</span><span>80%</span></div>
+<button class="choice-start" type="button">Начать <b>→</b></button>
+</article><article class="test-choice psid-choice" data-test="psid">
+<div class="choice-top"><span class="choice-code">PSID</span><span class="choice-status">ДОСТУПЕН</span></div>
+<h3>Тест на квалификацию мед. справок и вакцинации</h3>
+<p>Проверка знаний по медицинским справкам, вакцинации и внутренним регламентам отдела PSID.</p><div class="choice-rank">С 3-го → 4-й ранг</div>
+<div class="choice-note instructor">Нужно проходить с инструктором</div>
+<div class="choice-meta"><span>12 вопросов</span><span>15:00</span><span>80%</span></div>
+<button class="choice-material" data-study-screen="qualificationGuide" type="button">Открыть памятку <b>→</b></button>
+<button class="choice-start" type="button">Начать <b>→</b></button>
+</article><article class="test-choice surgery-choice" data-test="surgery">
+<div class="choice-top"><span class="choice-code">SD</span><span class="choice-status">ДОСТУПЕН</span></div>
+<h3>Тест на квалификацию хирурга</h3>
+<p>Проверка знаний по подготовке и проведению операций, противопоказаниям и правилам оказания помощи.</p><div class="choice-rank">С 4-го → 5-й ранг</div>
+<div class="choice-note instructor">Нужно проходить с инструктором по хирургии</div>
+<div class="choice-meta"><span>14 вопросов</span><span>15:00</span><span>80%</span></div>
+<button class="choice-material" data-study-screen="surgeryGuide" type="button">Открыть памятку <b>→</b></button>
+<button class="choice-start" type="button">Начать <b>→</b></button>
+</article></div></section><section class="extra-tests-panel flat-extra-panel"><div class="extra-tests-head"><div class="eyebrow">ДОПОЛНИТЕЛЬНЫЙ ТЕСТ</div><h2>Переаттестация</h2><p>Отдельный тест для сотрудников HAD.</p></div><div class="flat-test-grid extra-flat-grid"><article class="test-choice had-choice" data-test="charter">
+<div class="choice-top"><span class="choice-code">HAD</span><span class="choice-status">ДОСТУПЕН</span></div>
+<h3>Переаттестация</h3>
+<p>Проверка сотрудников HAD по внутренним требованиям EMS и действующему порядку работы.</p><div class="choice-rank">Дополнительный тест</div>
+<div class="choice-note instructor">Нужно проходить с инструктором</div>
+<div class="choice-meta"><span>12 вопросов</span><span>15:00</span><span>80%</span></div>
+<button class="choice-start" type="button">Начать <b>→</b></button>
+</article></div></section></div>
+</div>
+
+<div class="screen" id="info">
+<div class="page-title info-title">
+<div class="eyebrow">EMS • INFORMATION</div>
+<h1>Обучающие материалы</h1>
+<p>Материалы и полезная информация для сотрудников EMS.</p>
+</div>
+<div class="internship-guide-grid qualification-guide-grid info-overview-guide-grid">
+<article class="internship-guide-card" id="openInternshipBtn">
+<div class="guide-cover"><img alt="Материалы интернатуры" src="assets/cover_intro.webp"/><span class="guide-icon">▣</span><span class="guide-badge">01</span></div>
+<div class="guide-body"><div class="guide-meta">ОБУЧЕНИЕ</div><h3>Интернатура</h3><p>8 учебных материалов для подготовки к работе и повышению в EMS.</p><span class="guide-link">Открыть раздел <b>→</b></span></div>
+</article>
+<article class="internship-guide-card" id="openQualificationsBtn">
+<div class="guide-cover"><img alt="Квалификации" src="assets/cover_vaccination.webp"/><span class="guide-icon">✚</span><span class="guide-badge">02</span></div>
+<div class="guide-body"><div class="guide-meta">РАЗВИТИЕ</div><h3>Квалификации</h3><p>2 памятки по квалификациям EMS с учебными материалами и инструкциями.</p><span class="guide-link">Открыть материалы <b>→</b></span></div>
+</article>
+</div>
+</div>
+<div class="screen binders-screen" id="binders">
+<div class="page-title binders-title">
+<div class="eyebrow">EMS • TOOLS</div>
+<h1>Биндеры и профили</h1>
+<p>Скачайте нужный биндер, затем выберите профиль EMS и подходящий вариант.</p>
+</div>
+
+<section class="binder-programs">
+<article class="binder-program-card" data-binder-program="a5i">
+<div class="binder-program-icon">A5</div>
+<div class="binder-program-copy">
+<span class="binder-kicker">ПРОГРАММА 01</span>
+<h2>A5iBinder</h2>
+<p>Профили в формате <b>.a5i</b>.</p>
+<div class="binder-guide-copy"><strong>Видео-инструкция по программе</strong><span>Установка и базовая настройка</span></div>
+</div>
+<div class="binder-program-actions">
+<a class="btn primary binder-download-main" href="https://drive.google.com/uc?export=download&id=1GeOIz-69fxZPPzydHryrPaoZy-spYHat" target="_blank" rel="noopener noreferrer">Скачать программу →</a>
+<button class="btn ghost binder-select-program" type="button" data-binder-target="a5i">Показать профили</button>
+<a class="btn ghost binder-guide-link" href="https://www.youtube.com/watch?v=eZ74JZRfTPk" target="_blank" rel="noopener noreferrer">▶ Смотреть инструкцию</a>
+</div>
+</article>
+
+<article class="binder-program-card" data-binder-program="binderbot">
+<div class="binder-program-icon">BB</div>
+<div class="binder-program-copy">
+<span class="binder-kicker">ПРОГРАММА 02</span>
+<h2>BinderBot</h2>
+<p>Профили в форматах <b>.json</b> и <b>.bb</b>.</p>
+<div class="binder-guide-copy"><strong>Видео-инструкция по программе</strong><span>Установка и базовая настройка</span></div>
+</div>
+<div class="binder-program-actions">
+<a class="btn primary binder-download-main" href="https://drive.google.com/uc?export=download&id=134Ud7A106xy8oa5qgPS_yvPSGk9iMW23" target="_blank" rel="noopener noreferrer">Скачать программу →</a>
+<button class="btn ghost binder-select-program" type="button" data-binder-target="binderbot">Показать профили</button>
+<a class="btn ghost binder-guide-link" href="https://www.youtube.com/watch?v=oyUuthNrlVQ" target="_blank" rel="noopener noreferrer">▶ Смотреть инструкцию</a>
+</div>
+</article>
+</section>
+
+<section class="binder-profiles-section">
+<div class="binder-profiles-head">
+<div>
+<div class="eyebrow">PROFILES</div>
+<h2 id="binderProfilesTitle">Профили EMS</h2>
+<p>Сначала выберите программу, затем нужную категорию и вариант профиля.</p>
+</div>
+
+</div>
+
+<div class="binder-profile-grid" data-binder-panel="a5i" hidden>
+<article class="binder-profile-card"><div class="binder-profile-top"><span>EMS</span><span>.A5I</span></div><h3>Стандартный EMS</h3><p>Базовый профиль для повседневной работы сотрудника EMS.</p><div class="binder-gender-actions"><a href="https://drive.google.com/uc?export=download&id=1I_qj02HeNLo7E90INIdZ45kJXWmgam2n" target="_blank" rel="noopener noreferrer">♂ Мужской</a><a href="https://drive.google.com/uc?export=download&id=1F0oCXYA8QdUPAYxbw5sSEL-TUX52_8rt" target="_blank" rel="noopener noreferrer">♀ Женский</a></div></article>
+<article class="binder-profile-card"><div class="binder-profile-top"><span>EMS</span><span>.A5I</span></div><h3>Ветеринария</h3><p>Профиль для квалификации и работы по направлению ветеринарии.</p><div class="binder-gender-actions"><a href="https://drive.google.com/uc?export=download&id=1gNWjZ-o3rozRprZ9cf04KhdOD0_sMwtg" target="_blank" rel="noopener noreferrer">♂ Мужской</a><a href="https://drive.google.com/uc?export=download&id=1ScHygRA2xPtpFip6_nJqM7fL0pHrv5uM" target="_blank" rel="noopener noreferrer">♀ Женский</a></div></article>
+<article class="binder-profile-card"><div class="binder-profile-top"><span>EMS</span><span>.A5I</span></div><h3>Хирургия</h3><p>Профиль для квалификации и работы по направлению хирургии.</p><div class="binder-gender-actions"><a href="https://drive.google.com/uc?export=download&id=12leu_1IVGtDyFIhhwxhieTh0b0I2P3Qv" target="_blank" rel="noopener noreferrer">♂ Мужской</a><a href="https://drive.google.com/uc?export=download&id=1X3aNAjL1Xzu19IkxeWHF2-GD9kCTgM08" target="_blank" rel="noopener noreferrer">♀ Женский</a></div></article>
+<article class="binder-profile-card"><div class="binder-profile-top"><span>PSID</span><span>.A5I</span></div><h3>PSID — SES</h3><p>Профиль санитарно-эпидемиологического направления PSID.</p><div class="binder-gender-actions"><a href="https://drive.google.com/uc?export=download&id=1CRBQ6yPGhsG0y5OyFA-Bb4HQZglpmlkY" target="_blank" rel="noopener noreferrer">♂ Мужской</a><a href="https://drive.google.com/uc?export=download&id=1wLtqPOpdRsq4K9iWyLOHaEAEK-k70qEQ" target="_blank" rel="noopener noreferrer">♀ Женский</a></div></article>
+<article class="binder-profile-card"><div class="binder-profile-top"><span>PSID</span><span>.A5I</span></div><h3>PSID — Психология</h3><p>Профиль для проведения психологических проверок и связанных отыгровок.</p><div class="binder-gender-actions"><a href="https://drive.google.com/uc?export=download&id=1Im5YEC3Gr-5g7zLhGfg7NDid0D4WJQso" target="_blank" rel="noopener noreferrer">♂ Мужской</a><a href="https://drive.google.com/uc?export=download&id=18X8q-vDR9zMovHszRG2GCp8pKtQ3D9Fg" target="_blank" rel="noopener noreferrer">♀ Женский</a></div></article>
+</div>
+
+<div class="binder-profile-grid" data-binder-panel="binderbot" hidden>
+<article class="binder-profile-card"><div class="binder-profile-top"><span>EMS</span><span>.JSON</span></div><h3>Стандартный EMS</h3><p>Базовый профиль для повседневной работы сотрудника EMS.</p><div class="binder-gender-actions"><a href="https://drive.google.com/uc?export=download&id=1jEw2Mr-kdsJRKByPWHexQ7jCG6h9LZTd" target="_blank" rel="noopener noreferrer">♂ Мужской</a><a href="https://drive.google.com/uc?export=download&id=1AAjSLuwVesV_IgQA42cLSrDK-FIYvg0K" target="_blank" rel="noopener noreferrer">♀ Женский</a></div></article>
+<article class="binder-profile-card"><div class="binder-profile-top"><span>EMS</span><span>.JSON</span></div><h3>Ветеринария</h3><p>Профиль для квалификации и работы по направлению ветеринарии.</p><div class="binder-gender-actions"><a href="https://drive.google.com/uc?export=download&id=1kY_yMYvFzwPv8cs8BdIlxe1j2yKekhqR" target="_blank" rel="noopener noreferrer">♂ Мужской</a><a href="https://drive.google.com/uc?export=download&id=12R9vVRMt7yqW-_EFrgU6aDVR_ofDYyNE" target="_blank" rel="noopener noreferrer">♀ Женский</a></div></article>
+<article class="binder-profile-card"><div class="binder-profile-top"><span>EMS</span><span>.JSON</span></div><h3>Хирургия</h3><p>Профиль для квалификации и работы по направлению хирургии.</p><div class="binder-gender-actions"><a href="https://drive.google.com/uc?export=download&id=1-6l_gfgClTimG2ObMEnBxe0cVnKtY2pQ" target="_blank" rel="noopener noreferrer">♂ Мужской</a><a href="https://drive.google.com/uc?export=download&id=1FpuZ3-oU2lywUn2M-x96AWZfvzaNSuxZ" target="_blank" rel="noopener noreferrer">♀ Женский</a></div></article>
+<article class="binder-profile-card"><div class="binder-profile-top"><span>PSID</span><span>.BB</span></div><h3>PSID — SES</h3><p>Профиль санитарно-эпидемиологического направления PSID.</p><div class="binder-gender-actions"><a href="https://drive.google.com/uc?export=download&id=1q_xo6atNcPb0rbxKrDmPbw6xDPkINxVK" target="_blank" rel="noopener noreferrer">♂ Мужской</a><a href="https://drive.google.com/uc?export=download&id=1yvndTewOQjHoHdJGx2Iwf0uFyKD1anWx" target="_blank" rel="noopener noreferrer">♀ Женский</a></div></article>
+<article class="binder-profile-card"><div class="binder-profile-top"><span>PSID</span><span>.BB</span></div><h3>PSID — Психология</h3><p>Профиль для проведения психологических проверок и связанных отыгровок.</p><div class="binder-gender-actions"><a href="https://drive.google.com/uc?export=download&id=1lwQ333q5KDdmg21SCV_fF2gGs5-HqoTm" target="_blank" rel="noopener noreferrer">♂ Мужской</a><a href="https://drive.google.com/uc?export=download&id=1xj8BNHkK6TJtM97NwoErZrT0Qm80DzDH" target="_blank" rel="noopener noreferrer">♀ Женский</a></div></article>
+</div>
+
+<div class="binder-help">
+<div><strong>Как пользоваться?</strong><span>1. Скачайте программу → 2. Выберите профиль → 3. Выберите мужской или женский вариант.</span></div>
+<a class="btn ghost" href="https://drive.google.com/drive/folders/1EGY6EHuBD7hINklj-WPl7AffOZHp3TR9?usp=drive_link" target="_blank" rel="noopener noreferrer">Открыть всю папку Google Drive ↗</a>
+</div>
+</section>
+</div>
+<div class="screen qualification-menu-screen" id="qualificationMenu">
+<div class="page-title internship-header">
+<button class="btn ghost" id="backFromQualificationMenu">← Назад к информации</button>
+<div class="eyebrow">EMS • QUALIFICATIONS</div>
+<h1>Квалификации</h1>
+<p>Выберите нужную памятку и изучайте материал по квалификации.</p><div class="section-test-note instructor-test-note">Тесты по квалификациям проходят с инструктором.</div>
+</div>
+<div class="internship-guide-grid qualification-guide-grid">
+<article class="internship-guide-card" data-open="qualificationGuide">
+<div class="guide-cover"><img alt="Памятка: Выдача медицинских карт и вакцинация" src="assets/cover_vaccination.webp"/><span class="guide-icon">▣</span><span class="guide-badge">01</span></div>
+<div class="guide-body"><div class="guide-meta">КВАЛИФИКАЦИЯ</div><h3>Памятка: Выдача медицинских карт и вакцинация</h3><p>Единый учебный материал по вакцинации и выдаче медицинских справок.</p><span class="guide-link">Открыть памятку <b>→</b></span></div>
+</article>
+<article class="internship-guide-card" data-open="surgeryGuide">
+<div class="guide-cover"><img alt="Памятка по квалификации Хирургия" src="assets/cover_surgery.webp"/><span class="guide-icon">✚</span><span class="guide-badge">02</span></div>
+<div class="guide-body"><div class="guide-meta">КВАЛИФИКАЦИЯ</div><h3>Памятка по квалификации «Хирургия»</h3><p>Подготовка и проведение операций, противопоказания, правила оказания помощи и рабочие места.</p><span class="guide-link">Открыть памятку <b>→</b></span></div>
+</article>
+</div>
+</div>
+<div class="screen material-screen qualifications-screen surgery-guide-screen" id="surgeryGuide">
+<div class="page-title lecture-header">
+<button class="btn ghost" id="backFromSurgery">← Назад к квалификациям</button>
+<div class="eyebrow">QUALIFICATION • SURGERY</div>
+<h1>Памятка по квалификации «Хирургия»</h1>
+<p>Основные правила подготовки и проведения операций для сотрудников с квалификацией хирурга.</p>
+</div>
+
+<div class="qualification-doc surgery-doc">
+<article class="material-card surgery-important">
+<div class="lecture-label"><span>!</span> ВАЖНО</div>
+<p>Если вы не имеете квалификации <b>хирурга</b> или <b>ветеринара</b>, а квалифицированных сотрудников в штате нет, не пытайтесь проводить лечение самостоятельно. Попросите пациента записаться на портале штата.</p>
+<p>Если ситуация экстренная — обратитесь к <b>старшему составу EMS</b>.</p>
+</article>
+
+<section class="qualification-section">
+<div class="qualification-section-head"><span>01</span><div><div class="qualification-kicker">ПРОЦЕДУРА</div><h2>Проведение операций</h2></div></div>
+<article class="material-card">
+<p>Перед началом операции обязательно <b>проверьте документы пациента</b> и получите согласие на медицинское лечение и обработку данных. Согласие отыгрывается перед каждой операцией.</p>
+<h3>Согласие пациента</h3>
+<pre class="rp-block">/do На столе лежат пустые формы согласия.
+/me взял форму согласия в правую руку
+/do Форма в правой руке.
+/me передал форму согласия пациенту</pre>
+<p>После того как пациент подписал форму:</p>
+<pre class="rp-block">/me взял форму согласия у пациента
+/me положил документ в папку
+/do Подписанная форма согласия в папке.</pre>
+</article>
+</section>
+
+<section class="qualification-section">
+<div class="qualification-section-head"><span>02</span><div><div class="qualification-kicker">ПОДГОТОВКА</div><h2>Перед операцией</h2></div></div>
+<article class="material-card">
+<p>Непосредственно перед хирургическим вмешательством необходимо сменить рабочую форму, надеть чистый медицинский халат и перчатки. При необходимости пациенту проводится анестезия.</p>
+<div class="lecture-note"><b>Анестезия</b> — процедура, применяемая для обезболивания пациента во время хирургического вмешательства.</div>
+<h3>Подготовка хирургических инструментов</h3>
+<pre class="rp-block">/me взял поднос с хирургическими инструментами со стола
+/do Поднос с хирургическими инструментами в руках.
+/me поставил поднос на специальный столик рядом с операционным столом</pre>
+</article>
+</section>
+
+<section class="qualification-section">
+<div class="qualification-section-head"><span>03</span><div><div class="qualification-kicker">ЗАВЕРШЕНИЕ</div><h2>После операции</h2></div></div>
+<article class="material-card">
+<ul class="material-list">
+<li>Вывести пациента из состояния общей анестезии, если она применялась.</li>
+<li>Снять хирургический халат и использованные перчатки.</li>
+<li>Утилизировать использованные хирургические инструменты и расходные материалы.</li>
+</ul>
+<pre class="rp-block">/do На столе находится поднос с использованными хирургическими инструментами.
+/me взял поднос с хирургическими инструментами со стола
+/do Поднос в руках.
+/me утилизировал использованные хирургические инструменты в предназначенный для этого контейнер
+/me снял медицинские перчатки
+/do Использованные перчатки в руках.
+/me утилизировал использованные перчатки</pre>
+</article>
+</section>
+
+<section class="qualification-section">
+<div class="qualification-section-head"><span>04</span><div><div class="qualification-kicker">БЕЗОПАСНОСТЬ</div><h2>Противопоказания к операции</h2></div></div>
+<article class="material-card">
+<ul class="material-list">
+<li>Пациент находится в неоперабельном состоянии.</li>
+<li>Пациент не дал информированного согласия на медицинское лечение и обработку данных.</li>
+<li>Риск хирургического вмешательства существенно превышает предполагаемую пользу от операции.</li>
+<li>Имеются иные медицинские противопоказания, препятствующие безопасному проведению вмешательства.</li>
+</ul>
+</article>
+</section>
+
+<section class="qualification-section">
+<div class="qualification-section-head"><span>05</span><div><div class="qualification-kicker">ПРАВИЛА ПОМОЩИ</div><h2>Когда сотрудник может отказать в помощи</h2></div></div>
+<div class="surgery-law-grid">
+<article class="material-card surgery-law-card emergency"><div class="lecture-label"><span>02</span> НЕОТЛОЖНАЯ ПОМОЩЬ</div><p>Отказ в предоставлении неотложной медицинской помощи <b>запрещается</b> и влечёт юридическую ответственность согласно действующему законодательству.</p><div class="duty-warning"><strong>Исключение:</strong> наличие прямого фактора угрозы жизни или здоровью самого сотрудника EMS.</div></article>
+<article class="material-card surgery-law-card planned"><div class="lecture-label"><span>03</span> ПЛАНОВАЯ ПОМОЩЬ</div><p>Сотрудник EMS имеет право законно отказать в предоставлении плановой медицинской помощи, если:</p><ul class="material-list"><li>пациент проявляет оскорбительное поведение, неуважительное отношение к сотрудникам EMS или окружающим гражданам либо находится в неадекватном состоянии;</li><li>пациент не имеет возможности или отказывается оплатить регламентированную стоимость медицинских услуг.</li></ul></article>
+</div>
+<div class="lecture-note"><b>Важно:</b> неотложная медицинская помощь и плановая медицинская помощь — разные ситуации. Условия законного отказа от плановой помощи не распространяются на неотложную помощь.</div>
+</section>
+
+<section class="qualification-section">
+<div class="qualification-section-head"><span>06</span><div><div class="qualification-kicker">ОПЕРАЦИОННЫЕ</div><h2>Места проведения операций</h2></div></div>
+<article class="material-card">
+<div class="surgery-location-grid"><div><strong>ELSH</strong><span>East Los Santos Hospital</span></div><div><strong>Paleto Bay</strong><span>Пригородная больница</span></div><div><strong>Sandy Shores</strong><span>Пригородная больница</span></div></div>
+<div class="qualification-doc-images surgery-images">
+<figure><img alt="Операционная зона EMS" src="assets/surgery_operating_area.webp"/><figcaption>Операционная зона EMS.</figcaption></figure>
+<figure><img alt="Вход в операционную" src="assets/surgery_entrance.webp"/><figcaption>Вход в Oper. Room.</figcaption></figure>
+<figure><img alt="Операционная комната" src="assets/surgery_room.webp"/><figcaption>Пример операционной комнаты.</figcaption></figure>
+</div>
+</article>
+</section>
+
+<section class="qualification-section">
+<div class="qualification-section-head"><span>07</span><div><div class="qualification-kicker">СТОИМОСТЬ</div><h2>Актуальный прейскурант EMS</h2></div></div>
+<article class="material-card surgery-price-card"><p>Стоимость хирургических и иных платных медицинских услуг определяется действующим прейскурантом EMS. Чтобы на сайте всегда оставалась актуальная информация, цены открываются напрямую из официального прейскуранта.</p><a class="btn primary" href="https://forum.majestic-rp.ru/threads/preiskurant-platnykh-uslug-emergency-medical-services.3617865/" target="_blank" rel="noopener noreferrer">Открыть актуальный прейскурант →</a></article>
+</section>
+
+<div class="surgery-actions surgery-bottom-actions"><button class="btn primary" id="openSurgeryBinders" type="button">Профили для биндеров →</button></div>
+</div>
+</div>
+<div class="screen material-screen qualifications-screen" id="qualificationGuide">
+<div class="page-title lecture-header">
+<button class="btn ghost" id="backFromQualifications">← Назад к квалификациям</button>
+<div class="eyebrow">EMS • QUALIFICATION</div>
+<h1>Памятка: Выдача медицинских карт и вакцинация</h1>
+<p>Единый учебный материал по квалификации. Сначала — вакцинация, затем — выдача медицинских справок.</p>
+</div>
+<div class="qualification-doc">
+<section class="qualification-section">
+<div class="qualification-section-head"><span>01</span><div><div class="qualification-kicker">ЧАСТЬ I</div><h2>Вакцинация</h2></div></div>
+<article class="material-card">
+<div class="lecture-label"><span>01.1</span> Кабинеты</div>
+<p>Вакцинация проводится в отведённых для этого местах.</p>
+<ul class="material-list">
+<li><b>East Los Santos Hospital:</b> первый этаж — Operation Rooms; второй этаж — X-Ray X2 и X1.</li>
+<li><b>Paleto Bay:</b> Operation Rooms, кабинеты Surgery и Ward 2.</li>
+<li><b>Sandy Shores:</b> Operation Rooms, кабинеты Surgery и Ward 2.</li>
+</ul>
+<div class="qualification-doc-images">
+<figure><img alt="Кабинеты вакцинации в East Los Santos Hospital" src="assets/vaccination_els.webp"/><figcaption>East Los Santos Hospital — кабинеты вакцинации.</figcaption></figure>
+<figure><img alt="Кабинеты вакцинации в Paleto Bay" src="assets/vaccination_paleto.webp"/><figcaption>Paleto Bay — кабинеты вакцинации.</figcaption></figure>
+<figure><img alt="Кабинеты вакцинации в Sandy Shores" src="assets/vaccination_sandy.webp"/><figcaption>Sandy Shores — кабинеты вакцинации.</figcaption></figure>
+</div>
+</article>
+<article class="material-card">
+<div class="lecture-label"><span>01.2</span> Болезни и препараты</div>
+<p>Для квалификации важно знать соответствие медицинского препарата заболеванию.</p>
+<div class="medication-grid">
+<div><b>Азитромицин</b><span>ГРИПП</span></div>
+<div><b>Активированный уголь</b><span>Отравление</span></div>
+</div>
+</article>
+<article class="material-card">
+<div class="lecture-label"><span>01.3</span> Стоимость</div>
+<div class="price-grid">
+<div class="price-card free"><strong>БЕСПЛАТНО</strong><span>Сотрудникам государственных структур при предъявлении опознавательного знака или удостоверения.</span></div>
+<div class="price-card"><strong>5 000$</strong><span>Для гражданских лиц.</span></div>
+</div>
+</article>
+<article class="material-card">
+<div class="lecture-label"><span>01.4</span> Алгоритм вакцинации</div>
+<ol class="material-steps">
+<li>Спросить, что случилось, и попросить описать симптомы.</li>
+<li><b>Попросить снять верхнюю одежду и маску</b> (при наличии маски на лице пациента).</li>
+<li><b>G → Фракционное → Диагностировать болезнь.</b></li>
+<li>Спросить, является ли пациент государственным служащим:<br/><b>Да</b> — вакцинация бесплатно.<br/><b>Нет</b> — попросить передать <b>5000$</b>.</li>
+<li><b>G → Фракционное → Вакцинировать.</b></li>
+<li>Пройти мини-игру: соотнести колбы по цвету с заражениями.</li>
+<li>После успешного прохождения мини-игры нужный препарат автоматически берётся. Важно, чтобы препарат находился в инвентаре.</li>
+<li>Попросить пациента одеться и пожелать крепкого здоровья.</li>
+</ol>
+</article>
+</section>
+<section class="qualification-section">
+<div class="qualification-section-head"><span>02</span><div><div class="qualification-kicker">ЧАСТЬ II</div><h2>Выдача медицинских справок</h2></div></div>
+<article class="material-card">
+<div class="lecture-label"><span>02.1</span> Кабинеты</div>
+<ul class="material-list">
+<li><b>East Los Santos Hospital:</b> второй этаж — Office 1–01, Office 2–02, Office 3–03.</li>
+<li><b>Sandy Shores и Paleto Bay:</b> Operation Rooms, кабинеты Surgery и Ward 2.</li>
+</ul>
+<div class="qualification-doc-images">
+<figure><img alt="Кабинеты для выдачи медицинских справок в East Los Santos Hospital" src="assets/qualification_pillbox.png"/><figcaption>East Los Santos Hospital — кабинеты Office 01–03.</figcaption></figure>
+<figure><img alt="Кабинеты для выдачи медицинских справок в Sandy Shores" src="assets/certificates_sandy.webp"/><figcaption>Sandy Shores — кабинеты Surgery и Ward 2.</figcaption></figure>
+<figure><img alt="Кабинеты для выдачи медицинских справок в Paleto Bay" src="assets/certificates_paleto.webp"/><figcaption>Paleto Bay — кабинеты Surgery и Ward 2.</figcaption></figure>
+</div>
+</article>
+<article class="material-card">
+<div class="lecture-label"><span>02.2</span> Стоимость</div>
+<div class="price-grid">
+<div class="price-card"><strong>2 500$</strong><span>Справка о физическом здоровье.</span></div>
+<div class="price-card"><strong>5 000$</strong><span>Справка о психическом здоровье.</span></div>
+<div class="price-card total"><strong>7 500$</strong><span>Общая стоимость двух справок.</span></div>
+</div>
+</article>
+<article class="material-card">
+<div class="lecture-label"><span>02.3</span> Алгоритм выдачи справки</div>
+<div class="algorithm-card">
+<h3>Первичная выдача</h3>
+<p>Если у пациента ранее не было медицинской справки, проводится <b>полная проверка физического и психологического здоровья</b>.</p>
+<h4>1. Начало процедуры</h4>
+<ol class="material-steps">
+<li><b>Представиться:</b> «Меня зовут Иван Иванов, я врач этой больницы.»</li>
+<li><b>Уточнить оплату:</b> «Есть ли у вас 7500 наличными?»<br/>2500$ — физическое здоровье; 5000$ — психологическое здоровье.</li>
+<li><b>Проверить предыдущую справку</b>, если она имеется. Функциональное КД справки — 7 дней; справка для государственных служащих — 2 недели; справка для лётной лицензии — 2 недели.</li>
+</ol>
+<h4>2. Проверка физического здоровья</h4>
+<h5>Проверка зрения</h5>
+<p>Попросите пациента снять очки и освободить глаза для проверки.</p>
+<blockquote>«Снимите, пожалуйста, очки, сейчас проверим ваше зрение.»</blockquote>
+<p>Поставьте пациента напротив таблицы с буквами.</p>
+<blockquote>«Я буду Вам показывать буквы, а вы будете читать.»</blockquote>
+<p><b>Проверка левого глаза:</b> попросите закрыть правый глаз.</p>
+<blockquote>«Закройте, пожалуйста, правый глаз.»</blockquote>
+<div class="rp-block"><div>/do Указка лежит на столе.</div><div>/me взял указку со стола, начал указывать на буквы</div><div>/me указал на буквы A, F, Q</div></div>
+<blockquote>«Читайте буквы.»</blockquote>
+<p><b>Проверка правого глаза:</b> попросите открыть правый и закрыть левый глаз.</p>
+<blockquote>«Закройте, пожалуйста, левый глаз.»</blockquote>
+<div class="rp-block"><div>/me указал на буквы H, O, S</div></div>
+<blockquote>«Читайте буквы.»</blockquote>
+<p>Если пациент испытывает трудности с чтением, зафиксируйте информацию о снижении зрения или необходимости очков.</p>
+<div class="duty-warning"><strong>Важно:</strong> неправильное чтение букв само по себе не является причиной для отказа в медицинской справке.</div>
+<h5>Обследование физического здоровья</h5>
+<ol class="material-steps">
+<li>Попросить пациента снять верхнюю одежду и обувь и лечь на кушетку.</li>
+<li>Провести кардиограмму и зафиксировать результат.</li>
+<li>Провести рентген и зафиксировать результат.</li>
+<li>Попросить пациента одеться и предложить ознакомиться со снимками.</li>
+</ol>
+<blockquote>«Снимите, пожалуйста верхнюю одежду и обувь. Ложитесь на кушетку на спину. Сейчас я вам буду делать кардиограмму и рентген, не волнуйтесь, дышите в обычном темпе.»</blockquote>
+<p class="source-note">Порядок ЭКГ и рентгена перенесён из исходной лекции.</p>
+<h4>3. Проверка психологического здоровья</h4>
+<p>После физического обследования попросите пациента присесть и объясните, что сейчас будут заданы несколько вопросов.</p>
+<blockquote>«Присаживайтесь на стул. Задам вам несколько вопросов.»</blockquote>
+<p><b>Обязательно задайте следующие вопросы:</b></p>
+<ol class="material-steps">
+<li>«Употребляете алкоголь? Курите?»</li>
+<li>«Как относитесь к наркотическим веществам? Был ли опыт употребления наркотиков?»</li>
+<li>«Занимаетесь спортом? Каким?»</li>
+<li>«Как у вас обстоят дела с режимом сна? Сколько часов спите в сутки? Мучает ли бессонница?»</li>
+<li>«Вас посещали когда-нибудь мысли о суициде?»</li>
+</ol>
+<p>При необходимости задайте дополнительные вопросы на адекватность пациента.</p>
+<h5>Проверка изображения</h5>
+<div class="rp-block"><div>/me достал из стола листок с изображением</div><div>/do На листочке изображено пятно в виде волка.</div></div>
+<blockquote>«Сейчас покажу вам картинку, а вы скажите, на что похоже пятно.»</blockquote>
+<div class="rp-block"><div>/me положил листок на стол</div></div>
+<p>Если пациент видит животное или другое изображение, ответ считается корректным и сам по себе не является причиной для отказа в медицинской справке.</p>
+<div class="duty-warning"><strong>Важно:</strong> ответ вроде «кровь» может послужить причиной для отказа в медицинской справке.</div>
+<p>Если в биндере имеются дополнительные листочки с изображениями, их следует отыгрывать по очереди.</p>
+<h4>4. Завершение проверки</h4>
+<p>Озвучить необходимые пометки, заполнить документы и выдать соответствующие медицинские справки.</p>
+<ol class="material-steps">
+<li>Выдать справку о физическом здоровье.</li>
+<li>Выдать справку о психологическом здоровье.</li>
+<li>Сделать необходимый скриншот.</li>
+</ol>
+<div class="qualification-doc-single-image">
+<figure><img alt="Пример врачебного свидетельства" src="assets/qualification_certificate.png"/><figcaption>Пример выданного врачебного свидетельства.</figcaption></figure>
+</div>
+<h3>Повторная выдача</h3>
+<p>Если у пациента ранее уже была медицинская справка, сначала уточните:</p>
+<blockquote>«Возникали ли у вас какие-либо проблемы со здоровьем с момента получения предыдущей справки?»</blockquote>
+<ul class="material-list">
+<li><b>Если проблем не было</b> — можно сразу переходить к проверке психологического здоровья.</li>
+<li><b>Если проблемы были</b> — необходимо полностью провести проверку физического здоровья, после чего перейти к проверке психологического здоровья.</li>
+</ul>
+</div>
+</article>
+<article class="material-card">
+<div class="lecture-label"><span>02.4</span> Основные правила</div>
+<ul class="material-list">
+<li>Вежливо и уважительно обращаться с пациентом.</li>
+<li>В выдаче справки может быть отказано, если человек употребляет наркотики, злоупотребляет алкоголем на работе или психически нездоров.</li>
+<li>Если оснований для отказа нет — медицинские справки выдаются пациенту.</li>
+</ul>
+</article>
+</section>
+</div>
+</div>
+<div class="screen internship-screen" id="internship">
+<div class="page-title internship-header">
+<button class="btn ghost" id="backFromInternship">← Назад к информации</button>
+<div class="eyebrow">EMS • INTERNSHIP</div>
+<h1>Интернатура</h1>
+<p>Собрали все нужные материалы в одном месте. Выбирай тему и изучай по шагам.</p>
+</div>
+<div class="internship-guide-grid">
+<article class="internship-guide-card" data-open="lecture">
+<div class="guide-cover guide-cover-1"><img alt="Вводная лекция" src="assets/cover_intro.webp"/><span class="guide-icon">▣</span><span class="guide-badge">01</span></div>
+<div class="guide-body"><div class="guide-meta">ОСНОВЫ</div><h3>Вводная лекция</h3><p>Базовые знания перед началом работы в EMS.</p><span class="guide-link">Открыть материал <b>→</b></span></div>
+</article>
+<article class="internship-guide-card" data-external="https://forum.majestic-rp.ru/threads/ustav-emergency-medical-service.3617851/">
+<div class="guide-cover guide-cover-2"><img alt="Устав EMS" src="assets/cover_charter.webp"/><span class="guide-icon">▤</span><span class="guide-badge">02</span></div>
+<div class="guide-body"><div class="guide-meta">ПРАВИЛА</div><h3>Устав EMS</h3><p>Актуальные правила и обязанности сотрудников.</p><div class="guide-actions"><a class="btn ghost small" href="https://forum.majestic-rp.ru/threads/ustav-emergency-medical-service.3617851/" rel="noopener noreferrer" target="_blank">Открыть Устав</a><button class="btn primary small" id="startCharterBtn2">Сдать экзамен →</button></div></div>
+</article>
+<article class="internship-guide-card" data-open="duty"><div class="guide-cover"><img alt="Дежурство EMS" src="assets/cover_duty.webp"/><span class="guide-icon">◷</span><span class="guide-badge">03</span></div><div class="guide-body"><div class="guide-meta">РАБОЧИЙ ПРОЦЕСС</div><h3>Как отстоять дежурство?</h3><p>Тайминг, скрины и обязательные требования.</p><span class="guide-link">Открыть памятку <b>→</b></span></div></article>
+<article class="internship-guide-card" data-open="pmp"><div class="guide-cover"><img alt="Выезды на ПМП" src="assets/cover_pmp.webp"/><span class="guide-icon">✚</span><span class="guide-badge">04</span></div><div class="guide-body"><div class="guide-meta">ПМП</div><h3>Как ездить на вызовы ПМП?</h3><p>Подготовка, вызов, безопасность и завершение работы.</p><span class="guide-link">Открыть памятку <b>→</b></span></div></article>
+<article class="internship-guide-card" data-open="codeine"><div class="guide-cover"><img alt="Кодеиновые таблетки" src="assets/cover_codeine.webp"/><span class="guide-icon">◉</span><span class="guide-badge">05</span></div><div class="guide-body"><div class="guide-meta">ЛЕКАРСТВА</div><h3>Как лечить кодеиновыми таблетками?</h3><p>Где брать, кому выдавать и какие скрины делать.</p><span class="guide-link">Открыть памятку <b>→</b></span></div></article>
+<article class="internship-guide-card" data-open="screens"><div class="guide-cover"><img alt="Критерии для скриншотов" src="assets/cover_screens.webp"/><span class="guide-icon">▧</span><span class="guide-badge">06</span></div><div class="guide-body"><div class="guide-meta">ОТЧЁТНОСТЬ</div><h3>Критерии для скриншотов</h3><p>Правильные фото для таблеток, дежурств, ПМП и медкарт.</p><span class="guide-link">Открыть памятку <b>→</b></span></div></article>
+<article class="internship-guide-card" data-open="getid"><div class="guide-cover"><img alt="Удостоверение" src="assets/cover_getid.webp"/><span class="guide-icon">▱</span><span class="guide-badge">07</span></div><div class="guide-body"><div class="guide-meta">ДОКУМЕНТЫ</div><h3>Как получить удостоверение</h3><p>Путь от Government до получения удостоверения.</p><span class="guide-link">Открыть инструкцию <b>→</b></span></div></article>
+<article class="internship-guide-card" data-open="bodycam"><div class="guide-cover"><img alt="Боди-камера" src="assets/cover_bodycam.webp"/><span class="guide-icon">◫</span><span class="guide-badge">08</span></div><div class="guide-body"><div class="guide-meta">НАСТРОЙКА</div><h3>Как включить боди-камеру</h3><p>Где назначить клавишу и как не выключить камеру случайно.</p><span class="guide-link">Открыть инструкцию <b>→</b></span></div></article>
+</div>
+</div>
+<div class="screen material-screen" id="lecture">
+<div class="page-title lecture-header">
+<button class="btn ghost" id="backToInfo">← Назад к информации</button>
+<div class="eyebrow">EMS • INTRODUCTORY LECTURE</div>
+<h1>Вводная лекция</h1>
+<p>Базовые знания, необходимые сотруднику EMS перед началом работы.</p>
+</div>
+<div class="material-flow intro-lecture-flow">
+<article class="material-card"><div class="lecture-label"><span>01</span> Правила выдачи медикаментов и оборудования</div>
+<p>Права сотрудника на получение медикаментов и оборудования зависят от его ранга и полученных квалификаций.</p>
+<h3>3-й ранг</h3><ul class="material-list"><li>Можно оформить заявку на получение <b>дефибриллятора</b>.</li><li>Можно брать эпинефрин — не более <b>25 шт.</b></li><li>Можно брать стерильные бинты — не более <b>40 шт. в сутки</b>.</li></ul>
+<h3>2-й ранг</h3><ul class="material-list"><li>Можно брать кодеиновые таблетки — не более <b>72 шт.</b></li><li>Можно брать ИРП — не более <b>3 шт. раз в 2 часа</b>.</li></ul>
+<h3>Квалификация «Выдача медицинских карт»</h3><ul class="material-list"><li>Азитромицин — не более <b>24 шт.</b></li><li>Активированный уголь — не более <b>24 шт.</b></li></ul>
+<div class="lecture-note"><b>Соблюдай правила — используй ресурсы рационально.</b><br/>Знание правил — твоя помощь в работе.</div>
+</article>
+<article class="material-card"><div class="lecture-label"><span>02</span> Интернатура EMS</div>
+<p>На прохождение интернатуры отводится <b>120 часов</b>. За этот период сотрудник проходит этапы с 1-го по 4-й ранг.</p>
+<h3>1-й ранг — Студент</h3><ul class="material-list"><li>Ознакомительная часть.</li><li>Изучение основных материалов.</li><li>Прохождение необходимых тестов.</li></ul>
+<h3>2-й ранг</h3><ul class="material-list"><li>Выдача кодеиновых таблеток.</li></ul>
+<h3>3-й ранг — Фельдшер</h3><ul class="material-list"><li>Выдача кодеиновых таблеток.</li><li>Оказание первой медицинской помощи.</li></ul>
+<h3>4-й ранг</h3><ul class="material-list"><li>Выдача кодеиновых таблеток.</li><li>Оказание ПМП.</li><li>Работа со справками и вакцинацией.</li><li>Переход в отделение PM.</li></ul>
+</article>
+<article class="material-card"><div class="lecture-label"><span>03</span> Рабочий график EMS</div><div class="schedule-grid"><div><span>Будние дни</span><strong>11:00–21:00</strong></div><div><span>Выходные дни</span><strong>12:00–21:00</strong></div></div></article>
+<article class="material-card"><div class="lecture-label"><span>04</span> Отделы EMS</div><div class="department-grid"><div><b>DI</b><span>Подготавливает новых сотрудников и помогает им стать профессиональными врачами.</span></div><div><b>HAD</b><span>Осуществляет надзор за сотрудниками EMS, рассматривает нарушения и контролирует исполнение взысканий.</span></div><div><b>PSID</b><span>Занимается охраной здоровья населения, санитарными проверками, медицинскими справками и контролем инфекционных заболеваний.</span></div><div><b>PM</b><span>Основное рабочее отделение. Диагностика, лечение пациентов и взаимодействие с другими службами больницы.</span></div></div></article>
+<article class="material-card"><div class="lecture-label"><span>05</span> Структура EMS</div><h3>Руководящий состав</h3><p>Главный врач и заместители Главного врача.</p><h3>Старший состав</h3><p>Заведующие отделениями, заместители заведующих отделениями и ассистенты Главного врача.</p><h3>Средний состав</h3><p>Сотрудники 4–10 порядковых рангов.</p><h3>Младший состав</h3><p>Сотрудники 1–3 порядковых рангов.</p><h3>HAD — администрация больницы</h3><p>Основная задача — надзорная деятельность за сотрудниками EMS.</p><h3>Старший состав отделения</h3><p>1 заведующий отделением и 3 заместителя заведующего отделением.</p></article>
+<article class="material-card"><div class="lecture-label"><span>06</span> Квалификации EMS</div><p>В EMS предусмотрено <b>6 квалификаций</b>:</p><div class="qualification-grid"><div><b>Хирург</b><span>Диагностика и хирургическое лечение заболеваний и травм.</span></div><div><b>Ветеринар</b><span>Диагностика, лечение и профилактика заболеваний у животных.</span></div><div><b>Психолог</b><span>Работа с психологическими процессами, поведением и проблемами пациентов.</span></div><div><b>Выдача медицинских карт</b><span>Выдача медицинских карт и проведение вакцинации после обучения и сдачи экзамена.</span></div><div><b>Спасательно-поисковые работы (SAR)</b><span>Медицинская помощь и госпитализация в труднодоступных местах и территориях.</span></div><div><b>SES</b><span>Проверки на соблюдение санитарно-эпидемиологических норм.</span></div></div></article>
+<article class="material-card"><div class="lecture-label"><span>07</span> Выдача кодеиновых таблеток</div><p>Во время интернатуры сотрудникам разрешено выдавать кодеиновые таблетки <b>в пригородных больницах</b>.</p><ul class="material-list"><li><b>Sandy Shores</b> — в коридоре рядом с палатами.</li><li><b>Paleto Bay</b> — в холле больницы.</li></ul><p>Для выдачи используются два варианта:</p><ul class="material-list"><li><b>«Продать таблетку»</b> — обычному гражданину.</li><li><b>«Вылечить игрока»</b> — государственному сотруднику, если он предъявил удостоверение.</li></ul></article>
+<article class="material-card"><div class="lecture-label"><span>08</span> Эпинефрин и дефибриллятор</div><p>Для оказания первой медицинской помощи сотруднику необходим <b>дефибриллятор</b>.</p><div class="duty-warning"><strong>Оказывать ПМП без дефибриллятора строго запрещено.</strong></div><p>Следовательно, наличие эпинефрина само по себе не позволяет оказывать ПМП без дефибриллятора.</p><p>Эпинефрин доступен сотрудникам с 3-го ранга. Максимальное количество — <b>25 шт.</b></p></article>
+<article class="material-card"><div class="lecture-label"><span>09</span> Медикаменты и их назначение</div><div class="medication-grid"><div><b>Азитромицин</b><span>ГРИПП</span></div><div><b>Активированный уголь</b><span>Отравление</span></div></div></article>
+<article class="material-card intro-test-cta"><div class="lecture-label"><span>10</span> Проверка знаний</div><h2>Лекцию изучил?</h2><p>Проверь знания в уже существующем тесте по вводной лекции.</p><button class="btn primary" id="startIntroBtn">Пройти тест по вводной лекции <span>→</span></button></article>
+</div>
+</div>
+<div class="screen" id="duty">
+<div class="page-title lecture-header">
+<button class="btn ghost" id="backToInfoDuty">← Назад к интернатуре</button>
+<div class="eyebrow">EMS • INTERNSHIP</div>
+<h1>Как отстоять дежурство?</h1>
+<p>Памятка по оформлению дежурства и требованиям к фото-карточкам.</p>
+</div>
+<div class="duty-layout">
+<article class="duty-card duty-hero-card">
+<div class="duty-hero-image">
+<img alt="Пример фото-карточки дежурства" loading="lazy" referrerpolicy="no-referrer" src="assets/guide_local_01.webp"/>
+</div>
+<div class="duty-hero-copy">
+<span class="duty-label">ГЛАВНОЕ</span>
+<h2>Дежурство засчитывается только при соблюдении всех требований.</h2>
+<p>Соблюдай тайминг, делай правильные фото и обязательно фиксируй начало, продолжение и окончание дежурства во фракционной рации.</p>
+</div>
+</article>
+<div class="duty-grid">
+<article class="duty-card">
+<div class="duty-card-top"><span class="duty-number">01</span><h3>Требования к скринам</h3></div>
+<ul class="duty-list">
+<li>Боди-камера должна быть включена — должен гореть красный огонёк.</li>
+<li>На фото-карточке должен быть телефон, на котором видно время.</li>
+<li>Во фракционной рации в <b>/f</b> должно быть написано: <b>«Начал / Продолжаю / Закончил дежурство в …»</b>.</li>
+<li>Скрин дежурства можно делать в любом помещении на территории больницы.</li>
+</ul>
+</article>
+<article class="duty-card">
+<div class="duty-card-top"><span class="duty-number">02</span><h3>Тайминг</h3></div>
+<ul class="duty-list">
+<li>Начинай дежурство в ровные минуты: <b>10:00, 10:10, 10:20</b> и т. п.</li>
+<li>Промежуток между скринами — <b>20 минут</b>.</li>
+<li>Допускается опоздание не более <b>5 минут</b> и только один раз.</li>
+<li>Итого стандартный отчёт — <b>4 фото</b>.</li>
+<li>Если тайминг сорван, необходимо отдежурить ещё <b>20 минут</b> — тогда в отчёте будет 5 фото.</li>
+</ul>
+</article>
+<article class="duty-card duty-wide">
+<div class="duty-card-top"><span class="duty-number">03</span><h3>Последний скриншот</h3></div>
+<div class="duty-warning"><strong>Правило пяти минут не распространяется на последний скриншот.</strong> Заканчивая дежурство, убедись, что фактически отстоял не меньше положенного часа.</div>
+</article>
+<article class="duty-card duty-wide">
+<div class="duty-card-top"><span class="duty-number">04</span><h3>Важно</h3></div>
+<ul class="duty-list">
+<li>Если отсутствует любой обязательный элемент или ты напишешь о дежурстве в <b>/fb</b>, фото-карточка не засчитывается.</li>
+<li>При опоздании более чем на 5 минут промежуток между скринами также не засчитывается и это время нужно фиксировать отдельно.</li>
+<li>Требования действуют для любого дежурства: <b>ELSH, Sandy Shores, Paleto Bay</b>, а также 1 час дежурства ПМП по результатам брифинга.</li>
+<li>В отчёт на повышение принимаются только фото, сделанные <b>после последнего повышения</b>.</li>
+</ul>
+</article>
+</div>
+<article class="duty-card duty-wide duty-photo-gallery-card">
+<div class="duty-card-top"><span class="duty-number">05</span><h3>Примеры фото-карточек</h3></div>
+<p class="duty-gallery-note">Примеры оформлены в том же порядке, что и в вашем отчёте.</p>
+<div class="duty-photo-gallery">
+<img alt="Пример фото-карточки дежурства 4" loading="lazy" referrerpolicy="no-referrer" src="assets/guide_local_04.webp"/>
+<img alt="Пример фото-карточки дежурства 3" loading="lazy" referrerpolicy="no-referrer" src="assets/guide_local_03.webp"/>
+<img alt="Пример фото-карточки дежурства 2" loading="lazy" referrerpolicy="no-referrer" src="assets/guide_local_02.webp"/>
+<img alt="Пример фото-карточки дежурства 1" loading="lazy" referrerpolicy="no-referrer" src="assets/guide_local_01.webp"/>
+</div>
+</article>
+</div>
+</div>
+<div class="screen material-screen" id="pmp"><div class="page-title lecture-header"><button class="btn ghost backToInternship">← Назад к интернатуре</button><div class="eyebrow">EMS • INTERNSHIP</div><h1>Как ездить на вызовы ПМП?</h1><p>Пошаговая памятка по подготовке, выезду и завершению вызова.</p></div><div class="material-flow">
+<article class="material-card"><h2>Дефибриллятор</h2><p>После повышения до <b>Фельдшера (3-й ранг)</b> нужно получить дефибриллятор через заявку в канале запроса. Серийный номер закреплён за сотрудником. Передавать, продавать, выбрасывать или выкладывать дефибриллятор запрещено. При увольнении его нужно сдать.</p></article>
+<article class="material-card"><h2>Подготовка к выездам</h2><p>Для ПМП необходимы <b>дефибриллятор</b> и <b>эпинефрины (до 25 шт.)</b>. Оказывать ПМП без дефибриллятора строго запрещено.</p><div class="material-images"><img src="assets/guide_local_05.webp"/><img src="assets/guide_local_06.webp"/></div></article>
+<article class="material-card"><h2>Выезд</h2><p>Открываем планшет → <b>Emergency Medical Services</b> → <b>Доставка транспорта</b>. Доступность транспорта зависит от ранга: Novak и Landstalker — с 3; Scout — с 5; Buzzard — с 9 при наличии лицензии и SAR; Speedo II — с 9; Neon и Ambulance — с 11.</p><img class="material-wide-image" src="assets/guide_local_07.webp"/></article>
+<article class="material-card"><h2>1. Стать в патруль</h2><p>Открываем вкладку вызовов и включаем <b>«В патруле»</b>. Фильтр причин вызова можно настроить под себя.</p><img class="material-wide-image" src="assets/guide_local_08.webp"/></article>
+<article class="material-card"><h2>2. Принять вызов</h2><p>На планшете выбери вызов и нажми <b>«Принять вызов»</b>, либо используй уведомление: <b>Y</b> — принять, <b>H</b> — скрыть.</p><div class="material-images"><img src="assets/guide_local_09.webp"/><img src="assets/guide_local_10.webp"/></div></article>
+<article class="material-card"><h2>3. Проверка безопасности</h2><p>После прибытия убедись: нет активной перестрелки, ты не в зоне дропа/тайников/каптов и твоей жизни никто не угрожает. После этого наведиcь на игрока → <b>G → Реанимировать</b>.</p><img class="material-wide-image" src="assets/guide_local_11.webp"/></article>
+<article class="material-card"><h2>4. Мини-игра</h2><p>Нажимай <b>«Пробел»</b>, когда индикатор находится в зелёной зоне. Успешные нажатия заполняют прогресс, ошибки — шкалу ошибок.</p><img class="material-wide-image" src="assets/guide_local_12.webp"/></article>
+<article class="material-card"><h2>5. Завершение</h2><p>После успешной реанимации сделай скрин: боди-камера включена и внизу есть уведомление о реанимации.</p><img class="material-wide-image pmp-completion-image" src="assets/guide_local_13.webp"/></article>
+<article class="material-card"><h2>Отмена вызова</h2><p>Вызов можно отменить через планшет, если он находится в зоне активной перестрелки, на Кайо-Перико или во время мероприятий. Нажми <b>«Отклонить вызов»</b> и укажи причину.</p></article>
+<article class="material-card callout"><h2>Важно</h2><p>На выезды ПМП разрешено выезжать <b>максимум вдвоём</b>. Исключение — обучение интернов.</p></article>
+</div></div>
+<div class="screen material-screen" id="codeine"><div class="page-title lecture-header"><button class="btn ghost backToInternship">← Назад к интернатуре</button><div class="eyebrow">EMS • INTERNSHIP</div><h1>Как лечить кодеиновыми таблетками?</h1><p>Выдача таблеток во время интернатуры.</p></div><div class="material-flow">
+<article class="material-card"><h2>1. Получить таблетки</h2><p>Максимум — <b>72 шт.</b>, из ящика берётся сразу <b>24 шт.</b>. С 3-го ранга доступны наборы.</p><div class="material-images"><img src="assets/guide_local_14.webp"/><img src="assets/guide_local_15.webp"/></div></article>
+<article class="material-card"><h2>2. Где выдавать</h2><p>Во время интернатуры таблетки разрешено выдавать только в <b>пригородных больницах</b>: Sandy Shores — коридор рядом с палатами; Paleto Bay — холл больницы.</p><img class="material-wide-image" src="assets/guide_local_16.webp"/></article>
+<article class="material-card"><h2>3. Выбрать действие</h2><p><b>G → Фракционное → Продать таблетку / Вылечить игрока.</b> «Продать таблетку» — обычному гражданину. «Вылечить игрока» — государственному сотруднику, если он предъявил удостоверение.</p><img class="material-wide-image" src="assets/guide_local_17.webp"/></article>
+<article class="material-card"><h2>4. Требования к скрину</h2><ul class="material-list"><li>Включена боди-камера.</li><li>Внизу есть уведомление, подтверждающее лечение.</li><li>Вы находитесь в правильном месте.</li><li>Один и тот же человек не лечится больше двух раз подряд.</li></ul></article>
+</div></div>
+<div class="screen material-screen" id="screens"><div class="page-title lecture-header"><button class="btn ghost backToInternship">← Назад к интернатуре</button><div class="eyebrow">EMS • INTERNSHIP</div><h1>Критерии для скриншотов</h1><p>Примеры правильных фото для основных действий интернатуры.</p></div><div class="material-flow">
+<article class="material-card"><h2>Выдача таблеток</h2><ul class="material-list"><li>Вы находитесь в правильном месте.</li><li>Включена боди-камера.</li><li>Внизу есть уведомление, подтверждающее выдачу таблетки.</li></ul><div class="material-images"><img src="assets/guide_local_18.webp"/><img src="assets/guide_local_19.webp"/></div></article>
+<article class="material-card"><h2>Дежурство в больнице</h2><ul class="material-list"><li>Включена боди-камера.</li><li>В IC-рацию /f отправлено начало, продолжение или окончание дежурства.</li><li>В руках телефон, на котором видно время.</li></ul><img class="material-wide-image" src="assets/guide_local_20.webp"/></article>
+<article class="material-card"><h2>Выезд на ПМП с сотрудником 4+ ранга</h2><ul class="material-list"><li>Включена боди-камера.</li><li>Сотрудник 4+ ранга находится в поле зрения.</li></ul><img class="material-wide-image" src="assets/guide_local_21.webp"/></article>
+<article class="material-card"><h2>Выдача медицинских справок</h2><ul class="material-list"><li>Включена боди-камера.</li><li>В чате видна отыгровка о выдаче медицинских карт.</li></ul><img class="material-wide-image" src="assets/guide_local_22.webp"/></article>
+</div></div>
+<div class="screen material-screen" id="getid"><div class="page-title lecture-header"><button class="btn ghost backToInternship">← Назад к интернатуре</button><div class="eyebrow">EMS • INTERNSHIP</div><h1>Как получить удостоверение</h1><p>Путь до Government и получение удостоверения.</p></div><div class="material-flow"><article class="material-card"><h2>Путь к мэрии</h2><ol class="material-steps"><li>Приезжай в Government — на карте это здание с колоннами.</li><li>Зайди через главный вход.</li><li>Подниматься на второй этаж не нужно: через арки по правой или левой стороне войди в нужную дверь.</li><li>Подойди к NPC и выбери «Получить удостоверение».</li></ol><div class="material-images government-guide-images"><img alt="Маршрут до Government" src="assets/government_route_map.png"/><img alt="Главный вход в Government" src="assets/government_main_entrance.png"/><img alt="Направление внутри Government" src="assets/government_lobby_directions.png"/><img alt="Дверь к NPC для получения удостоверения" src="assets/government_office_door.png"/></div></article></div></div>
+<div class="screen material-screen" id="bodycam"><div class="page-title lecture-header"><button class="btn ghost backToInternship">← Назад к интернатуре</button><div class="eyebrow">EMS • INTERNSHIP</div><h1>Как включить боди-камеру</h1><p>Настрой клавишу один раз и больше не ищи настройку.</p></div><div class="material-flow"><article class="material-card"><h2>Путь в настройках</h2><p><b>F2 → Настройки → Назначение клавиш → Боди камера.</b></p><p>Лучше назначить отдельную клавишу, которую ты обычно не используешь, чтобы случайно не выключить камеру.</p><img class="material-wide-image" src="assets/bodycam_keybind_settings.png"/></article></div></div>
+<div class="screen" id="test">
+<div class="test-top">
+<div><div class="eyebrow" id="testEyebrow">QUALIFICATION TEST • PSID</div><h1 id="questionTitle">Вопрос 1</h1></div>
+<div class="timer" id="timer">15:00</div>
+</div>
+<div class="progress-wrap"><div class="progress"><span id="progressBar"></span></div><div class="progress-text"><span id="progressText">1 / 12</span><span id="progressStandard">PSID STANDARD</span></div></div>
+<div class="question-card">
+<div class="question-number" id="questionNumber">01</div>
+<h2 id="questionText"></h2>
+<div class="answers" id="answers"></div>
+</div>
+<div class="test-actions">
+<button class="btn ghost" id="prevBtn">← Назад</button>
+<button class="btn primary" id="nextBtn">Следующий →</button>
+</div>
+</div>
+<div class="screen" id="result">
+<div class="result-card">
+<div class="result-ring"><span id="score">0%</span><small id="resultStatus">FAIL</small></div>
+<div class="eyebrow" id="resultEyebrow">TEST COMPLETE • PSID</div>
+<h1 id="resultTitle">Результат готов</h1>
+<p id="resultText"></p>
+<div class="result-meta"><span>Имя и фамилия</span><strong id="resultName">—</strong></div>
+<div class="result-meta"><span>Static ID</span><strong id="resultStaticId">—</strong></div>
+<div class="result-meta"><span>Правильных ответов</span><strong id="resultCorrect">0 / 12</strong></div>
+<div class="candidate-answers-section">
+<div class="eyebrow">ОТВЕТЫ КАНДИДАТА</div>
+<h2 class="candidate-answers-title">Выбранные ответы</h2>
+<div class="candidate-answers" id="candidateAnswers"></div>
+</div>
+<button class="btn primary" id="restartBtn">Вернуться к выбору теста</button>
+</div>
+</div>
+
+</section>
+</main>
+<footer class="site-author"><span>Автор</span><strong>Anthony Raiden</strong><span>/ 133604 / DS:fourban</span></footer>
+<div class="modal" id="nameModal">
+<div class="modal-box identity-modal">
+<button class="identity-modal-close" id="closeNameModal" type="button" aria-label="Закрыть окно">×</button>
+<div class="modal-logo">EMS</div>
+<div class="eyebrow">IDENTIFICATION • CANDIDATE</div>
+<h2>Представьтесь</h2>
+<p>Введите игровое имя, фамилию и Static ID. После подтверждения выбранный тест начнётся автоматически.</p>
+<div class="registration-instruction">
+<div class="registration-instruction-title"><span>Инструкция</span><em>Перед началом теста</em></div>
+<ol>
+<li>Убедитесь, что выбран именно тот тест, который вы хотите пройти.</li>
+<li>Укажите <b>игровое имя и фамилию</b> и <b>Static ID</b>.</li>
+<li>Выберите один или несколько правильных вариантов ответа.</li>
+<li><b>Сторонние ресурсы во время тестирования запрещены.</b></li>
+<li>Для сдачи необходимо набрать <b>80% или выше</b>.</li>
+</ol>
+<p>После завершения теста не закрывайте страницу, пока экзаменатор не проверит результат.</p>
+</div>
+<label class="input-label" for="nameInput">Имя и фамилия</label>
+<input autocomplete="name" id="nameInput" maxlength="40" placeholder="Например: Ivan Ivanov" type="text"/>
+<label class="input-label" for="staticIdInput">Static ID</label>
+<input autocomplete="off" id="staticIdInput" inputmode="numeric" maxlength="20" placeholder="Например: 123456" type="text"/>
+<button class="btn primary full" id="confirmName">Продолжить →</button>
+</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
