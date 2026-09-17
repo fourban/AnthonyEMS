@@ -361,23 +361,90 @@ function activeBackButton(){
   const active=document.querySelector('.screen.active');
   return active?.querySelector('.bottom-page-back') || null;
 }
+function swipeBackTarget(active){
+  if(!active) return null;
+  if(materialOriginTestId && ['lecture','pmp','qualificationGuide','surgeryGuide'].includes(active.id)) return 'home';
+  const map={
+    internship:'info',qualificationMenu:'info',qualificationGuide:'qualificationMenu',surgeryGuide:'qualificationMenu',
+    lecture:'internship',duty:'internship',pmp:'internship',codeine:'internship',screens:'internship',getid:'internship',bodycam:'internship'
+  };
+  return map[active.id]||null;
+}
+function buildSwipePreview(targetId){
+  const target=$(targetId);
+  if(!target) return null;
+  const preview=document.createElement('div');
+  preview.className='swipe-back-preview';
+  const clone=target.cloneNode(true);
+  clone.removeAttribute('id');
+  clone.classList.add('active','swipe-preview-screen');
+  preview.appendChild(clone);
+  document.body.appendChild(preview);
+  return preview;
+}
+function clearSwipeBackVisuals(state){
+  if(!state) return;
+  state.active?.classList.remove('swipe-back-current');
+  if(state.active){state.active.style.transform='';state.active.style.transition='';state.active.style.boxShadow='';}
+  state.preview?.remove();
+  document.body.classList.remove('swipe-back-active');
+}
 document.addEventListener('touchstart',e=>{
   if(window.innerWidth>900 || e.touches.length!==1 || document.body.classList.contains('mobile-nav-open') || $('nameModal')?.classList.contains('show')){swipeBackStart=null;return;}
   const back=activeBackButton();
   if(!back){swipeBackStart=null;return;}
   const t=e.touches[0];
   if(t.clientX>swipeBackMaxStartX){swipeBackStart=null;return;}
-  swipeBackStart={x:t.clientX,y:t.clientY,time:Date.now(),back};
+  const active=document.querySelector('.screen.active');
+  const targetId=swipeBackTarget(active);
+  if(!targetId){swipeBackStart=null;return;}
+  const preview=buildSwipePreview(targetId);
+  if(!preview){swipeBackStart=null;return;}
+  active.classList.add('swipe-back-current');
+  document.body.classList.add('swipe-back-active');
+  swipeBackStart={x:t.clientX,y:t.clientY,time:Date.now(),back,active,targetId,preview,dragging:false,dx:0};
 },{passive:true});
-document.addEventListener('touchend',e=>{
-  if(!swipeBackStart || e.changedTouches.length!==1){swipeBackStart=null;return;}
-  const t=e.changedTouches[0];
-  const dx=t.clientX-swipeBackStart.x;
+document.addEventListener('touchmove',e=>{
+  if(!swipeBackStart || e.touches.length!==1) return;
+  const t=e.touches[0];
+  const dx=Math.max(0,t.clientX-swipeBackStart.x);
   const dy=t.clientY-swipeBackStart.y;
-  const dt=Date.now()-swipeBackStart.time;
-  const back=swipeBackStart.back;
+  if(!swipeBackStart.dragging){
+    if(Math.abs(dy)>18 && Math.abs(dy)>dx){clearSwipeBackVisuals(swipeBackStart);swipeBackStart=null;return;}
+    if(dx<8) return;
+    swipeBackStart.dragging=true;
+  }
+  if(dx>0){
+    e.preventDefault();
+    swipeBackStart.dx=dx;
+    const progress=Math.min(dx/window.innerWidth,1);
+    swipeBackStart.active.style.transition='none';
+    swipeBackStart.active.style.transform=`translate3d(${dx}px,0,0)`;
+    swipeBackStart.active.style.boxShadow=`-18px 0 42px rgba(0,0,0,${0.38*(1-progress)+0.08})`;
+    swipeBackStart.preview.style.setProperty('--swipe-progress',progress.toFixed(3));
+  }
+},{passive:false});
+document.addEventListener('touchend',e=>{
+  if(!swipeBackStart || e.changedTouches.length!==1){clearSwipeBackVisuals(swipeBackStart);swipeBackStart=null;return;}
+  const state=swipeBackStart;
+  const t=e.changedTouches[0];
+  const dx=Math.max(state.dx,t.clientX-state.x);
+  const dy=t.clientY-state.y;
+  const dt=Date.now()-state.time;
   swipeBackStart=null;
-  if(dx>=swipeBackMinDistance && Math.abs(dy)<=70 && dt<=900){
-    back.click();
+  const shouldGo=state.dragging && dx>=swipeBackMinDistance && Math.abs(dy)<=90 && dt<=1200;
+  state.active.style.transition='transform 220ms cubic-bezier(.22,.8,.22,1),box-shadow 220ms ease';
+  if(shouldGo){
+    state.active.style.transform=`translate3d(${window.innerWidth+24}px,0,0)`;
+    state.preview.classList.add('commit');
+    setTimeout(()=>{
+      clearSwipeBackVisuals(state);
+      state.back.click();
+    },210);
+  }else{
+    state.active.style.transform='translate3d(0,0,0)';
+    state.preview.classList.add('cancel');
+    setTimeout(()=>clearSwipeBackVisuals(state),220);
   }
 },{passive:true});
+document.addEventListener('touchcancel',()=>{clearSwipeBackVisuals(swipeBackStart);swipeBackStart=null;},{passive:true});
