@@ -326,7 +326,7 @@ $("nameModal")?.addEventListener("click",e=>{if(e.target===$("nameModal"))$("nam
 document.addEventListener("keydown",e=>{if(e.key==="Escape" && $("nameModal")?.classList.contains("show"))$("nameModal").classList.remove("show")});
 
 
-// v99 — bottom back controls + mobile swipe-right navigation
+// v102 — seamless interactive mobile swipe-back navigation
 function getTopBackButton(screen){
   return screen?.querySelector('.page-title > .btn.ghost, .lecture-header > .btn.ghost, .internship-header > .btn.ghost');
 }
@@ -355,14 +355,14 @@ function initBottomBackButtons(){
 initBottomBackButtons();
 
 let swipeBackStart=null;
+let swipeBackLocked=false;
 const swipeBackMaxStartX=72;
 const swipeBackMinDistance=105;
-function activeBackButton(){
-  const active=document.querySelector('.screen.active');
-  return active?.querySelector('.bottom-page-back') || null;
-}
+
 function swipeBackTarget(active){
   if(!active) return null;
+  // Root sections return to the app home (Tests).
+  if(active.id==='info' || active.id==='binders') return 'home';
   if(materialOriginTestId && ['lecture','pmp','qualificationGuide','surgeryGuide'].includes(active.id)) return 'home';
   const map={
     internship:'info',qualificationMenu:'info',qualificationGuide:'qualificationMenu',surgeryGuide:'qualificationMenu',
@@ -370,40 +370,76 @@ function swipeBackTarget(active){
   };
   return map[active.id]||null;
 }
-function buildSwipePreview(targetId){
+function prepareSwipeTarget(targetId){
   const target=$(targetId);
   if(!target) return null;
-  const preview=document.createElement('div');
-  preview.className='swipe-back-preview';
-  const clone=target.cloneNode(true);
-  clone.removeAttribute('id');
-  clone.classList.add('active','swipe-preview-screen');
-  preview.appendChild(clone);
-  document.body.appendChild(preview);
-  return preview;
+  target.classList.add('active','swipe-back-target');
+  target.style.setProperty('--swipe-progress','0');
+  target.scrollTop=0;
+  return target;
 }
-function clearSwipeBackVisuals(state){
+function clearSwipeBackVisuals(state,{keepTarget=false}={}){
   if(!state) return;
   state.active?.classList.remove('swipe-back-current');
   if(state.active){state.active.style.transform='';state.active.style.transition='';state.active.style.boxShadow='';}
-  state.preview?.remove();
-  document.body.classList.remove('swipe-back-active');
+  if(state.target){
+    state.target.style.removeProperty('--swipe-progress');
+    state.target.classList.remove('swipe-back-target','swipe-back-commit','swipe-back-cancel');
+    if(!keepTarget) state.target.classList.remove('active');
+  }
+  document.body.classList.remove('swipe-back-active','swipe-transition-lock');
+  swipeBackLocked=false;
 }
+function applyScreenStateWithoutReenter(id){
+  const navScreen = id==='binders' ? 'binders' : (["info","internship","qualificationMenu","qualificationGuide","surgeryGuide","lecture","duty","pmp","codeine","screens","getid","bodycam"].includes(id) ? 'info' : id);
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.screen===navScreen));
+  if(["info","internship","qualificationMenu","qualificationGuide","surgeryGuide","lecture","duty","pmp","codeine","screens","getid","bodycam","binders"].includes(id)) applyInfoTheme();
+  else if(id==='home'||id==='test'||id==='result') applyTestTheme();
+  syncBottomBackButton($(id));
+}
+function commitSwipeBack(state){
+  const originTestId = (state.targetId==='home' && materialOriginTestId) ? materialOriginTestId : null;
+  if(originTestId){
+    materialOriginTestId=null;
+    const back=state.active?.querySelector('.lecture-header > .btn.ghost');
+    if(back?.dataset.originalText) back.textContent=back.dataset.originalText;
+  }
+  state.active.classList.remove('active');
+  state.target.classList.add('active');
+  applyScreenStateWithoutReenter(state.targetId);
+  window.scrollTo(0,0);
+  if(originTestId){
+    chooseTest(originTestId);
+    renderTestChooser();
+  }
+  // Keep the real target visually in place for one frame, then return it to normal flow.
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    state.target.classList.remove('swipe-back-target','swipe-back-commit');
+    state.target.style.removeProperty('--swipe-progress');
+    state.active.classList.remove('swipe-back-current');
+    state.active.style.transform='';state.active.style.transition='';state.active.style.boxShadow='';
+    document.body.classList.remove('swipe-back-active','swipe-transition-lock');
+    swipeBackLocked=false;
+    if(originTestId){
+      requestAnimationFrame(()=>document.querySelector(`.test-choice[data-test="${originTestId}"]`)?.scrollIntoView({behavior:'smooth',block:'center'}));
+    }
+  }));
+}
+
 document.addEventListener('touchstart',e=>{
-  if(window.innerWidth>900 || e.touches.length!==1 || document.body.classList.contains('mobile-nav-open') || $('nameModal')?.classList.contains('show')){swipeBackStart=null;return;}
-  const back=activeBackButton();
-  if(!back){swipeBackStart=null;return;}
+  if(swipeBackLocked || window.innerWidth>900 || e.touches.length!==1 || document.body.classList.contains('mobile-nav-open') || $('nameModal')?.classList.contains('show')){swipeBackStart=null;return;}
   const t=e.touches[0];
   if(t.clientX>swipeBackMaxStartX){swipeBackStart=null;return;}
-  const active=document.querySelector('.screen.active');
+  const active=document.querySelector('.screen.active:not(.swipe-back-target)');
   const targetId=swipeBackTarget(active);
   if(!targetId){swipeBackStart=null;return;}
-  const preview=buildSwipePreview(targetId);
-  if(!preview){swipeBackStart=null;return;}
+  const target=prepareSwipeTarget(targetId);
+  if(!target){swipeBackStart=null;return;}
   active.classList.add('swipe-back-current');
   document.body.classList.add('swipe-back-active');
-  swipeBackStart={x:t.clientX,y:t.clientY,time:Date.now(),back,active,targetId,preview,dragging:false,dx:0};
+  swipeBackStart={x:t.clientX,y:t.clientY,time:Date.now(),active,targetId,target,dragging:false,dx:0};
 },{passive:true});
+
 document.addEventListener('touchmove',e=>{
   if(!swipeBackStart || e.touches.length!==1) return;
   const t=e.touches[0];
@@ -421,9 +457,10 @@ document.addEventListener('touchmove',e=>{
     swipeBackStart.active.style.transition='none';
     swipeBackStart.active.style.transform=`translate3d(${dx}px,0,0)`;
     swipeBackStart.active.style.boxShadow=`-18px 0 42px rgba(0,0,0,${0.38*(1-progress)+0.08})`;
-    swipeBackStart.preview.style.setProperty('--swipe-progress',progress.toFixed(3));
+    swipeBackStart.target.style.setProperty('--swipe-progress',progress.toFixed(3));
   }
 },{passive:false});
+
 document.addEventListener('touchend',e=>{
   if(!swipeBackStart || e.changedTouches.length!==1){clearSwipeBackVisuals(swipeBackStart);swipeBackStart=null;return;}
   const state=swipeBackStart;
@@ -433,18 +470,27 @@ document.addEventListener('touchend',e=>{
   const dt=Date.now()-state.time;
   swipeBackStart=null;
   const shouldGo=state.dragging && dx>=swipeBackMinDistance && Math.abs(dy)<=90 && dt<=1200;
+  swipeBackLocked=true;
+  document.body.classList.add('swipe-transition-lock');
   state.active.style.transition='transform 220ms cubic-bezier(.22,.8,.22,1),box-shadow 220ms ease';
   if(shouldGo){
     state.active.style.transform=`translate3d(${window.innerWidth+24}px,0,0)`;
-    state.preview.classList.add('commit');
-    setTimeout(()=>{
-      clearSwipeBackVisuals(state);
-      state.back.click();
-    },210);
+    state.target.classList.add('swipe-back-commit');
+    state.target.style.setProperty('--swipe-progress','1');
+    const done=()=>commitSwipeBack(state);
+    let fired=false;
+    const once=()=>{if(fired)return;fired=true;state.active.removeEventListener('transitionend',once);done();};
+    state.active.addEventListener('transitionend',once,{once:true});
+    setTimeout(once,280);
   }else{
     state.active.style.transform='translate3d(0,0,0)';
-    state.preview.classList.add('cancel');
-    setTimeout(()=>clearSwipeBackVisuals(state),220);
+    state.target.classList.add('swipe-back-cancel');
+    const done=()=>clearSwipeBackVisuals(state);
+    let fired=false;
+    const once=()=>{if(fired)return;fired=true;state.active.removeEventListener('transitionend',once);done();};
+    state.active.addEventListener('transitionend',once,{once:true});
+    setTimeout(once,280);
   }
 },{passive:true});
+
 document.addEventListener('touchcancel',()=>{clearSwipeBackVisuals(swipeBackStart);swipeBackStart=null;},{passive:true});

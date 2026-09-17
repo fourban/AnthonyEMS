@@ -1289,18 +1289,22 @@ body.surgery-mode .bottom-page-back{border-color:rgba(96,165,250,.24)}
 }
 
 
-/* v101 — interactive mobile swipe-back transition */
+/* v102 — seamless interactive mobile swipe-back transition */
 @media(max-width:900px){
   body.swipe-back-active{overflow-x:hidden}
+  body.swipe-transition-lock{pointer-events:none}
   .swipe-back-current{position:relative;z-index:72;will-change:transform;backface-visibility:hidden;background:#080808}
-  .swipe-back-preview{
-    --swipe-progress:0;position:fixed;z-index:68;left:0;right:0;top:72px;bottom:0;overflow:hidden;pointer-events:none;
-    background:#080808;opacity:calc(.72 + var(--swipe-progress)*.28);
-    transform:translate3d(calc(-22px + var(--swipe-progress)*22px),0,0);
-    transition:opacity 140ms linear,transform 140ms linear;
+  .screen.swipe-back-target{
+    --swipe-progress:0;display:block!important;position:fixed!important;z-index:68;
+    left:0;right:0;top:72px;bottom:0;margin:0!important;width:100%!important;max-width:none!important;
+    overflow-y:auto;overscroll-behavior:contain;padding:35px 22px 110px;background:#080808;
+    opacity:calc(.72 + var(--swipe-progress)*.28);
+    transform:translate3d(calc(-22px + var(--swipe-progress)*22px),0,0)!important;
+    filter:brightness(calc(.82 + var(--swipe-progress)*.18));
+    animation:none!important;transition:opacity 140ms linear,transform 140ms linear,filter 140ms linear;
+    pointer-events:none;
   }
-  .swipe-back-preview .swipe-preview-screen{display:block!important;min-height:100%;padding:22px 18px 110px;filter:brightness(.82)}
-  .swipe-back-preview::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,calc(.20 - var(--swipe-progress)*.16));transition:background 120ms linear}
-  .swipe-back-preview.commit{--swipe-progress:1}
-  .swipe-back-preview.cancel{opacity:.72;transform:translate3d(-22px,0,0)}
+  .screen.swipe-back-target::after{content:"";position:fixed;z-index:3;left:0;right:0;top:72px;bottom:0;background:rgba(0,0,0,calc(.20 - var(--swipe-progress)*.16));pointer-events:none;transition:background 120ms linear}
+  .screen.swipe-back-target.swipe-back-commit{--swipe-progress:1}
+  .screen.swipe-back-target.swipe-back-cancel{opacity:.72;transform:translate3d(-22px,0,0)!important}
 }
