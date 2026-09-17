@@ -1229,3 +1229,29 @@ body.surgery-mode .candidate-choice span{color:#60a5fa}
 @media(max-width:480px){
   .top-status{font-size:10px}
 }
+
+
+/* v98 — larger mobile E menu button with subtle menu cue */
+.brand-letter{display:block;line-height:1}
+.brand-menu-glyph{display:none}
+@media(max-width:900px){
+  .brand-mark{
+    width:52px;height:52px;border-radius:14px;
+    display:flex;align-items:center;justify-content:center;
+    position:relative;flex:0 0 52px;
+    font-size:19px;
+  }
+  .brand-letter{transform:translate(-2px,-1px)}
+  .brand-menu-glyph{
+    display:block;position:absolute;right:6px;bottom:5px;
+    font-size:15px;line-height:.7;font-weight:800;letter-spacing:-2px;
+    color:currentColor;opacity:.88;transform:scaleX(.9);
+    text-shadow:0 0 8px currentColor;
+    pointer-events:none;
+  }
+  .brand{gap:12px}
+}
+@media(max-width:390px){
+  .brand-mark{width:50px;height:50px;flex-basis:50px;border-radius:13px}
+  .brand-menu-glyph{right:5px;bottom:5px;font-size:14px}
+}
