@@ -428,6 +428,7 @@ function commitSwipeBack(state){
 
 document.addEventListener('touchstart',e=>{
   if(swipeBackLocked || window.innerWidth>900 || e.touches.length!==1 || document.body.classList.contains('mobile-nav-open') || $('nameModal')?.classList.contains('show')){swipeBackStart=null;return;}
+  if(e.target.closest('.topbar')){swipeBackStart=null;return;}
   const t=e.touches[0];
   if(t.clientX>swipeBackMaxStartX){swipeBackStart=null;return;}
   const active=document.querySelector('.screen.active:not(.swipe-back-target)');
