@@ -1255,3 +1255,22 @@ body.surgery-mode .candidate-choice span{color:#60a5fa}
   .brand-mark{width:50px;height:50px;flex-basis:50px;border-radius:13px}
   .brand-menu-glyph{right:5px;bottom:5px;font-size:14px}
 }
+
+
+/* v99 — convenient back navigation at the end of long material pages */
+.bottom-page-back-wrap{
+  width:100%;max-width:1100px;margin:30px 0 38px;padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.055);
+}
+.bottom-page-back{
+  min-width:210px;justify-content:center;
+  border-color:rgba(239,68,68,.20);background:rgba(255,255,255,.02);
+}
+.bottom-page-back:hover{background:rgba(239,68,68,.07);border-color:rgba(239,68,68,.34)}
+@media(max-width:900px){
+  .bottom-page-back-wrap{margin:24px 0 26px;padding-top:16px}
+  .bottom-page-back{width:100%;min-height:48px;font-size:12px}
+}
+body.di-mode .bottom-page-back{border-color:rgba(74,222,128,.20)}
+body.psid-mode .bottom-page-back{border-color:rgba(168,85,247,.22)}
+body.surgery-mode .bottom-page-back{border-color:rgba(96,165,250,.24)}

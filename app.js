@@ -126,6 +126,7 @@ function showScreen(id){
  document.querySelectorAll(".nav-item").forEach(n=>n.classList.toggle("active",n.dataset.screen===navScreen));
  if(["info","internship","qualificationMenu","qualificationGuide","surgeryGuide","lecture","duty","pmp","codeine","screens","getid","bodycam","binders"].includes(id)) applyInfoTheme();
  else if(id==="home"||id==="test"||id==="result") applyTestTheme();
+ syncBottomBackButton($(id));
  window.scrollTo(0,0)
 }
 function renderQuestion(){
@@ -273,6 +274,7 @@ document.querySelectorAll(".choice-material").forEach(btn=>btn.addEventListener(
   const screen=$(btn.dataset.studyScreen);
   const back=screen?.querySelector(".lecture-header > .btn.ghost");
   if(back){back.dataset.originalText ||= back.textContent;back.textContent="← Вернуться к тесту";}
+  syncBottomBackButton(screen);
 }));
 function backFromStudy(defaultScreen,screenId){
   if(materialOriginTestId){
@@ -322,3 +324,60 @@ $("backToInfoDuty")?.addEventListener("click",()=>showScreen("internship"));
 $("closeNameModal")?.addEventListener("click",()=>$("nameModal").classList.remove("show"));
 $("nameModal")?.addEventListener("click",e=>{if(e.target===$("nameModal"))$("nameModal").classList.remove("show")});
 document.addEventListener("keydown",e=>{if(e.key==="Escape" && $("nameModal")?.classList.contains("show"))$("nameModal").classList.remove("show")});
+
+
+// v99 — bottom back controls + mobile swipe-right navigation
+function getTopBackButton(screen){
+  return screen?.querySelector('.page-title > .btn.ghost, .lecture-header > .btn.ghost, .internship-header > .btn.ghost');
+}
+function syncBottomBackButton(screen){
+  if(!screen) return;
+  const topBack=getTopBackButton(screen);
+  const bottomBack=screen.querySelector('.bottom-page-back');
+  if(topBack && bottomBack) bottomBack.textContent=topBack.textContent.trim();
+}
+function initBottomBackButtons(){
+  document.querySelectorAll('.screen').forEach(screen=>{
+    const topBack=getTopBackButton(screen);
+    if(!topBack || screen.querySelector('.bottom-page-back-wrap')) return;
+    const wrap=document.createElement('div');
+    wrap.className='bottom-page-back-wrap';
+    const btn=document.createElement('button');
+    btn.type='button';
+    btn.className='btn ghost bottom-page-back';
+    btn.textContent=topBack.textContent.trim();
+    btn.setAttribute('aria-label','Вернуться назад');
+    btn.addEventListener('click',()=>topBack.click());
+    wrap.appendChild(btn);
+    screen.appendChild(wrap);
+  });
+}
+initBottomBackButtons();
+
+let swipeBackStart=null;
+const swipeBackMaxStartX=72;
+const swipeBackMinDistance=105;
+function activeBackButton(){
+  const active=document.querySelector('.screen.active');
+  return active?.querySelector('.bottom-page-back') || null;
+}
+document.addEventListener('touchstart',e=>{
+  if(window.innerWidth>900 || e.touches.length!==1 || document.body.classList.contains('mobile-nav-open') || $('nameModal')?.classList.contains('show')){swipeBackStart=null;return;}
+  const back=activeBackButton();
+  if(!back){swipeBackStart=null;return;}
+  const t=e.touches[0];
+  if(t.clientX>swipeBackMaxStartX){swipeBackStart=null;return;}
+  swipeBackStart={x:t.clientX,y:t.clientY,time:Date.now(),back};
+},{passive:true});
+document.addEventListener('touchend',e=>{
+  if(!swipeBackStart || e.changedTouches.length!==1){swipeBackStart=null;return;}
+  const t=e.changedTouches[0];
+  const dx=t.clientX-swipeBackStart.x;
+  const dy=t.clientY-swipeBackStart.y;
+  const dt=Date.now()-swipeBackStart.time;
+  const back=swipeBackStart.back;
+  swipeBackStart=null;
+  if(dx>=swipeBackMinDistance && Math.abs(dy)<=70 && dt<=900){
+    back.click();
+  }
+},{passive:true});
