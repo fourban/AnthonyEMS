@@ -1308,3 +1308,21 @@ body.surgery-mode .bottom-page-back{border-color:rgba(96,165,250,.24)}
   .screen.swipe-back-target.swipe-back-commit{--swipe-progress:1}
   .screen.swipe-back-target.swipe-back-cancel{opacity:.72;transform:translate3d(-22px,0,0)!important}
 }
+
+
+/* v103 — larger candidate summary on result screen */
+.result-meta{padding:17px 0;font-size:14px;align-items:center;gap:24px}
+.result-meta strong{font-size:16px;font-weight:800;letter-spacing:.01em;text-align:right}
+@media(max-width:520px){.result-meta{font-size:13px;padding:15px 0}.result-meta strong{font-size:14px}}
+
+/* v1.0.4 — answer borders follow active test theme */
+body.di-mode .answer{border-color:rgba(74,222,128,.16)}
+body.psid-mode .answer{border-color:rgba(192,132,252,.16)}
+body.surgery-mode .answer{border-color:rgba(96,165,250,.16)}
+body.had-mode .answer{border-color:rgba(239,68,68,.16)}
+
+/* v1.0.5 — checkbox borders follow active test theme */
+body.di-mode .check-box{border-color:rgba(74,222,128,.38)}
+body.psid-mode .check-box{border-color:rgba(192,132,252,.38)}
+body.surgery-mode .check-box{border-color:rgba(96,165,250,.38)}
+body.had-mode .check-box{border-color:rgba(239,68,68,.38)}
