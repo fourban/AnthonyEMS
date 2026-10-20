@@ -42,7 +42,7 @@
       </div>
     </div>
     <div id="materialsTab" hidden>
-      <div class="page-heading"><div><div class="eyebrow">EMS • KNOWLEDGE BASE</div><h1>Учебные материалы</h1><p>Создавай и редактируй дополнительные лекции и памятки. Существующие разделы сайта сохраняются.</p></div><button id="newMaterialBtn" class="btn primary">＋ Новый материал</button></div>
+      <div class="page-heading"><div><div class="eyebrow">EMS • KNOWLEDGE BASE</div><h1>Учебные материалы</h1><p>Создавай и редактируй дополнительные лекции и памятки. Существующие разделы сайта сохраняются.</p></div><div class="row2"><button id="newFolderBtn" class="btn ghost">＋ Новый раздел</button><button id="newMaterialBtn" class="btn primary">＋ Новый материал</button></div></div>
       <div class="materials-layout">
         <section class="panel material-list-panel"><div class="panel-head"><div><h2>Материалы конструктора</h2><p>Добавленные здесь материалы появятся в разделе «Обучающие материалы» сайта.</p></div><span id="materialCount" class="count">0</span></div><div id="materialList" class="material-list"></div></section>
         <section class="panel material-editor-panel"><div class="panel-head"><div><h2 id="materialEditorTitle">Редактор материала</h2><p>Текст, изображения и ссылки можно изменить до сборки ZIP.</p></div></div>
@@ -50,7 +50,7 @@
           <div id="materialEditor" hidden>
             <div class="form-grid">
               <label>Название материала<input id="materialTitle" maxlength="100" placeholder="Например: Порядок оформления справки"></label>
-              <label>Раздел<select id="materialCategory"><option value="ИНСТРУКЦИЯ">Инструкция</option><option value="ОБУЧЕНИЕ">Обучение</option><option value="КВАЛИФИКАЦИЯ">Квалификация</option><option value="ПАМЯТКА">Памятка</option><option value="ПРАВИЛА">Правила</option></select></label>
+              <label>Раздел сайта<select id="materialFolder"><option value="">Без раздела — самостоятельный материал</option></select></label><label>Тип материала<select id="materialCategory"><option value="ИНСТРУКЦИЯ">Инструкция</option><option value="ОБУЧЕНИЕ">Обучение</option><option value="КВАЛИФИКАЦИЯ">Квалификация</option><option value="ПАМЯТКА">Памятка</option><option value="ПРАВИЛА">Правила</option></select></label>
               <label class="full">Краткое описание<textarea id="materialDescription" rows="2" maxlength="240" placeholder="Что сотрудник узнает из материала"></textarea></label>
               <label class="full">Текст материала<textarea id="materialContent" rows="12" placeholder="Каждый абзац отделяй пустой строкой. Можно использовать обычный текст."></textarea><small>Абзацы сохраняются. Для выделения важного используй обычный текст — HTML вводить не нужно.</small></label>
               <label class="full">Путь к изображению (необязательно)<input id="materialImage" placeholder="assets/guide_local_01.webp"><small>Укажи путь к файлу в проекте или прямую HTTPS-ссылку.</small></label>
