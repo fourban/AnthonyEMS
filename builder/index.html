@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10091d">
+<title>AnthonyEMS • Конструктор</title>
+<link rel="stylesheet" href="builder.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+<script src="builder.js" defer></script>
+</head>
+<body>
+<div class="ambient"></div>
+<header class="topbar">
+  <a class="brand" href="../" aria-label="AnthonyEMS"><span class="brand-mark">A</span><span><b>AnthonyEMS</b><small>BUILDER / КОНСТРУКТОР</small></span></a>
+  <div class="top-actions"><span id="projectStatus" class="status"><i></i> Загрузка проекта…</span><button id="importBtn" class="btn ghost">Импорт ZIP</button><button id="saveDraftBtn" class="btn ghost">Сохранить проект</button><button id="exportBtn" class="btn primary">Собрать ZIP ↗</button><input id="zipInput" type="file" accept=".zip,application/zip" hidden></div>
+</header>
+<main class="layout">
+  <aside class="sidebar">
+    <div class="side-label">РАБОЧЕЕ ПРОСТРАНСТВО</div>
+    <button class="nav active" data-tab="tests"><span>▤</span> Тесты <em id="testCount">—</em></button>
+    <button class="nav" data-tab="materials"><span>▧</span> Учебные материалы <em>этап 2</em></button>
+    <div class="side-note"><span class="note-icon">✓</span><div><b>Безопасная сборка</b><p>Редактор не публикует изменения. ZIP скачивается на устройство — GitHub обновляешь сам.</p></div></div>
+    <div class="side-bottom"><span class="pulse"></span> Локальное редактирование<br><small>Черновик хранится в этом браузере</small></div>
+  </aside>
+  <section class="workspace">
+    <div id="testsTab">
+      <div class="page-heading"><div><div class="eyebrow">EMS • QUALIFICATION CENTER</div><h1>Конструктор тестов</h1><p>Редактируй вопросы визуально, проверяй результат и экспортируй целый сайт.</p></div><button id="newTestBtn" class="btn primary">＋ Новый тест</button></div>
+      <div class="test-layout">
+        <section class="panel test-list-panel"><div class="panel-head"><div><h2>Тесты проекта</h2><p>Выбери тест для редактирования</p></div><span id="listCount" class="count">0</span></div><div id="testList" class="test-list"></div></section>
+        <section class="editor-column">
+          <div id="emptyState" class="panel empty-state"><div class="empty-icon">✦</div><h2>Выбери тест</h2><p>Здесь появятся его настройки и вопросы.</p></div>
+          <div id="testEditor" class="panel test-editor" hidden>
+            <div class="panel-head editor-head"><div><div class="eyebrow">НАСТРОЙКИ ТЕСТА</div><h2>Информация</h2></div><button id="duplicateTestBtn" class="btn ghost small">Дублировать</button></div>
+            <div class="form-grid"><label>Название теста<input id="testTitle" maxlength="180"></label><label>Код теста<input id="testCode" maxlength="24"></label><label>Короткое название<input id="testShort" maxlength="120"></label><label>Цветовая тема<select id="testAccent"><option value="purple">Фиолетовая</option><option value="green">Зелёная</option><option value="blue">Синяя</option><option value="orange">Оранжевая</option></select></label><label class="full">Описание<textarea id="testDescription" rows="2"></textarea></label></div>
+            <div class="divider"></div>
+            <div class="panel-head questions-head"><div><h2>Вопросы</h2><p>Нажми на вопрос, чтобы изменить его</p></div><button id="newQuestionBtn" class="btn primary small">＋ Вопрос</button></div>
+            <div class="question-layout"><div id="questionList" class="question-list"></div><div id="questionForm" class="question-form"><div class="form-placeholder">Выбери вопрос из списка или создай новый.</div></div></div>
+            <div class="editor-footer"><button id="deleteTestBtn" class="btn danger ghost">Удалить тест</button><span id="editNotice" class="muted">Изменения сохраняются в черновик автоматически.</span></div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div id="materialsTab" hidden>
+      <div class="page-heading"><div><div class="eyebrow">EMS • KNOWLEDGE BASE</div><h1>Учебные материалы</h1><p>Следующий модуль конструктора — редактирование лекций, инструкций и информационных карточек.</p></div></div>
+      <div class="panel material-roadmap"><div class="empty-icon">▧</div><h2>Модуль материалов ещё не подключён</h2><p>Текущие учебные разделы встроены непосредственно в HTML и JavaScript. Сначала безопасно выделим их в отдельную структуру данных, чтобы редактор мог менять тексты и добавлять материалы, не ломая навигацию и оформление.</p><ul><li>Редактирование заголовков и текста</li><li>Создание и удаление материалов</li><li>Сохранение изображений и ссылок</li><li>Предпросмотр перед экспортом</li></ul><p class="muted">На этом этапе существующие материалы в экспортируемом сайте сохраняются без изменений.</p></div>
+    </div>
+    <footer class="footer">AnthonyEMS Builder <span>•</span> ZIP-экспорт <span>•</span> Без прямой публикации</footer>
+  </section>
+</main>
+<div id="toast" class="toast" role="status"></div>
+</body>
+</html>
