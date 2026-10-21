@@ -1360,3 +1360,7 @@ body.raiden-egg-open{overflow:hidden}
 @keyframes raiden-peek-out{0%{transform:translateX(10%)}100%{transform:translateX(110%)}}
 @media(max-width:520px){.raiden-easter-egg-card{width:min(60vw,240px);height:min(50vh,400px)}.raiden-easter-egg.is-visible .raiden-easter-egg-card{animation:raiden-peek-in 1.15s cubic-bezier(.18,.82,.22,1) both}.raiden-easter-egg-bubble{top:14%;left:-8%;padding:9px 12px;font-size:17px}}
 @media(prefers-reduced-motion:reduce){.raiden-easter-egg-card,.raiden-easter-egg-bubble,.raiden-easter-egg-character{animation:none!important;transition:none!important}.raiden-easter-egg.is-visible .raiden-easter-egg-card{transform:translateX(10%);animation:none}.raiden-easter-egg.is-leaving .raiden-easter-egg-card{transform:translateX(110%);animation:none}}
+
+/* Result test name: larger, without the "ТЕСТ:" prefix */
+#resultEyebrow{font-size:14px;letter-spacing:.14em;line-height:1.5;margin-bottom:16px}
+@media(max-width:520px){#resultEyebrow{font-size:12px;letter-spacing:.1em}}
