@@ -706,7 +706,6 @@
 <div class="raiden-easter-egg" id="raidenEasterEgg" role="dialog" aria-modal="true" aria-label="Пасхалка Anthony Raiden" aria-hidden="true">
   <button class="raiden-easter-egg-backdrop" type="button" data-close-raiden aria-label="Закрыть пасхалку"></button>
   <div class="raiden-easter-egg-card">
-    <button class="raiden-easter-egg-close" type="button" data-close-raiden aria-label="Закрыть">×</button>
     <div class="raiden-easter-egg-bubble">Чё хотел?<span class="raiden-bubble-tail"></span></div>
     <img class="raiden-easter-egg-character" src="assets/anthony-raiden.webp" alt="Персонаж Anthony Raiden" />
     <div class="raiden-easter-egg-caption">ANTHONY RAIDEN <span>• EMS</span></div>
@@ -717,26 +716,34 @@
   const trigger=document.getElementById('raidenEasterEggTrigger');
   const modal=document.getElementById('raidenEasterEgg');
   if(!trigger||!modal)return;
-  const closeButtons=modal.querySelectorAll('[data-close-raiden]');
-  let noticeTimer=null;
+  let noticeTimer=null,leaveTimer=null,hideTimer=null;
+  function clearTimers(){
+    [noticeTimer,leaveTimer,hideTimer].forEach(timer=>{if(timer)clearTimeout(timer);});
+    noticeTimer=leaveTimer=hideTimer=null;
+  }
   function openEgg(){
-    if(noticeTimer)clearTimeout(noticeTimer);
-    modal.classList.remove('is-noticed');
+    clearTimers();
+    modal.classList.remove('is-leaving','is-noticed');
     modal.classList.add('is-visible');
     modal.setAttribute('aria-hidden','false');
     document.body.classList.add('raiden-egg-open');
     noticeTimer=setTimeout(()=>{if(modal.classList.contains('is-visible'))modal.classList.add('is-noticed');},1450);
+    hideTimer=setTimeout(startLeaving,4800);
   }
-  function closeEgg(){
+  function startLeaving(){
+    if(!modal.classList.contains('is-visible')||modal.classList.contains('is-leaving'))return;
     if(noticeTimer)clearTimeout(noticeTimer);
-    noticeTimer=null;
-    modal.classList.remove('is-visible','is-noticed');
-    modal.setAttribute('aria-hidden','true');
-    document.body.classList.remove('raiden-egg-open');
+    modal.classList.remove('is-noticed');
+    modal.classList.add('is-leaving');
+    leaveTimer=setTimeout(()=>{
+      modal.classList.remove('is-visible','is-leaving');
+      modal.setAttribute('aria-hidden','true');
+      document.body.classList.remove('raiden-egg-open');
+      clearTimers();
+    },650);
   }
   trigger.addEventListener('click',openEgg);
-  closeButtons.forEach(button=>button.addEventListener('click',closeEgg));
-  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal.classList.contains('is-visible'))closeEgg();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal.classList.contains('is-visible'))startLeaving();});
 })();
 </script>
 <script src="app.js?v=b817e6ad"></script>
