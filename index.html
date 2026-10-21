@@ -29,7 +29,7 @@
 <div class="brand-sub">QUALIFICATION • TESTING • SYSTEM</div>
 </div>
 </div>
-<div class="top-author" aria-label="Автор сайта"><span class="top-author-label">АВТОР</span><strong>Anthony Raiden</strong><span class="top-author-meta">Статик: 133604 <i>·</i> DS:fourban</span></div>
+<div class="top-author" aria-label="Автор сайта"><span class="top-author-label">АВТОР</span><button class="top-author-name" id="raidenEasterEggTrigger" type="button" aria-haspopup="dialog" aria-controls="raidenEasterEgg"><strong>Anthony Raiden</strong></button><span class="top-author-meta">Статик: 133604 <i>·</i> DS:fourban</span></div>
 </header>
 <div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
 <main class="shell">
@@ -703,6 +703,28 @@
 <button class="btn primary full" id="confirmName">Продолжить →</button>
 </div>
 </div>
+<div class="raiden-easter-egg" id="raidenEasterEgg" role="dialog" aria-modal="true" aria-label="Пасхалка Anthony Raiden" aria-hidden="true">
+  <button class="raiden-easter-egg-backdrop" type="button" data-close-raiden aria-label="Закрыть пасхалку"></button>
+  <div class="raiden-easter-egg-card">
+    <button class="raiden-easter-egg-close" type="button" data-close-raiden aria-label="Закрыть">×</button>
+    <div class="raiden-easter-egg-bubble">Чё хотел?<span class="raiden-bubble-tail"></span></div>
+    <img class="raiden-easter-egg-character" src="https://media.discordapp.net/attachments/1497645696977866792/1529524494018940979/image.png?ex=6ad98ff0&amp;is=6ad83e70&amp;hm=1ed14ee9c7eda6d0c765677723dc4200e2e7b6bb7c687f9273484c9564b5646c&amp;=&amp;format=webp&amp;quality=lossless" alt="Персонаж Anthony Raiden" />
+    <div class="raiden-easter-egg-caption">ANTHONY RAIDEN <span>• EMS</span></div>
+  </div>
+</div>
+<script>
+(function(){
+  const trigger=document.getElementById('raidenEasterEggTrigger');
+  const modal=document.getElementById('raidenEasterEgg');
+  if(!trigger||!modal)return;
+  const closeButtons=modal.querySelectorAll('[data-close-raiden]');
+  function openEgg(){modal.classList.add('is-visible');modal.setAttribute('aria-hidden','false');document.body.classList.add('raiden-egg-open');}
+  function closeEgg(){modal.classList.remove('is-visible');modal.setAttribute('aria-hidden','true');document.body.classList.remove('raiden-egg-open');}
+  trigger.addEventListener('click',openEgg);
+  closeButtons.forEach(button=>button.addEventListener('click',closeEgg));
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal.classList.contains('is-visible'))closeEgg();});
+})();
+</script>
 <script src="app.js?v=b817e6ad"></script>
 </body>
 </html>
