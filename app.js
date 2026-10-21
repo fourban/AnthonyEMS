@@ -167,7 +167,7 @@ function finishTest(){
  $("score").textContent=pct+"%";
  $("resultStatus").textContent=pct>=80?"PASSED":"FAIL";
  $("resultStatus").style.color=pct>=80?(active.accent==="green"?"#4ade80":active.accent==="red"?"#ef4444":active.accent==="blue"?"#60a5fa":"#c084fc"):"#ff719f";
- $("resultEyebrow").textContent=`ТЕСТ: ${active.title}`;
+ $("resultEyebrow").textContent=active.title;
  $("resultTitle").textContent=pct>=80?"Квалификация пройдена":"Квалификация не пройдена";
  $("resultText").textContent=pct>=80?"Отличный результат. Данные тестирования можно передать руководству подразделения. Не закрывайте страницу до тех пор, пока экзаменатор не скажет, что можно завершить проверку.":"Результата пока недостаточно для квалификации. Повтори попытку и закрепи теорию. Не закрывайте страницу до тех пор, пока экзаменатор не скажет, что можно завершить проверку.";
  $("resultName").textContent=candidate||"—";
