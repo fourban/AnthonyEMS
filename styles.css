@@ -1328,10 +1328,10 @@ body.surgery-mode .check-box{border-color:rgba(96,165,250,.38)}
 body.had-mode .check-box{border-color:rgba(239,68,68,.38)}
 
 
-/* v54 — compact stacked author credit in the sticky header */
-.top-author{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:3px;min-width:0;text-align:right}
+/* v55 — keep author credit on one line */
+.top-author{display:flex;flex-direction:row;align-items:center;justify-content:flex-end;gap:8px;min-width:0;text-align:right;white-space:nowrap}
 .top-author-label{font-size:9px;letter-spacing:.14em;font-weight:800;color:#95889e;line-height:1.1}
-.top-author strong{font-size:13px;font-weight:750;color:#d8b4fe;white-space:nowrap;line-height:1.2}
+.top-author strong{font-size:12px;font-weight:750;color:#d8b4fe;white-space:nowrap;line-height:1.2}
 .top-author-meta{font-size:10px;color:#a99bb4;white-space:nowrap;line-height:1.2}
 .top-author-meta i{font-style:normal;color:#594b68;padding:0 3px}
-@media(max-width:600px){.topbar{padding:0 14px;gap:10px}.top-author{gap:3px;flex-direction:column;align-items:flex-end}.top-author-label{font-size:7px}.top-author strong{font-size:10px}.top-author-meta{font-size:8px}}
+@media(max-width:600px){.topbar{padding:0 14px;gap:10px}.top-author{gap:5px;flex-direction:row;align-items:center;white-space:nowrap}.top-author-label{font-size:7px}.top-author strong{font-size:10px}.top-author-meta{font-size:8px}}
