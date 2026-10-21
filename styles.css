@@ -1362,5 +1362,5 @@ body.raiden-egg-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.raiden-easter-egg-card,.raiden-easter-egg-bubble,.raiden-easter-egg-character{animation:none!important;transition:none!important}.raiden-easter-egg.is-visible .raiden-easter-egg-card{transform:translateX(10%);animation:none}.raiden-easter-egg.is-leaving .raiden-easter-egg-card{transform:translateX(110%);animation:none}}
 
 /* Result test name: larger, without the "ТЕСТ:" prefix */
-#resultEyebrow{font-size:14px;letter-spacing:.14em;line-height:1.5;margin-bottom:16px}
-@media(max-width:520px){#resultEyebrow{font-size:12px;letter-spacing:.1em}}
+#resultEyebrow{font-size:20px;letter-spacing:.08em;line-height:1.4;margin-bottom:18px}
+@media(max-width:520px){#resultEyebrow{font-size:16px;letter-spacing:.04em;line-height:1.35}}
