@@ -718,8 +718,22 @@
   const modal=document.getElementById('raidenEasterEgg');
   if(!trigger||!modal)return;
   const closeButtons=modal.querySelectorAll('[data-close-raiden]');
-  function openEgg(){modal.classList.add('is-visible');modal.setAttribute('aria-hidden','false');document.body.classList.add('raiden-egg-open');}
-  function closeEgg(){modal.classList.remove('is-visible');modal.setAttribute('aria-hidden','true');document.body.classList.remove('raiden-egg-open');}
+  let noticeTimer=null;
+  function openEgg(){
+    if(noticeTimer)clearTimeout(noticeTimer);
+    modal.classList.remove('is-noticed');
+    modal.classList.add('is-visible');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('raiden-egg-open');
+    noticeTimer=setTimeout(()=>{if(modal.classList.contains('is-visible'))modal.classList.add('is-noticed');},1450);
+  }
+  function closeEgg(){
+    if(noticeTimer)clearTimeout(noticeTimer);
+    noticeTimer=null;
+    modal.classList.remove('is-visible','is-noticed');
+    modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('raiden-egg-open');
+  }
   trigger.addEventListener('click',openEgg);
   closeButtons.forEach(button=>button.addEventListener('click',closeEgg));
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal.classList.contains('is-visible'))closeEgg();});
